@@ -4,7 +4,7 @@
 
 ## Dirs
 DIR="$(pwd)"
-echo ${LIST}
+LIST="$(cat aur.list)"
 
 # Sort packages
 PKGS=($(for i in "${LIST[@]}"; do echo $i; done | sort))
