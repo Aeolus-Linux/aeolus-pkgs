@@ -1,5 +1,5 @@
 pacman -Syu --needed --noconfirm --noprogressbar 
-pacman -Sy archiso sudo fakeroot git base-devel jq giflib libid3tag libqalculate rofi libwebp  imlib2 startup-notification expac diffstat pacutils wget devtools sudo libxslt cmake intltool mesa gtk-doc gtk-update-icon-cache meson libx11 libxkbcommon gobject-introspection gnome-common polkit gtk3 dbus-glib go pkg-config libxcb xcb-util pam cairo check libglvnd libev ncurses xorg xorg-xauth glibc base-devel gcc libx11 libxkbcommon>=0.5.0 libxkbcommon-x11>=0.5.0 --needed --noconfirm --noprogressbar 
+pacman -Sy autogen bdf-unifont help2man ttf-dejavu --needed --noconfirm --noprogressbar 
 tee -a /etc/sudoers > /dev/null <<EOT
 nobody    ALL=(ALL) NOPASSWD:ALL
 EOT
