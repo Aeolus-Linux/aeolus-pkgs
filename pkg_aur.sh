@@ -4,7 +4,6 @@
 
 ## Dirs
 DIR="$(pwd)"
-LIST="$(cat ${DIR}/aur.list)"
 echo ${LIST}
 
 # Sort packages
