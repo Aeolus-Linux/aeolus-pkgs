@@ -49,5 +49,5 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
          branch: ${{ github.ref }}
-         force: true
+         force: false
          github_token: ${{ secrets.GITHUB_TOKEN }}
