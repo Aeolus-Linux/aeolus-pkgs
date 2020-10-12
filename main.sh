@@ -1,4 +1,3 @@
-sudo pacman -Sy autogen --noconfirm 
 sudo mkdir -p /go/pkg/mod/cache/download/github.com
 sudo chmod -R 777 /go
 sudo chmod -R 777 /go/pkg/mod/cache/download/github.com
