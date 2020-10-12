@@ -43,7 +43,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Re-pull on failure
       if: ${{ failure() }}
-      run: git pull https://github.com/laufen-mit-eile/lme-pkgs ${{ github.ref }} --autostash --rebase -X ours --allow-unrelated-histories
+      run: git pull https://github.com/laufen-mit-eile/lme-pkgs.git --autostash --rebase -X ours --allow-unrelated-histories
     - name: Re-push on failure
       if: ${{ failure() }}
       uses: ad-m/github-push-action@master
