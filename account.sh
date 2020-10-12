@@ -1,5 +1,5 @@
 pacman -Syu --needed --noconfirm --noprogressbar 
-pacman -Sy autogen efibootmgr git sudo fakeroot go bdf-unifont help2man ttf-dejavu --needed --noconfirm --noprogressbar 
+pacman -Sy autogen efibootmgr git sudo fakeroot go binutils rofi bdf-unifont help2man ttf-dejavu --needed --noconfirm --noprogressbar 
 tee -a /etc/sudoers > /dev/null <<EOT
 nobody    ALL=(ALL) NOPASSWD:ALL
 EOT
