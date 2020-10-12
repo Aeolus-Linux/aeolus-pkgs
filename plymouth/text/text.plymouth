@@ -1,0 +1,11 @@
+[Plymouth Theme]
+Name=LME Text
+Description=Text mode theme for LME
+ModuleName=lme-text
+
+[ubuntu-text]
+title=Laufen mit Eile
+black=0x000000
+white=0x00BBD2
+brown=0x323F4E
+blue=0x000000

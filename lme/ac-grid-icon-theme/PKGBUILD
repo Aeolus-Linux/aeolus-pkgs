@@ -1,0 +1,16 @@
+# Maintainer: Aditya Shakya <adi1090x@gmail.com>
+
+pkgname=ac-grid-icon-theme
+pkgver=1.0
+pkgrel=1
+pkgdesc="Grid icon theme for Archcraft OS."
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+
+package() {
+	mkdir -p "$pkgdir/usr/share/icons"
+	cp -r grid "$pkgdir/usr/share/icons/"
+}
