@@ -1,6 +1,7 @@
 DIR="$(pwd)"
 echo test1
-pacman -Sy autogen --noconfirm 
+pacman -Syu
+pacman -Sy autogen  startup-notification expac diffstat pacutils wget devtools sudo libxslt cmake intltool mesa gtk-doc gtk-update-icon-cache meson libx11 libxkbcommon gobject-introspection gnome-common polkit gtk3 dbus-glib go pkg-config libxcb xcb-util pam cairo check libglvnd libev ncurses xorg xorg-xauth glibc base-devel gcc libx11 libxkbcommon>=0.5.0 libxkbcommon-x11>=0.5.0 archiso sudo fakeroot git base-devel jq giflib libid3tag libqalculate rofi libwebp  imlib2  startup-notification expac diffstat pacutils wget devtools sudo libxslt cmake intltool mesa gtk-doc gtk-update-icon-cache meson libx11 libxkbcommon gobject-introspection gnome-common polkit gtk3 dbus-glib go pkg-config libxcb xcb-util pam cairo check libglvnd libev ncurses xorg pam xorg-xauth git imlib2 librsvg libsm libxcursor libxinerama libxlm2 libxrandr autogen bdf-unifont help2man ttf-dejavu efibootmgr pango startup-notification gtk-update-icon-cache hicolor-icon-theme gtk3 mpd  go xorg-xauth glibc base-devel gcc libx11 libxkbcommon>=0.5.0libxkbcommon-x11>=0.5.0 archiso sudo fakeroot git base-devel jq giflib libid3tag libqalculate rofi libwebp  imlib2  --noconfirm --needed --noprogressbar
 echo test2
 tee -a /etc/sudoers > /dev/null <<EOT
 nobody    ALL=(ALL) NOPASSWD:ALL
