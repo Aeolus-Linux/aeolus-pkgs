@@ -1,3 +1,3 @@
         ./setup.sh
         ./pkg_aur.sh
-        ./x86_64/update.sh
+       sh ./x86_64/update.sh
