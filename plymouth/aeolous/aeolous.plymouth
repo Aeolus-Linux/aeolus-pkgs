@@ -1,0 +1,9 @@
+[Plymouth Theme]
+Name=lme
+Description=default aeolous plymouth theme
+Comment=created By Eile Kerning
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/aeolous
+ScriptFile=/usr/share/plymouth/themes/aeolous/aeolous.script

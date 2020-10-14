@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-## This script will generate lme pkg-files.
+## This script will generate aeolus pkg-files.
 
 ## Dirs
 DIR="$(pwd)"
-PKGDIR="$DIR/lme"
+PKGDIR="$DIR/aeolus-pkgs"
 
 ## Packages
 PKGS=($(ls $PKGDIR))
@@ -59,9 +59,9 @@ build_pkgs () {
 
 # Setup repository
 setup_repo () {
-	repoargs=("-n -R lme.db.tar.gz *.pkg.tar.zst")
+	repoargs=("-n -R aeolus-pkgs.db.tar.gz *.pkg.tar.zst")
 	{ echo "Setting up repository & updating database..."; echo; }
-	{ cd $DIR/x86_64; rm -f lme.*; repo-add $repoargs; }
+	{ cd $DIR/x86_64; rm -f aeolus-pkgs.*; repo-add $repoargs; }
 	{ echo; echo "Done!"; echo; }
 }
 

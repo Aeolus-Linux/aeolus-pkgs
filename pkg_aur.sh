@@ -90,18 +90,18 @@ build_pkgs () {
 	done	
 }
 
-# Build plymouth with lme-theme (Not a good way, i know)
+# Build plymouth with aeolus-theme (Not a good way, i know)
 build_plymouth () {
-	{ echo "Building plymouth with custom configs & lme-theme"; echo; }
+	{ echo "Building plymouth with custom configs & aeolus-theme"; echo; }
 	{ cd $DIR/aur_pkgs; git clone --depth 1 https://aur.archlinux.org/plymouth.git; echo; }
-	{ cd $DIR/aur_pkgs/plymouth; cp -r $DIR/plymouth/lme $DIR/aur_pkgs/plymouth; cp -r $DIR/plymouth/text $DIR/aur_pkgs/plymouth; cp -r $DIR/plymouth/lme-text.so $DIR/aur_pkgs/plymouth; }
+	{ cd $DIR/aur_pkgs/plymouth; cp -r $DIR/plymouth/aeolus $DIR/aur_pkgs/plymouth; cp -r $DIR/plymouth/text $DIR/aur_pkgs/plymouth; cp -r $DIR/plymouth/aeolus-text.so $DIR/aur_pkgs/plymouth; }
 	sed -i '$d' PKGBUILD
 	cat >> PKGBUILD <<- EOL
-	  sed -i -e 's/Theme=.*/Theme=lme/g' \$pkgdir/etc/plymouth/plymouthd.conf
+	  sed -i -e 's/Theme=.*/Theme=aeolus/g' \$pkgdir/etc/plymouth/plymouthd.conf
 	  sed -i -e 's/ShowDelay=.*/ShowDelay=1/g' \$pkgdir/etc/plymouth/plymouthd.conf
-	  cp -r ../../lme \$pkgdir/usr/share/plymouth/themes
+	  cp -r ../../aeolus \$pkgdir/usr/share/plymouth/themes
 	  cp -r ../../text \$pkgdir/usr/share/plymouth/themes
-	  cp -r ../../lme-text.so \$pkgdir/usr/lib/plymouth
+	  cp -r ../../aeolus-text.so \$pkgdir/usr/lib/plymouth
 	}
 	EOL
 	sum1=$(sha256sum lxdm-plymouth.service |  awk -F ' ' '{print $1}')
@@ -153,9 +153,9 @@ build_grub () {
 
 # Setup repository
 setup_repo () {
-	repoargs=("-n -R lme.db.tar.gz *.pkg.tar.zst")
+	repoargs=("-n -R aeolus-pkgs.db.tar.gz *.pkg.tar.zst")
 	{ echo "Setting up repository & updating database..."; echo; }
-	{ cd $DIR/x86_64; rm -f lme.*; repo-add $repoargs; }
+	{ cd $DIR/x86_64; rm -f aeolus-pkgs.*; repo-add $repoargs; }
 	{ echo; echo "Database Updated."; echo; }
 }
 
