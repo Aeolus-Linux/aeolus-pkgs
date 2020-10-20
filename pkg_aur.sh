@@ -135,21 +135,21 @@ build_plymouth () {
 }
 
 # Build grub-silent
-build_grub () {
-	{ echo "Building grub-silent..."; echo; }
-	cd $DIR/grub-silent
-	makepkg -s
-	mv *.pkg.tar.zst $DIR/x86_64
-	{ rm -rf pkg src; rm -r *.xz *.gz; }
-	# Verify
-	set -- $DIR/x86_64/grub-silent-*
-	if [[ -f "$1" ]]; then
-		{ echo; echo "Package 'grub-silent' generated successfully."; echo; }
-	else
-		{ echo "Failed to build 'grub-silent', Exiting..." >&2; }
-		{ echo; exit 1; }
-	fi
-}
+#build_grub () {
+#	{ echo "Building grub-silent..."; echo; }
+#	cd $DIR/grub-silent
+#	makepkg -s
+#	mv *.pkg.tar.zst $DIR/x86_64
+#	{ rm -rf pkg src; rm -r *.xz *.gz; }
+#	# Verify
+#	set -- $DIR/x86_64/grub-silent-*
+#	if [[ -f "$1" ]]; then
+#		{ echo; echo "Package 'grub-silent' generated successfully."; echo; }
+#	else
+#		{ echo "Failed to build 'grub-silent', Exiting..." >&2; }
+#		{ echo; exit 1; }
+#	fi
+#}
 
 # Setup repository
 setup_repo () {
