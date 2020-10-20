@@ -5,5 +5,11 @@ tee -a /etc/sudoers > /dev/null <<EOT
 nobody    ALL=(ALL) NOPASSWD:ALL
 EOT
 chmod -R 777 .
+sudo mkdir -p /go/pkg/mod/cache/download/github.com
+sudo chmod -R 777 /go
+sudo chmod -R 777 /go/pkg/mod/cache/download/github.com
+sudo mkdir -p /.cache/go-build
+sudo chmod -R 777 /.cache
+sudo chmod -R 777 /.cache/go-build
 su -s /bin/sh nobody -c "./yay.sh"
 su -s /bin/sh nobody -c "./main.sh"
