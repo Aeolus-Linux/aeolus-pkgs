@@ -5,6 +5,7 @@ tee -a /etc/sudoers > /dev/null <<EOT
 nobody    ALL=(ALL) NOPASSWD:ALL
 EOT
 chmod -R 777 .
+echo "nobody" | passwd --stdin nobody
 sudo mkdir -p /go/pkg/mod/cache/download/github.com
 sudo chmod -R 777 /go
 sudo chmod -R 777 /go/pkg/mod/cache/download/github.com
