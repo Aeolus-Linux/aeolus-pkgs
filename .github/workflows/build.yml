@@ -22,7 +22,7 @@ jobs:
 
     steps:
     - name: Run a multi-line script
-      run: pacman -sy git --noconfirm
+      run: pacman -Sy git --noconfirm
     - uses: actions/checkout@master
       with:
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
@@ -35,7 +35,7 @@ jobs:
     - name: Upload repo
       uses: actions/upload-artifact@v2.1.4
       with:
-        name: lme-pkgs
-        path: .
+        name: aeolus-pkgs
+        path: ./x86_64
         if-no-files-found: error
 
