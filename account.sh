@@ -3,7 +3,7 @@ pacman -S --needed git base-devel
 useradd -p builderbob -c builderbob -m builderbob
 echo "builderbob:builderbob"|chpasswd
 #echo "nobody" | passwd --stdin nobody
-pacman -Sy --needed autogen cmake python-sphinx i3-wm libpulse libmpdclient perl-data-dump perl sudo fakeroot gtk2-perl perl-file-desktopentry perl-gtk3 efibootmgr base-devel python rsync fuse2 xorg-xauth libxinerama gtk3 libxrandr libxcursor imlib2 libqalculate hicolor-icon-theme gtk-update-icon-cache git sudo fakeroot go binutils rofi  docbook-xsl libdrm patch autoconf automake gcc bdf-unifont help2man ttf-dejavu --needed --noconfirm --noprogressbar 
+pacman -Sy --needed autogen cmake python-sphinx git meson perl fish tmux vim zsh git go i3-wm pygtk python2 python pacman-contrib expac fzf libpulse libmpdclient perl-data-dump perl sudo fakeroot gtk2-perl perl-file-desktopentry perl-gtk3 efibootmgr base-devel python rsync fuse2 xorg-xauth libxinerama gtk3 libxrandr libxcursor imlib2 libqalculate hicolor-icon-theme gtk-update-icon-cache git sudo fakeroot go binutils rofi  docbook-xsl libdrm patch autoconf automake gcc bdf-unifont help2man ttf-dejavu --needed --noconfirm --noprogressbar 
 tee -a /etc/sudoers > /dev/null <<EOT
 builderbob    ALL=(ALL) NOPASSWD:ALL
 EOT
