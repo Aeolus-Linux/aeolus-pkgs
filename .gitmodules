@@ -1,0 +1,3 @@
+[submodule "aeolus-pkgs/calamares-installer"]
+	path = aeolus-pkgs/calamares-installer
+	url = https://github.com/Aeolus-Linux/calamares-installer
