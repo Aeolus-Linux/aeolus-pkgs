@@ -2,7 +2,3 @@
 	path = aeolus-pkgs/calamares-installer
 	url = https://github.com/Aeolus-Linux/calamares-installer
 	branch = master
-[submodule "aeolus-pkgs/--force"]
-	path = aeolus-pkgs/--force
-	url = https://github.com/Aeolus-Linux/calamares-installer
-	branch = master
