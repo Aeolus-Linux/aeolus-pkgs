@@ -13,15 +13,17 @@ Compiled Packages Repository For Aeolus.
 ```
 # Aur Packages
 
-ly 
+polybar 
 yay 
 openbox-patched 
 rofi-calc 
-oranchelo-icon-theme-git 
-tela-icon-theme-git 
+obmenu-generator 
+oranchelo-icon-theme 
+tela-icon-theme 
 ymuse-git 
 ttf-comfortaa 
-ttf-iosevka
+ttf-iosevka 
+perl-linux-desktopfiles
 
 # Aeolus Packages
 #ac-about-dev
