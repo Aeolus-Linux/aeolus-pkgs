@@ -162,7 +162,6 @@ setup_repo () {
 # Cleanup
 cleanup () {
 	echo "Cleaning up..."
-	rm -rf $DIR/aur_pkgs
 	if [[ ! -d "$DIR/aur_pkgs" ]]; then
 		{ echo; echo "Cleanup Completed."; exit 0; }
 	else
