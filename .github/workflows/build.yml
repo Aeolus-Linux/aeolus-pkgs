@@ -36,6 +36,6 @@ jobs:
       uses: actions/upload-artifact@v2.1.4
       with:
         name: aeolus-pkgs
-        path: ./x86_64
+        path: ./
         if-no-files-found: error
 
