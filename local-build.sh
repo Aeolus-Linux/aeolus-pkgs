@@ -11,7 +11,7 @@ sudo chmod +x pkg_aur.sh
 sudo chmod +x pkg_lme.sh
 sudo chmod +x ./x86_64/update.sh
 git clone https://aur.archlinux.org/yay.gitcd aeolus-pkgs
-git clone https://github.com/Aeolus-Linux/calamares-aeolus
+git clone https://github.com/Aeolus-Linux/calamares-aeolus.git
 cd ..
 pwd
 cd yay
