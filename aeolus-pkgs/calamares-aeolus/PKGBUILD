@@ -33,7 +33,7 @@ makedepends=('extra-cmake-modules'
 source+=("https://github.com/calamares/calamares/releases/download/v${pkgver}/calamares-${pkgver}.tar.gz"
          git+https://github.com/Aeolus-Linux/calamares-aeolus.git)
 
-sha256sums=('b3e17f62edee123857ffc6786c0bbdf9c780ec3bc25ffdf0da2028668156dd36'
+sha256sums=('898ff375bc679ad4be8214466931662a171809fa147d8fdd1ecc9841a1f9dbe4'
             'SKIP')
 
 prepare() {
