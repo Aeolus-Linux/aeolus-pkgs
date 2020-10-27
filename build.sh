@@ -13,11 +13,9 @@ sudo chmod +x ./x86_64/update.sh
 git clone https://aur.archlinux.org/yay.git
 mkdir aeolus-pkgs
 cd aeolus-pkgs
-git clone https://github.com/Aeolus-Linux/calamares-aeolus.git
 git clone https://github.com/Frogging-Family/linux-tkg.git
 cd linux-tkg
 rm customization.cfg
-cd ..
 cd ..
 cp ./customization.cfg ./aeolus-pkgs/linux-tkg
 cd ..
