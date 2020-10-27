@@ -13,7 +13,7 @@ sudo chmod +x ./x86_64/update.sh
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
-yay -Sy --noconfirm plymouth openbox-patched perl-linux-desktopfiles
+yay -Sy --noconfirm plymouth openbox-patched perl-linux-desktopfiles mkinitcpio-openswap ckbcomp
 cd ..
 git clone https://aur.archlinux.org/pygtk.git
 cd pygtk
