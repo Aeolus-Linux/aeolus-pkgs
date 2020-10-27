@@ -19,6 +19,9 @@ git clone https://aur.archlinux.org/pygtk.git
 cd pygtk
 makepkg -si --noconfirm
 cd ..
+cd aeolus-pkgs
+https://github.com/Aeolus-Linux/calamares-aeolus
+cd ..
 ./pkg_aur.sh
 ./pkg_lme.sh
 sh ./x86_64/update.sh
