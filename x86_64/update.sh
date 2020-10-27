@@ -2,11 +2,11 @@
 
 ## Update Repository Database
 
-repoargs=("-n -R lme.db.tar.gz *.pkg.tar.zst")
+repoargs=("-n -R aeolus.db.tar.gz *.tar.*")
 
 # Delete Existing Database Files
 echo "Deleting Existing Database..."
-rm -f lme.*
+rm -f aeolus.*
 sleep 1
 
 # Updating Database
