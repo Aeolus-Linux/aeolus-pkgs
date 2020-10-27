@@ -34,7 +34,7 @@ trap exit_on_signal_SIGTERM SIGTERM
 ## Delete previous packages
 delete_pkg () {
 	if [[ -d $DIR/aur_pkgs ]]; then
-		#rm -rf $DIR/aur_pkgs
+		rm -rf $DIR/aur_pkgs
 	fi
 	{ echo; cd $DIR/x86_64; }
 	set -- $DIR/x86_64/${PKGS[0]}-*
