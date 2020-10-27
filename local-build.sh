@@ -14,6 +14,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
 yay -Sy --noconfirm plymouth openbox-patched perl-linux-desktopfiles pygtk
+cd ..
 ./pkg_aur.sh
 ./pkg_lme.sh
 sh ./x86_64/update.sh
