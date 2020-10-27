@@ -10,7 +10,10 @@ sudo chmod -R 777 /.cache/go-build
 sudo chmod +x pkg_aur.sh
 sudo chmod +x pkg_lme.sh
 sudo chmod +x ./x86_64/update.sh
-git clone https://aur.archlinux.org/yay.git
+git clone https://aur.archlinux.org/yay.gitcd aeolus-pkgs
+git clone https://github.com/Aeolus-Linux/calamares-aeolus
+cd ..
+pwd
 cd yay
 makepkg -si --noconfirm
 yay -Sy --noconfirm plymouth openbox-patched perl-linux-desktopfiles mkinitcpio-openswap ckbcomp
@@ -19,10 +22,6 @@ git clone https://aur.archlinux.org/pygtk.git
 cd pygtk
 makepkg -si --noconfirm
 cd ..
-cd aeolus-pkgs
-git clone https://github.com/Aeolus-Linux/calamares-aeolus
-cd ..
-pwd
 ./pkg_aur.sh
 ./pkg_lme.sh
 sh ./x86_64/update.sh
