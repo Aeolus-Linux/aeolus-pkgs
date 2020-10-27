@@ -10,7 +10,8 @@ sudo chmod -R 777 /.cache/go-build
 sudo chmod +x pkg_aur.sh
 sudo chmod +x pkg_lme.sh
 sudo chmod +x ./x86_64/update.sh
-git clone https://aur.archlinux.org/yay.gitcd aeolus-pkgs
+git clone https://aur.archlinux.org/yay.git
+cd aeolus-pkgs
 git clone https://github.com/Aeolus-Linux/calamares-aeolus.git
 cd ..
 pwd
