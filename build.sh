@@ -7,8 +7,8 @@ sudo chmod -R 777 /go/pkg/mod/cache/download/github.com
 sudo mkdir -p /.cache/go-build
 sudo chmod -R 777 /.cache
 sudo chmod -R 777 /.cache/go-build
-sudo chmod +x pkg_aur.sh
-sudo chmod +x pkg_lme.sh
+sudo chmod +x ./scripts/pkg_aur.sh
+sudo chmod +x ./scripts/pkg_lme.sh
 sudo chmod +x ./x86_64/update.sh
 git clone https://aur.archlinux.org/yay.git
 mkdir aeolus-pkgs
@@ -24,7 +24,7 @@ git clone https://aur.archlinux.org/pygtk.git
 cd pygtk
 makepkg -si --noconfirm
 cd ..
-./pkg_aur.sh
-./pkg_lme.sh
+sh ./scripts/pkg_aur.sh
+sh ./scripts/pkg_lme.sh
 sh ./x86_64/update.sh
 rm -rf /__w/aeolus-pkgs/aeolus-pkgs/aur_pkgs/
