@@ -17,8 +17,8 @@ git clone https://github.com/Frogging-Family/linux-tkg.git
 cd linux-tkg
 rm customization.cfg
 cd ..
-cp ./customization.cfg ./aeolus-pkgs/linux-tkg
 cd ..
+cp ./customization.cfg ./aeolus-pkgs/linux-tkg
 pwd
 cd yay
 makepkg -si --noconfirm
