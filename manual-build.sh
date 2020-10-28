@@ -2,13 +2,13 @@
 
 
 DIR="$(pwd)"
-LISTNL="$(cat --number aur.list)"
-LIST="$(echo "${LISTNL}"\
-| tr " " "\n")"
+LIST="$(cat --number aur.list)"
 echo ${LIST}
-echo ${LIST} | xargs -L1 echo
-RESULT=${PKGS}
-echo "${PKGS}"\
+echo Please enter the package you wish to build.
+
+read varname
+
+pkg="$(echo $varname)"
 
 
 ## Script Termination
