@@ -1,8 +1,7 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 
 DIR="$(pwd)"
-LIST="$(cat --number aur.list)"
+LIST="$(cat aur.list)"
 echo ${LIST}
 echo Please enter the package you wish to build.
 
@@ -31,6 +30,7 @@ exit_on_signal_SIGTERM () {
 
 trap exit_on_signal_SIGINT SIGINT
 trap exit_on_signal_SIGTERM SIGTERM
+
 # Download AUR packages
 download_pkgs () {
 	mkdir $DIR/aur_pkgs && cd $DIR/aur_pkgs
@@ -72,3 +72,6 @@ build_pkgs () {
 		cd $DIR/aur_pkgs
 	done	
 }
+
+download_pkgs
+build_pkgs
