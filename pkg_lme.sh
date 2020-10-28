@@ -41,10 +41,10 @@ build_pkgs () {
 	for pkg in "${PKGS[@]}"; do
 		echo "Building ${pkg}..."
 		cd ${pkg} && makepkg -s && rm -rf pkg
-		mv *.{pkg.tar.zst,tar.gz} $DIR/x86_64
 		# Rename all *.txt to *.text
 		for f in *.tar.gz; do 
-	    mv -- "$f" "${f%.txt}.pkg.tar.zst"
+	    mv -- "$f" "${f%.tar.gz}.pkg.tar.zst"
+		mv *.pkg.tar.zst $DIR/x86_64
 		done
 		# Verify
 		while true; do
