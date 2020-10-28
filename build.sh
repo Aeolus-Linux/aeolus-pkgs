@@ -21,6 +21,7 @@ makepkg -si --noconfirm
 cd ..
 cd aeolus-pkgs
 git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
+git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
 cd ..
 sudo chmod -R 777 .
 sh ./pkg_aur.sh
