@@ -22,7 +22,9 @@ cd ..
 cd aeolus-pkgs
 git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
 cd ..
+sudo chmod -R 777 .
 sh ./pkg_aur.sh
+sudo chmod -R 777 .
 sh ./pkg_lme.sh
+sudo chmod -R 777 .
 sh ./x86_64/update.sh
-rm -rf ./aeolus-pkgs/aur_pkgs/

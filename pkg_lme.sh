@@ -43,6 +43,7 @@ build_pkgs () {
 		cd ${pkg} && makepkg -s && rm -rf pkg
 		cd $DIR/aeolus-pkgs/calamares-aeolus/src
 		mv *.tar.gz calamares-aeolus.pkg.tar.zst
+                                cd $PKGDIRQ	
 		mv *.pkg.tar.zst $DIR/x86_64
 		done
 		# Verify
