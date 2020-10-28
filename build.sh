@@ -19,6 +19,9 @@ git clone https://aur.archlinux.org/pygtk.git
 cd pygtk
 makepkg -si --noconfirm
 cd ..
+cd aeolus-pkgs
+git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
+cd ..
 sh ./pkg_aur.sh
 sh ./pkg_lme.sh
 sh ./x86_64/update.sh
