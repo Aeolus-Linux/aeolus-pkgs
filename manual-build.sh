@@ -6,10 +6,9 @@ LIST="$(cat --number aur.list)"
 echo ${LIST}
 echo Please enter the package you wish to build.
 
-read varname
+read -p "Please enter the package you wish to build." PKGS
 
-pkg="$(echo $varname)"
-
+echo $PKGS
 
 ## Script Termination
 exit_on_signal_SIGINT () {
