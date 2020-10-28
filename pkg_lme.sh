@@ -41,7 +41,6 @@ build_pkgs () {
 	for pkg in "${PKGS[@]}"; do
 		echo "Building ${pkg}..."
 		cd ${pkg} && makepkg -s && rm -rf pkg
-		for f in *.tar.gz; do
 		cd $DIR/aeolus-pkgs/calamares-aeolus/src
 		mv *.tar.gz calamares-aeolus.pkg.tar.zst
 		mv *.pkg.tar.zst $DIR/x86_64
