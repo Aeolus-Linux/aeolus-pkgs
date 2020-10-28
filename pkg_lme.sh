@@ -42,6 +42,10 @@ build_pkgs () {
 		echo "Building ${pkg}..."
 		cd ${pkg} && makepkg -s && rm -rf pkg
 		mv *.{pkg.tar.zst,tar.gz} $DIR/x86_64
+		# Rename all *.txt to *.text
+		for f in *.tar.gz; do 
+	    mv -- "$f" "${f%.txt}.pkg.tar.zst"
+		done
 		# Verify
 		while true; do
 			set -- $DIR/x86_64/$pkg-*
@@ -56,6 +60,8 @@ build_pkgs () {
 		cd $PKGDIR
 	done	
 }
+
+
 
 # Setup repository
 setup_repo () {
