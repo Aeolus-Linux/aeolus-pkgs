@@ -57,7 +57,7 @@ build_pkgs () {
 			fi
 		done
 		cd $PKGDIR
-	done	
+	done}	
 }
 
 
