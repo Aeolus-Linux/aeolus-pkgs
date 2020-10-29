@@ -46,11 +46,17 @@ cd ${BWDIR}
 pwd
 sh ./pkg_lme.sh
 cd aeolus-pkgs
+git clone --depth 1 https://github.com/Aeolus-Linux/calamares-makepkg.git
+cd calamares-makepkg
 dir
 cd calamares-aeolus
-cd $BWDIR/aeolus-pkgs/calamares-aeolus
-mv calamares-*.*.*.*.tar.gz calamares-aeolus.pkg.tar.zst
-cd $PKGDIRBW	
+mv calamares-*.*.*.*.tar.gz calamares-aeolus.pkg.tar.zst 
+makepkg -s 
+dir
+pwd
+cd ..
+cd ..
+mv ./aeolus-pkgs/calamares-makepkg ./x86_64
 dir
 sudo chmod -R 777 .
 cd ${BWDIR}

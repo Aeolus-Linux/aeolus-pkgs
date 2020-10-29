@@ -42,11 +42,6 @@ build_pkgs () {
 		echo "Building ${pkg}..."
 		cd ${pkg} && makepkg -s && rm -rf pkg
 		mv *.pkg.tar.zst $DIR/x86_64
-                                cd $DIR/aeolus-pkgs/calamares-aeolus
-                                dir
-                                cd $BWDIR/aeolus-pkgs/calamares-aeolus
-                                mv calamares-*.*.*.*.tar.gz calamares-aeolus.pkg.tar.zst
-                                cd $DIR
 		done
 		# Verify
 		while true; do
