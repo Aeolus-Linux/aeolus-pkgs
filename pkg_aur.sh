@@ -174,5 +174,5 @@ download_pkgs
 build_pkgs
 build_plymouth
 build_grub
-setup_repo
-cleanup
+#setup_repo
+#cleanup

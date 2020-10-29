@@ -71,6 +71,6 @@ setup_repo () {
 	{ echo; echo "Done!"; echo; }
 }
 
-delete_pkg
+#delete_pkg
 build_pkgs
-setup_repo
+#setup_repo

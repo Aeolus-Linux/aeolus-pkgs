@@ -33,7 +33,7 @@ trap exit_on_signal_SIGTERM SIGTERM
 
 # Download AUR packages
 download_pkgs () {
-	mkdir $DIR/aur_pkgs && cd $DIR/aur_pkgs
+	cd $DIR/aur_pkgs
 	for pkg in "${PKGS[@]}"; do
 		git clone --depth 1 https://aur.archlinux.org/${pkg}.git
 	# Verify
@@ -75,3 +75,5 @@ build_pkgs () {
 
 download_pkgs
 build_pkgs
+
+bash manual-build.sh

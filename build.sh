@@ -26,6 +26,6 @@ cd ..
 sudo chmod -R 777 .
 sh ./pkg_aur.sh
 sudo chmod -R 777 .
-sh ./pkg_lme.sh
+sh ./pkg_lme
 sudo chmod -R 777 .
 sh ./x86_64/update.sh
