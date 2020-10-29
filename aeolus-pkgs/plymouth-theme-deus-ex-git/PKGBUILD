@@ -22,7 +22,7 @@ _themenames=('cyanide'
 'hexagon_hud'
 'hexagon_red')
 
-pkgname=(deus_ex) #initialized by loop at the bottom
+pkgname=() #initialized by loop at the bottom
 pkgver=r28.32a0d92
 pkgrel=1
 pkgdesc="The plymouth theme collection by adi1090x"
