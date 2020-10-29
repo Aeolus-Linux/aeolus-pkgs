@@ -29,8 +29,8 @@ makepkg -si --noconfirm
 cd ..
 cd aeolus-pkgs
 pacman --root=/mnt --cachedir=/mnt/var/cache/pacman/pkg -S libsystemd lib32-systemd
-git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
-git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
+#git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
+#git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
 https://aur.archlinux.org/polybar.git
 cd ..
 sudo chmod -R 777 .
