@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 BWDIR="$(pwd)"
+echo ${BWDIR}
 sudo chmod -R 777 .
 sudo mkdir -p /go/pkg/mod/cache/download/github.com
 sudo chmod -R 777 /go
@@ -26,9 +27,9 @@ git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
 git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
 cd ..
 sudo chmod -R 777 .
-sudo mkdir aur-pkgs
+sudo mkdir -p aur-pkgs
 sudo chmod -R aur-pkgs
-chmod +x manual-build.sh
+sudo chmod +x manual-build.sh
 sh ./manual-build.sh
 #sh ./pkg_aur.sh
 pwd
