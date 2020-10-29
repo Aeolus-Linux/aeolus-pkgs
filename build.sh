@@ -44,6 +44,12 @@ sudo chmod -R 777 .
 cd ${BWDIR}
 pwd
 sh ./pkg_lme.sh
+cd ${PKGDIR}
+dir
+cd calamares-aeolus
+dir
+cd src
+dir
 sudo chmod -R 777 .
 cd ${BWDIR}
 pwd
