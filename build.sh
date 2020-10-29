@@ -16,7 +16,7 @@ sudo chmod +x ./x86_64/update.sh
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
-yay -Sy --noconfirm plymouth openbox-patched thrash-protect perl-linux-desktopfiles mkinitcpio-openswap ckbcomp
+yay -Sy --noconfirm plymouth findutils openbox-patched thrash-protect perl-linux-desktopfiles mkinitcpio-openswap ckbcomp
 cd ..
 git clone https://aur.archlinux.org/pygtk.git
 cd pygtk
@@ -27,7 +27,10 @@ git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
 git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
 cd ..
 sudo chmod -R 777 .
-sh ./pkg_aur.sh
+chmod +x manual-build.sh
+LIST="$(echo "cat aur.list" | tr " " "\n")"
+ls -1 | xargs -L1 echo
+#sh ./pkg_aur.sh
 pwd
 sudo chmod -R 777 .
 cd ${BWDIR}
