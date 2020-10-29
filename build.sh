@@ -5,7 +5,7 @@ echo ${BWDIR}
 pacman -Sy --needed --noconfirm coreutils kmod linux-firmware bc git graphviz imagemagick kmod git fakeroot libelf pahole python-sphinx_rtd_theme xmlto crda autogen cmake 
 pacman -Sy --needed --noconfirm python-sphinx grub git meson perl fish tmux libglade python2-cairo python2-gobject2 python2-numpy  vim zsh git go i3-wm python2 python pacman-contrib expac fzf libpulse 
 pacman -Sy --needed --noconfirm libmpdclient perl-data-dump perl sudo fakeroot gtk2-perl perl-file-desktopentry perl-gtk3 efibootmgr base-devel python rsync fuse2 xorg-xauth libxinerama gtk3 libxrandr libxcursor 
-pacman -Sy --needed --noconfirm imlib2 inetutils patchutils libqalculate hicolor-icon-theme gtk-update-icon-cache git sudo fakeroot go binutils rofi  docbook-xsl libdrm patch autoconf automake gcc bdf-unifont help2man ttf-dejavu
+pacman -Sy --needed --noconfirm imlib2 xmlto docbook-xsl inetutils bc pahole patchutils flex python-sphinx python-sphinx_rtd_theme graphviz imagemagick inetutils patchutils libqalculate hicolor-icon-theme gtk-update-icon-cache git sudo fakeroot go binutils rofi  docbook-xsl libdrm patch autoconf automake gcc bdf-unifont help2man ttf-dejavu
 
 sudo chmod -R 777 .
 sudo mkdir -p /go/pkg/mod/cache/download/github.com
@@ -28,6 +28,7 @@ cd pygtk
 makepkg -si --noconfirm
 cd ..
 cd aeolus-pkgs
+pacman --root=/mnt --cachedir=/mnt/var/cache/pacman/pkg -S libsystemd lib32-systemd
 git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
 git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
 https://aur.archlinux.org/polybar.git
