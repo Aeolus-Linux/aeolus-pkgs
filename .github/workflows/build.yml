@@ -36,7 +36,7 @@ jobs:
         EOT
         pacman -Syu --noconfirm
         pwd
-        pacman -Sy --needed --noconfirm coreutils kmod linux-firmware bc git graphviz imagemagick kmod git fakeroot libelf pahole python-spinx_rtd_theme xmlto crda autogen cmake 
+        pacman -Sy --needed --noconfirm coreutils kmod linux-firmware bc git graphviz imagemagick kmod git fakeroot libelf pahole python-sphinx_rtd_theme xmlto crda autogen cmake 
         pacman -Sy --needed --noconfirm python-sphinx grub git meson perl fish tmux libglade python2-cairo python2-gobject2 python2-numpy  vim zsh git go i3-wm python2 python pacman-contrib expac fzf libpulse 
         pacman -Sy --needed --noconfirm libmpdclient perl-data-dump perl sudo fakeroot gtk2-perl perl-file-desktopentry perl-gtk3 efibootmgr base-devel python rsync fuse2 xorg-xauth libxinerama gtk3 libxrandr libxcursor 
         pacman -Sy --needed --noconfirm imlib2 libqalculate hicolor-icon-theme gtk-update-icon-cache git sudo fakeroot go binutils rofi  docbook-xsl libdrm patch autoconf automake gcc bdf-unifont help2man ttf-dejavu
