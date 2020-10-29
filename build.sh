@@ -28,8 +28,7 @@ git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
 cd ..
 sudo chmod -R 777 .
 chmod +x manual-build.sh
-LIST="$(echo "cat aur.list" | tr " " "\n")"
-ls -1 | xargs -L1 echo
+sh ./manual-build.sh
 #sh ./pkg_aur.sh
 pwd
 sudo chmod -R 777 .
