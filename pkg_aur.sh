@@ -42,8 +42,6 @@ delete_pkg () {
 		for pkg in "${PKGS[@]}"; do
 			{ echo "Deleting previous '${pkg}' .pkg file..."; rm -r ${pkg}-*; }
 		done
-		{ echo "Deleting previous 'plymouth' .pkg file..."; rm -r plymouth-*; }
-		{ echo "Deleting previous 'grub-silent' .pkg file..."; rm -r grub-silent-*; }
 		{ echo; echo "Done!"; echo; }
 	fi
 }
