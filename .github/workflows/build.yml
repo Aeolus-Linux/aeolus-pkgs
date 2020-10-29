@@ -31,6 +31,9 @@ jobs:
         pacman -S --needed --noconfirm sudo 
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
+        tee -a /etc/sudoers > /dev/null <<EOT
+        builderbob    ALL=(ALL) NOPASSWD:ALL
+        EOT
         chmod +x build.sh
         su -c "./build.sh" builderbob
         
