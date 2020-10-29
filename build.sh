@@ -47,6 +47,7 @@ pwd
 sh ./pkg_lme.sh
 cd aeolus-pkgs
 git clone --depth 1 https://github.com/Aeolus-Linux/calamares-makepkg.git
+git clone --depth 1 https://aur.archlinux.org/plymouth-themes-adi1090x-pack2-git.git
 cd calamares-makepkg
 dir
 mv calamares-*.*.*.*.tar.gz calamares-aeolus.pkg.tar.zst 
@@ -54,7 +55,13 @@ makepkg -s
 dir
 pwd
 cd ..
+cd plymouth-themes-adi1090x-pack2-git.git
+makepkg -s 
+pwd
+dir
 cd ..
+cd ..
+mv ./aeolus-pkgs/plymouth-themes-adi1090x-pack2-git.git ./x86_64
 mv ./aeolus-pkgs/calamares-makepkg ./x86_64
 dir
 sudo chmod -R 777 .
