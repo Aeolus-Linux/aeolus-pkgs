@@ -2,7 +2,7 @@
 
 BWDIR="$(pwd)"
 pacman -Syu --needed --noconfirm --noprogressbar 
-pacman -S --needed git base-devel
+pacman -S --needed sudo
 useradd -p builderbob -c builderbob -m builderbob
 echo "builderbob:builderbob"|chpasswd
 su builderbob
