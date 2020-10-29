@@ -31,7 +31,8 @@ cd ..
 cd aeolus-pkgs
 #git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
 #git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
-git clone https://aur.archlinux.org/polybar.git
+#git clone https://aur.archlinux.org/polybar.git
+git clone https://github.com/Aeolus-Linux/calamares-makepkg.git
 cd ..
 sudo chmod -R 777 .
 sudo mkdir -p aur-pkgs
@@ -48,7 +49,6 @@ cd aeolus-pkgs
 git clone --depth 1 https://github.com/Aeolus-Linux/calamares-makepkg.git
 cd calamares-makepkg
 dir
-cd calamares-aeolus
 mv calamares-*.*.*.*.tar.gz calamares-aeolus.pkg.tar.zst 
 makepkg -s 
 dir
