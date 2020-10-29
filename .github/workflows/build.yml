@@ -27,8 +27,12 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
     - name: Build packages
       run: |
+        pacman -Syu --needed --noconfirm --noprogressbar 
+        pacman -S --needed --noconfirm sudo 
+        useradd -p builderbob -c builderbob -m builderbob
+        echo "builderbob:builderbob"|chpasswd
         chmod +x build.sh
-        ./build.sh
+        su -c "./build.sh" builderbob
         
     - name: Upload repo
       uses: actions/upload-artifact@v2.1.4

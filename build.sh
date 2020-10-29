@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 
 BWDIR="$(pwd)"
-pacman -Syu --needed --noconfirm --noprogressbar 
-pacman -S --needed --noconfirm sudo 
-useradd -p builderbob -c builderbob -m builderbob
-echo "builderbob:builderbob"|chpasswd
-su builderbob
 sudo pacman -Syu --noconfirm
 sudo pacman -Sy --needed --noconfirm coreutils kmod linux-firmware bc git graphviz imagemagickkmod git fakeroot libelf pahole python-spinx_rtd_theme xmlto crda autogen cmake python-sphinx grub git meson perl fish tmux libglade python2-cairo python2-gobject2 python2-numpy  vim zsh git go i3-wm python2 python pacman-contrib expac fzf libpulse libmpdclient perl-data-dump perl sudo fakeroot gtk2-perl perl-file-desktopentry perl-gtk3 efibootmgr base-devel python rsync fuse2 xorg-xauth libxinerama gtk3 libxrandr libxcursor imlib2 libqalculate hicolor-icon-theme gtk-update-icon-cache git sudo fakeroot go binutils rofi  docbook-xsl libdrm patch autoconf automake gcc bdf-unifont help2man ttf-dejavu
 sudo chmod -R 777 .
