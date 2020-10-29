@@ -37,7 +37,7 @@ sudo chmod -R 777 .
 sudo mkdir -p aur-pkgs
 sudo chmod -R 777 aur-pkgs
 sudo chmod +x manual-build.sh
-sh ./manual-build.sh
+#sh ./manual-build.sh
 #sh ./pkg_aur.sh
 pwd
 sudo chmod -R 777 .
