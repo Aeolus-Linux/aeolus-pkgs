@@ -2,6 +2,7 @@
 
 BWDIR="$(pwd)"
 echo ${BWDIR}
+PKGDIRBW="$BWDIR/aeolus-pkgs"
 sudo pacman -Sy --needed --noconfirm coreutils kmod linux-firmware bc git graphviz libinput imagemagick kmod git fakeroot libelf extra-cmake-modules pahole python-sphinx_rtd_theme xmlto crda autogen cmake 
 sudo pacman -Sy --needed --noconfirm python-sphinx grub git meson perl fish libevdev tmux libwacom libglade python2-cairo boost python2-gobject2 qt5-tools python2-numpy  vim zsh git go i3-wm python2 python pacman-contrib expac fzf libpulse 
 sudo pacman -Sy --needed --noconfirm libmpdclient boost-libs perl-data-dump perl sudo fakeroot mtdev gtk2-perl  tslib xorg-xset perl-file-desktopentry perl-gtk3 qt5-translations efibootmgr boost-libs python rsync fuse2 xorg-xauth libxinerama gtk3 libxrandr libxcursor 
@@ -36,9 +37,9 @@ cd ..
 sudo chmod -R 777 .
 sudo mkdir -p aur-pkgs
 sudo chmod -R 777 aur-pkgs
-sudo chmod +x manual-build.sh
-#sh ./manual-build.sh
-#sh ./pkg_aur.sh
+sudo chmod +x aur-build.sh
+sh ./aur-build.sh
+sh ./pkg_aur.sh
 pwd
 sudo chmod -R 777 .
 cd ${BWDIR}
@@ -47,8 +48,9 @@ sh ./pkg_lme.sh
 cd aeolus-pkgs
 dir
 cd calamares-aeolus
-dir
-cd src
+cd $BWDIR/aeolus-pkgs/calamares-aeolus
+mv calamares-*.*.*.*.tar.gz calamares-aeolus.pkg.tar.zst
+cd $PKGDIRBW	
 dir
 sudo chmod -R 777 .
 cd ${BWDIR}

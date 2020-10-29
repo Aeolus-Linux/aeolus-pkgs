@@ -3,13 +3,13 @@
 DIR="$(pwd)"
 LIST="$(cat aur.list)"
 # Sort packages
-#PKGS=($(for i in "${LIST[@]}"; do echo $i; done | sort))
-echo ${LIST}
-echo Please enter the package you wish to build.
+PKGS=($(for i in "${LIST[@]}"; do echo $i; done | sort))
+#echo ${LIST}
+#echo Please enter the package you wish to build.
 
-read -p "Please enter the package you wish to build." PKGS
+#read -p "Please enter the package you wish to build." PKGS
 
-echo $PKGS
+#echo $PKGS
 
 ## Script Termination
 exit_on_signal_SIGINT () {
