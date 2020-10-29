@@ -25,6 +25,7 @@ cd ..
 cd aeolus-pkgs
 git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
 git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
+https://aur.archlinux.org/polybar.git
 cd ..
 sudo chmod -R 777 .
 sudo mkdir -p aur-pkgs
@@ -36,7 +37,7 @@ pwd
 sudo chmod -R 777 .
 cd ${BWDIR}
 pwd
-sh ./pkg_lme
+sh ./pkg_lme.sh
 sudo chmod -R 777 .
 cd ${BWDIR}
 pwd
