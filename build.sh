@@ -28,9 +28,13 @@ git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
 cd ..
 sudo chmod -R 777 .
 sh ./pkg_aur.sh
+pwd
 sudo chmod -R 777 .
 cd ${BWDIR}
+pwd
 sh ./pkg_lme
 sudo chmod -R 777 .
 cd ${BWDIR}
+pwd
 sh ./x86_64/update.sh
+pwd
