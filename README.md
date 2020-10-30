@@ -26,6 +26,19 @@ ymuse-git
 ttf-comfortaa 
 ttf-iosevka 
 perl-linux-desktopfiles
+pygtk
+plymouth-theme-deus-ex-git
+opencl-nvidia-tkg
+obkey
+nvidia-utils-tkg
+nvidia-settings-tkg
+nvidia-egl-wayland-tkg
+nvidia-dkms-tkg
+linux510-tkg-pds
+linux510-tkg-pds-headers
+lib32-nvidia-utils-tkg
+lib32-opencl-nvidia-tkg
+opencl-nvidia-tkg
 
 # Aeolus Packages
 #ac-about-dev
