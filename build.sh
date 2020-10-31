@@ -30,7 +30,7 @@ makepkg -si --noconfirm
 cd ..
 cd aeolus-pkgs
 git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
-git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
+#git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
 git clone https://aur.archlinux.org/polybar.git
 git clone https://github.com/Aeolus-Linux/calamares-makepkg.git
 cd ..
@@ -55,13 +55,13 @@ mv calamares-*.*.*.*.tar.gz calamares-aeolus.pkg.tar.zst
 dir
 pwd
 cd ..
-cd 
+cd plymouth-theme-deus_ex-git.git
 makepkg -s 
 pwd
 dir
 cd ..
 cd ..
-mv ./aeolus-pkgs/plymouth-themes-adi1090x-pack2-git.git ./x86_64
+mv ./aeolus-pkgs/plymouth-themes-adi1090x-pack2-git.git/*.pkg.tar.zst ./x86_64
 mv ./aeolus-pkgs/calamares-makepkg/*.pkg.tar.zst ./x86_64
 dir
 sudo chmod -R 777 .
