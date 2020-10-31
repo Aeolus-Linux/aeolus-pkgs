@@ -39,7 +39,7 @@ sudo mkdir -p aur-pkgs
 sudo chmod -R 777 aur-pkgs
 sudo chmod +x aur-build.sh
 sh ./aur-build.sh
-sh ./pkg_aur.sh
+sh ./pkg_aur.sh 
 pwd
 sudo chmod -R 777 .
 cd ${BWDIR}
@@ -47,22 +47,22 @@ pwd
 sh ./pkg_lme.sh
 cd aeolus-pkgs
 git clone --depth 1 https://github.com/Aeolus-Linux/calamares-makepkg.git
-git clone --depth 1 https://aur.archlinux.org/plymouth-themes-adi1090x-pack2-git.git
+git clone --depth 1 hhttps://github.com/Aeolus-Linux/plymouth-theme-deus_ex-git.git
 cd calamares-makepkg
 dir
-mv calamares-*.*.*.*.tar.gz calamares-aeolus.pkg.tar.zst 
 makepkg -s 
+mv calamares-*.*.*.*.tar.gz calamares-aeolus.pkg.tar.zst 
 dir
 pwd
 cd ..
-cd plymouth-themes-adi1090x-pack2-git.git
+cd 
 makepkg -s 
 pwd
 dir
 cd ..
 cd ..
 mv ./aeolus-pkgs/plymouth-themes-adi1090x-pack2-git.git ./x86_64
-mv ./aeolus-pkgs/calamares-makepkg ./x86_64
+mv ./aeolus-pkgs/calamares-makepkg/*.pkg.tar.zst ./x86_64
 dir
 sudo chmod -R 777 .
 cd ${BWDIR}
