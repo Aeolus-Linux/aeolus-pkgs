@@ -14,7 +14,7 @@ Compiled Packages Repository For Aeolus.
 # Aur Packages
 
 polybar
-fzf 
+ly
 obkey 
 yay 
 openbox-patched 
