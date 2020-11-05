@@ -47,7 +47,7 @@ pwd
 sh ./pkg_lme.sh
 cd aeolus-pkgs
 git clone --depth 1 https://github.com/Aeolus-Linux/calamares-makepkg.git
-git clone --depth 1 hhttps://github.com/Aeolus-Linux/plymouth-theme-deus_ex-git.git
+git clone --depth 1 https://github.com/Aeolus-Linux/plymouth-theme-deus_ex-git.git
 cd calamares-makepkg
 dir
 makepkg -s 
