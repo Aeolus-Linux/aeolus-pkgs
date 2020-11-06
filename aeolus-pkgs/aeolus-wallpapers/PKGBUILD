@@ -1,0 +1,16 @@
+# Maintainer: Eile Kerning <tysayahi@gmail.com>
+
+pkgname=aeolus-wallpapers
+pkgver=1.0
+pkgrel=1
+pkgdesc="Aeolus wallpaper pack."
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+
+package() {
+	# copy whole dir recursively to destination
+	(find aeolus -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/backgrounds/{}" \;)
+}

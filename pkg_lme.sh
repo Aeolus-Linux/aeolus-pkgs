@@ -61,12 +61,12 @@ build_pkgs () {
 
 
 # Setup repository
-setup_repo () {
-	repoargs=("-n -R aeolus-pkgs.db.tar.gz *.pkg.tar.zst")
-	{ echo "Setting up repository & updating database..."; echo; }
-	{ cd $DIR/x86_64; rm -f aeolus-pkgs.*; repo-add $repoargs; }
-	{ echo; echo "Done!"; echo; }
-}
+#setup_repo () {
+#	repoargs=("-n -R aeolus-pkgs.db.tar.gz *.pkg.tar.zst")
+#	{ echo "Setting up repository & updating database..."; echo; }
+#	{ cd $DIR/x86_64; rm -f aeolus-pkgs.*; repo-add $repoargs; }
+#	{ echo; echo "Done!"; echo; }
+#}
 
 #delete_pkg
 build_pkgs

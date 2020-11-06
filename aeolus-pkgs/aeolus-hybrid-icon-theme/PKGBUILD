@@ -1,0 +1,17 @@
+# Maintainer: Eile Kerning <tysayahi@gmail.com>
+
+pkgname=aeolus-hybrid-icon-theme
+pkgver=1.0
+pkgrel=1
+pkgdesc="Default icon theme for Aeolus OS."
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+
+package() {
+	mkdir -p "$pkgdir/usr/share/icons"
+	cp -r Hybrid "$pkgdir/usr/share/icons/"
+	cp -r Hybrid_Light "$pkgdir/usr/share/icons/"
+}

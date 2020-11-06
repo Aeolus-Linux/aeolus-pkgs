@@ -1,0 +1,16 @@
+# Maintainer: Eile Kerning <tysayahi@gmail.com>
+
+pkgname=aeolus-gtk-themepack
+pkgver=1.0
+pkgrel=1
+pkgdesc="All GTK themes for Aeolus."
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+
+package() {
+	mkdir -p "$pkgdir/usr/share/themes"
+	cp -r * "$pkgdir/usr/share/themes/"
+}

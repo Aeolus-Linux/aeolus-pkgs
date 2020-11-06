@@ -1,0 +1,15 @@
+# Maintainer: Eile Kerning <tysayahi@gmail.com>
+
+pkgname=aeolus-lxdm-theme-circuit
+pkgver=1.0
+pkgrel=1
+pkgdesc="A circuit styled lxdm theme for Aeolus."
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=('lxdm-gtk3' 'arc-gtk-theme')
+
+package() {
+	install -D -m644 aeolus-circuit/* -t $pkgdir/usr/share/lxdm/themes/aeolus-circuit
+}
