@@ -56,7 +56,7 @@ git clone --depth 1 https://github.com/Aeolus-Linux/plymouth-theme-deus_ex-git.g
 #dir
 #pwd
 #cd ..
-cd plymouth-theme-deus_ex-git.git
+cd plymouth-theme-deus_ex-git
 makepkg -s 
 pwd
 dir
