@@ -62,6 +62,7 @@ pwd
 dir
 cd ..
 cd ..
+cd $BWDIR
 mv ./aeolus-pkgs/plymouth-theme-deus_ex-git/*.pkg.tar.zst ./x86_64
 #mv ./aeolus-pkgs/calamares-makepkg/*.pkg.tar.zst ./x86_64
 mv ./x86_64/speshul/*.pkg.tar.zst ./x86_64
