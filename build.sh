@@ -63,8 +63,8 @@ dir
 cd ..
 cd ..
 rm ./x86_64/*.pkg.tar.zst
-mv ./aeolus-pkgs/plymouth-themes-adi1090x-pack2-git.git/*.pkg.tar.zst ./x86_64
-mv ./aeolus-pkgs/calamares-makepkg/*.pkg.tar.zst ./x86_64
+mv ./aeolus-pkgs/plymouth-themes-adi1090x-deus_ex-git/*.pkg.tar.zst ./x86_64
+#mv ./aeolus-pkgs/calamares-makepkg/*.pkg.tar.zst ./x86_64
 mv ./x86_64/speshul/*.pkg.tar.zst ./x86_64
 dir
 sudo chmod -R 777 .
