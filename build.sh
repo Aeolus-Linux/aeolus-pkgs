@@ -71,5 +71,6 @@ sudo chmod -R 777 .
 cd ${BWDIR}
 pwd
 #sh ./x86_64/update.sh
-cd ./x86_64 repo-add -n aeolus-pkgs.db.tar.gz *.pkg.tar.zst
+cd ./x86_64 
+repo-add -n aeolus-pkgs.db.tar.gz *.pkg.tar.zst
 pwd
