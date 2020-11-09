@@ -12,5 +12,5 @@ depends=()
 
 package() {
 	# copy whole dir recursively to destination
-	(find aeolus -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/backgrounds/{}" \;)
+	(find aeolus -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/{}" \;)
 }
