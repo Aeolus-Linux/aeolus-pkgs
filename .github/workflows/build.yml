@@ -59,6 +59,7 @@ jobs:
         sudo pacman -Syyu
         cd ..
         ls -l build.sh
+        rm ./x86_64/aeolus-pkgs.*
         su -c "sh build.sh" builderbob
         #mkdir goo
         #cd goo
