@@ -31,7 +31,8 @@ jobs:
         tee -a /etc/sudoers > /dev/null <<EOT
         builderbob    ALL=(ALL) NOPASSWD:ALL
         EOT
-        #git clone https://github.com/Aeolus-Linux/aeolus-pkgs/
+        git clone https://github.com/Aeolus-Linux/aeolus-pkgs/
+        cd ./aeolus-pkgs/
         cd ..
         chmod -777 -R ./aeolus-pkgs/
         cd ./aeolus-pkgs/
