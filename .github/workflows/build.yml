@@ -52,7 +52,7 @@ jobs:
         EOT
         printf 'y\n' | sudo pacman -Scc
         sudo pacman -Syyu
-        cd aeolus-pkgs
+        cd ./aeolus-pkgs/
         #su -c "./build.sh" builderbob
         mkdir goo
         cd goo
