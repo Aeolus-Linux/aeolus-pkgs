@@ -25,6 +25,7 @@ jobs:
     - name: Build packages
       run: |
         #pacman -Syu --needed --noconfirm --noprogressbar 
+        pacman -Syyu --needed --noconfirm sudo git --noprogressbar
         #pacman -S --needed --noconfirm sudo midori fakeroot git lxdm-gtk3 arc-gtk-theme adapta-gtk-theme
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
