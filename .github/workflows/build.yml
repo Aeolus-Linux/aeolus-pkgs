@@ -37,12 +37,10 @@ jobs:
         builderbob    ALL=(ALL) NOPASSWD:ALL
         EOT
         git clone https://github.com/Aeolus-Linux/aeolus-pkgs/
-        cd ./aeolus-pkgs/
-        cd ..
-        chmod 777 -R ./aeolus-pkgs/
+        chmod -R 777 ./aeolus-pkgs/
+        chown -R builderbob:builderbob ./aeolus-pkgs/
         cd ./aeolus-pkgs/
         git init
-        git add *
         dir
         ls
         pwd
@@ -51,20 +49,21 @@ jobs:
         chmod +x build.sh
         chown builderbob:builderbob build.sh 
         pwd
-        cd x86_64
+        cd x86_64 
         pwd
         DBDIR="$(pwd)"
-        tee -a /etc/pacman.conf > /dev/null <<EOT
-        [aeolus-pkgs]
-        SigLevel = Optional TrustAll
-        Server = file://${DBDIR}
-        EOT
+        #tee -a /etc/pacman.conf > /dev/null <<EOT
+        #[aeolus-pkgs]
+        #SigLevel = Optional TrustAll
+        #Server = file://${DBDIR}
+        #EOT
         printf 'y\n' | sudo pacman -Scc
         sudo pacman -Syyu
         cd ..
         ls -l build.sh
         rm ./x86_64/aeolus-pkgs.*
         su -c "sh build.sh" builderbob
+        git add *
         #mkdir goo
         #cd goo
         #cp /etc/pacman.conf ./
