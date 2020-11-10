@@ -57,7 +57,7 @@ jobs:
         printf 'y\n' | sudo pacman -Scc
         sudo pacman -Syyu
         cd ..
-        su -c "./build.sh" builderbob
+        su -c "sh build.sh" builderbob
         #mkdir goo
         #cd goo
         #cp /etc/pacman.conf ./
