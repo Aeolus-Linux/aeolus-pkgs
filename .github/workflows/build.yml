@@ -37,7 +37,7 @@ jobs:
         SigLevel = Optional TrustAll
         Server = https://aeolus-linux.github.io/aeolus-pkgs/$arch
         EOT
-        printf 'y\n' | sudo pacman -Syyu
+        printf 'y\n' | sudo pacman -Scc
         sudo pacman -Syyu
         cd aeolus-pkgs
         chmod -777 *
