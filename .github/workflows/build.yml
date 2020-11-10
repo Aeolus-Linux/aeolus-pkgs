@@ -43,8 +43,9 @@ jobs:
         ls
         pwd
         pacman -Syyu --noconfirm
-        chmod +x build.sh
         chmod -777 build.sh
+        chmod +x build.sh
+        chown build.sh builderbob:builderbob
         pwd
         cd x86_64
         pwd
