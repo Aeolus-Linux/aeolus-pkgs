@@ -31,7 +31,13 @@ jobs:
         tee -a /etc/sudoers > /dev/null <<EOT
         builderbob    ALL=(ALL) NOPASSWD:ALL
         EOT
-        git clone https://github.com/Aeolus-Linux/aeolus-pkgs/
+        git clone https://github.com/Aeolus-Linux/aeolus-pkgs/\
+        tee -a /etc/pacman.conf > /dev/null <<EOT
+        [aeolus-pkgs]
+        SigLevel = Optional TrustAll
+        Server = https://aeolus-linux.github.io/aeolus-pkgs/$arch
+        EOT
+        sudo pacman -Syyu
         cd aeolus-pkgs
         chmod -777 *
         git init
