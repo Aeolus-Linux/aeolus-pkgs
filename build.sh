@@ -72,5 +72,7 @@ cd ${BWDIR}
 pwd
 #sh ./x86_64/update.sh
 cd ./x86_64 
+rm aeolus-pkgs.*
 repo-add -n aeolus-pkgs.db.tar.gz *.pkg.tar.zst
+cd $BWDIR
 pwd
