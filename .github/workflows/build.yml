@@ -35,7 +35,7 @@ jobs:
         git clone https://github.com/Aeolus-Linux/aeolus-pkgs/
         cd ./aeolus-pkgs/
         cd ..
-        chmod -777 -R ./aeolus-pkgs/
+        chmod 777 -R ./aeolus-pkgs/
         cd ./aeolus-pkgs/
         git init
         git add *
@@ -43,7 +43,7 @@ jobs:
         ls
         pwd
         pacman -Syyu --noconfirm
-        chmod -777 build.sh
+        chmod 777 build.sh
         chmod +x build.sh
         chown builderbob:builderbob build.sh 
         pwd
