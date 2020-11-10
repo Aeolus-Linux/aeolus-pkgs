@@ -32,7 +32,9 @@ jobs:
         builderbob    ALL=(ALL) NOPASSWD:ALL
         EOT
         #git clone https://github.com/Aeolus-Linux/aeolus-pkgs/
-        chmod -777 *
+        cd ..
+        chmod -777 -R ./aeolus-pkgs/
+        cd ./aeolus-pkgs/
         #git init
         #git add *
         pacman -Syyu --noconfirm
