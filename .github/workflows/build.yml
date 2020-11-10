@@ -37,8 +37,11 @@ jobs:
         cd ..
         chmod -777 -R ./aeolus-pkgs/
         cd ./aeolus-pkgs/
-        #git init
-        #git add *
+        git init
+        git add *
+        dir
+        ls
+        pwd
         pacman -Syyu --noconfirm
         chmod +x build.sh
         pwd
