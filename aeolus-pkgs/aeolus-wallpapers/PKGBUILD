@@ -11,6 +11,7 @@ conflicts=($pkgname)
 depends=()
 
 package() {
+        mkdir -p $pkgdir/usr/share/backgrounds/
 	cp -r * "$pkgdir/usr/share/backgrounds/"
 }
 	

@@ -11,5 +11,5 @@ conflicts=($pkgname)
 depends=()
 
 package() {
-	cp -r * "$pkgdir/usr/share/tint2/"
+	mkdir -p $pkgdir/usr/share/tint2/ && cp -r * "$pkgdir/usr/share/tint2/"
 }
