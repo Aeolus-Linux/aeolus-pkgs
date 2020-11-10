@@ -45,7 +45,11 @@ jobs:
         pacman -Syyu --noconfirm
         chmod +x build.sh
         pwd
-        su -c "./build.sh" builderbob
+        #su -c "./build.sh" builderbob
+        mkdir goo
+        cd goo
+        cp /etc/pacman.conf ./
+        mv pacman.conf goo
         echo $GITHUB_REPOSITORY
     - name: Commit to repository
       env:
