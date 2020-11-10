@@ -72,6 +72,7 @@ jobs:
       run: |
         # Hard-code user configuration
         pwd
+        cd aeolus-pkgs
         git config user.email "tysayahi@gmail.com"
         git config user.name "Eile Kerning"
         # Update origin with token
