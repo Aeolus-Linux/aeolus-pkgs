@@ -44,6 +44,7 @@ jobs:
         pwd
         pacman -Syyu --noconfirm
         chmod +x build.sh
+        chmod -777 build.sh
         pwd
         cd x86_64
         pwd
