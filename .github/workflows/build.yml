@@ -39,20 +39,20 @@ jobs:
         chmod +x build.sh
         pwd
         su -c "./build.sh" builderbob
-    - name: Commit files
+    - name: Commit to repository
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_token }}
+        COMMIT_MSG: |
+          <Update Packages>
+          skip-checks: true
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git commit -m "Add changes" -a
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
-    - name: Upload repo
-      uses: actions/upload-artifact@v2.1.4
-      with:
-        name: aeolus-pkgs
-        path: ./x86_64
-        if-no-files-found: error
-
+        # Hard-code user configuration
+        git config user.email "tysayahi@gmail.com"
+        git config user.name "Eile Kerning"
+        # Update origin with token
+        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        # Checkout the branch so we can push back to it
+        git checkout master
+        git add .
+        # Only commit and push if we have changes
+        git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
