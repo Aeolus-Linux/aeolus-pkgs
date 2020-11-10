@@ -26,9 +26,13 @@ jobs:
       run: |
         pacman -Syu --needed --noconfirm --noprogressbar 
         pacman -Syyu --needed --noconfirm sudo git --noprogressbar
-        pacman -S --needed --noconfirm sudo midori fakeroot git lxdm-gtk3 arc-gtk-theme adapta-gtk-theme
+        pacman -S --needed --noconfirm base-devel binutils sudo midori fakeroot git lxdm-gtk3 arc-gtk-theme adapta-gtk-theme
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
+        rm -rf aur_pkgs
+        mkdir aur_pkgs
+        rm -rf yay
+        rm -rf pygtk
         tee -a /etc/sudoers > /dev/null <<EOT
         builderbob    ALL=(ALL) NOPASSWD:ALL
         EOT
