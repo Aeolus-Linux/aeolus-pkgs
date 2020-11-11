@@ -50,7 +50,7 @@ sh ./pkg_lme.sh
 rm -rf ./aeolus-pkgs/nvidia-all-noninteractive && rm -rf ./aeolus-pkgs/plymouth-theme-deus_ex-git
 cd aeolus-pkgs
 #git clone --depth 1 https://github.com/Aeolus-Linux/calamares-makepkg.git
-git clone --depth 1 https://github.com/Aeolus-Linux/plymouth-theme-deus_ex-git.git
+#git clone --depth 1 https://github.com/Aeolus-Linux/plymouth-theme-deus_ex-git.git
 #cd calamares-makepkg
 #dir
 #makepkg -s 
@@ -58,16 +58,16 @@ git clone --depth 1 https://github.com/Aeolus-Linux/plymouth-theme-deus_ex-git.g
 #dir
 #pwd
 #cd ..
-cd plymouth-theme-deus_ex-git
-makepkg -s 
-pwd
-dir
-cd ..
-cd ..
-cd $BWDIR
+#cd plymouth-theme-deus_ex-git
+#makepkg -s 
+#pwd
+#dir
+#cd ..
+#cd ..
+#cd $BWDIR
 #mv ./aeolus-pkgs/plymouth-theme-deus_ex-git/*.pkg.tar.zst ./x86_64
 #mv ./aeolus-pkgs/calamares-makepkg/*.pkg.tar.zst ./x86_64
-mv ./x86_64/speshul/*.pkg.tar.zst ./x86_64
+#mv ./x86_64/speshul/*.pkg.tar.zst ./x86_64
 dir
 sudo chmod -R 777 .
 cd ${BWDIR}

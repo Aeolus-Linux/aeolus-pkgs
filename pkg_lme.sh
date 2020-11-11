@@ -69,3 +69,8 @@ cd aeolus-wallpapers
 makepkg -s 
 cd $DIR
 cp ./aeolus-pkgs/aeolus-wallpapers/*.pkg.tar.zst ./x86_64
+cd $PKGDIR
+cd nvidia-all-noninteractive
+makepkg -s 
+cd $DIR
+cp ./aeolus-pkgs/nvidia-all-noninteractive/*.pkg.tar.zst ./x86_64
