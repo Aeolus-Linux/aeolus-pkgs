@@ -60,7 +60,7 @@ build_pkgs () {
 	for pkg in "${PKGS[@]}"; do
 		echo "Building ${pkg}..."
 		cd ${pkg} && makepkg -s
-		mv $pkg/*.pkg.tar.zst $DIR/x86_64
+		mv ${pkg}/*.pkg.tar.zst $DIR/x86_64
 		rm -rf $DIR/aur_pkgs/${pkg} && rm -rf $DIR/${pkg}
 		# Verify
 		while true; do
@@ -78,6 +78,6 @@ build_pkgs () {
 }
 
 download_pkgs
-#build_pkgs
+build_pkgs
 
 bash manual-build.sh
