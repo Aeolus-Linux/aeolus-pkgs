@@ -37,6 +37,7 @@ jobs:
         builderbob    ALL=(ALL) NOPASSWD:ALL
         EOT
         git clone https://github.com/Aeolus-Linux/aeolus-pkgs/
+        rm ./aeolus-pkgs/x86_64/*.pkg.tar.zst
         chmod -R 777 ./aeolus-pkgs/
         chown -R builderbob:builderbob ./aeolus-pkgs/
         cd ./aeolus-pkgs/
