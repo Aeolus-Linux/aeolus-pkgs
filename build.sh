@@ -28,6 +28,7 @@ git clone https://aur.archlinux.org/pygtk.git
 cd pygtk
 makepkg -si --noconfirm
 cd ..
+rm -rf pygtk
 mkdir aeolus-pkgs
 cd aeolus-pkgs
 git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
@@ -40,12 +41,13 @@ sudo mkdir -p aur-pkgs
 sudo chmod -R 777 aur-pkgs
 sudo chmod +x aur-build.sh
 sh ./aur-build.sh
-sh ./pkg_aur.sh 
+#sh ./pkg_aur.sh 
 pwd
 sudo chmod -R 777 .
 cd ${BWDIR}
 pwd
 sh ./pkg_lme.sh
+rm -rf ./aeolus-pkgs/nvidia-all-noninteractive && rm -rf ./aeolus-pkgs/plymouth-theme-deus_ex-git
 cd aeolus-pkgs
 #git clone --depth 1 https://github.com/Aeolus-Linux/calamares-makepkg.git
 git clone --depth 1 https://github.com/Aeolus-Linux/plymouth-theme-deus_ex-git.git
