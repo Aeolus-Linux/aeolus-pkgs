@@ -85,6 +85,14 @@ cd $PKGDIR
 git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
 cd nvidia-all-noninteractive
 makepkg -sf 
+cd $PKGDIR
 cd $DIR
-rm -rf nvidia-all-noninteractive
 mv ./aeolus-pkgs/nvidia-all-noninteractive/*.pkg.tar.zst ./x86_64/
+rm -rf ./aeolus-pkgs/nvidia-all-noninteractive
+cd $PKGDIR
+git clone https://aur.archlinux.org/pygtk.git
+cd pygtk
+makepkg -si --noconfirm
+cd $DIR
+rm -rf pygtk
+mv ./aeolus-pkgs/pygtk/*.pkg.tar.zst ./x86_64/
