@@ -37,9 +37,14 @@ cd ${BWDIR}
 pwd
 sh ./pkg_lme.sh
 cd aeolus-pkgs
-dir
 sudo chmod -R 777 .
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -s --noconfirm
+dir
 cd ${BWDIR}
+cp ./aeolus-pkgs/yay/*.pkg.tar.zst ./x86_64/
+rm -rf ./aeolus-pkgs/yay/
 pwd
 cd ./x86_64 
 rm aeolus-pkgs.*
