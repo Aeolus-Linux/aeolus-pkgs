@@ -29,14 +29,14 @@ jobs:
         pacman -S --needed --noconfirm base-devel binutils sudo midori fakeroot git lxdm-gtk3 arc-gtk-theme adapta-gtk-theme
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
-        rm -rf aur_pkgs
-        mkdir aur_pkgs
-        rm -rf yay
-        rm -rf pygtk
         tee -a /etc/sudoers > /dev/null <<EOT
         builderbob    ALL=(ALL) NOPASSWD:ALL
         EOT
         git clone https://github.com/Aeolus-Linux/aeolus-pkgs/
+        rm -rf aur_pkgs
+        mkdir aur_pkgs
+        rm -rf yay
+        rm -rf pygtk
         rm ./aeolus-pkgs/x86_64/*.pkg.tar.zst
         chmod -R 777 ./aeolus-pkgs/
         chown -R builderbob:builderbob ./aeolus-pkgs/
@@ -52,11 +52,6 @@ jobs:
         cd x86_64 
         pwd
         DBDIR="$(pwd)"
-        #tee -a /etc/pacman.conf > /dev/null <<EOT
-        #[aeolus-pkgs]
-        #SigLevel = Optional TrustAll
-        #Server = file://${DBDIR}
-        #EOT
         printf 'y\n' | sudo pacman -Scc
         sudo pacman -Syyu
         cd ..
@@ -65,15 +60,13 @@ jobs:
         git init
         git add *
         su -c "sh build.sh" builderbob
+        rm -rf aur_pkgs
+        mkdir aur_pkgs
+        rm -rf yay
+        rm -rf pygtk
         cd ./x86_64/
         git add *
         cd ..
-        #mkdir goo
-        #cd goo
-        #cp /etc/pacman.conf ./
-        #mv pacman.conf goo
-        echo $GITHUB_REPOSITORY
-        #cd ..
     - name: Commit to repository
       env:
         GITHUB_TOKEN: ${{ secrets.github_token }}
