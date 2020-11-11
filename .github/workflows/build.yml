@@ -61,9 +61,12 @@ jobs:
         cd ..
         ls -l build.sh
         rm ./x86_64/aeolus-pkgs.*
-        su -c "sh build.sh" builderbob
         git init
         git add *
+        su -c "sh build.sh" builderbob
+        cd ./x86_64/
+        git add *
+        cd ..
         #mkdir goo
         #cd goo
         #cp /etc/pacman.conf ./
