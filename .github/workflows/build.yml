@@ -40,7 +40,6 @@ jobs:
         chmod -R 777 ./aeolus-pkgs/
         chown -R builderbob:builderbob ./aeolus-pkgs/
         cd ./aeolus-pkgs/
-        git init
         dir
         ls
         pwd
@@ -63,6 +62,7 @@ jobs:
         ls -l build.sh
         rm ./x86_64/aeolus-pkgs.*
         su -c "sh build.sh" builderbob
+        git init
         git add *
         #mkdir goo
         #cd goo

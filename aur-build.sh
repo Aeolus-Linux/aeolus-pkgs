@@ -38,6 +38,7 @@ download_pkgs () {
 	mkdir $DIR/aur_pkgs && cd $DIR/aur_pkgs
 	for pkg in "${PKGS[@]}"; do
 		git clone --depth 1 https://aur.archlinux.org/${pkg}.git
+		rm -rf $DIR/aur_pkgs/$pkg/.git
 	# Verify
 		while true; do
 			set -- $DIR/aur_pkgs/$pkg
