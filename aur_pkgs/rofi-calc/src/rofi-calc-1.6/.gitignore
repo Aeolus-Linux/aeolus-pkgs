@@ -1,0 +1,14 @@
+*.in
+*.m4
+ar-lib
+*.cache
+compile
+depcomp
+install-sh
+ltmain.sh
+m4
+missing
+configure
+config.*
+build/
+compile_commands.json
