@@ -61,7 +61,7 @@ build_pkgs () {
 		echo "Building ${pkg}..."
 		cd ${pkg} && makepkg -s
 		mv *.pkg.tar.zst $DIR/x86_64
-		rm -rf $DIR/aur_pkgs/${pkg} && rm -rf $DIR/${pkg}
+		rmdir $DIR/aur_pkgs/${pkg} && rmdir $DIR/${pkg}
 		# Verify
 		while true; do
 			set -- $DIR/x86_64/$pkg-*
