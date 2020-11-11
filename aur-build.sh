@@ -60,8 +60,8 @@ build_pkgs () {
 	for pkg in "${PKGS[@]}"; do
 		echo "Building ${pkg}..."
 		cd ${pkg} && makepkg -s
-		mv *.pkg.tar.zst $DIR/x86_64
-		rmdir $DIR/aur_pkgs/${pkg} && rmdir $DIR/${pkg}
+		mv $pkg/*.pkg.tar.zst $DIR/x86_64
+		rm -rf $DIR/aur_pkgs/${pkg} && rm -rf $DIR/${pkg}
 		# Verify
 		while true; do
 			set -- $DIR/x86_64/$pkg-*
