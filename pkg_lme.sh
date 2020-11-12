@@ -96,3 +96,10 @@ makepkg -si --noconfirm
 cd $DIR
 rm -rf pygtk
 mv ./aeolus-pkgs/pygtk/*.pkg.tar.zst ./x86_64/
+cd $PKGDIR
+git clone https://github.com/Aeolus-Linux/aeolus-plymouth-theme.git
+cd aeolus-plymouth-theme
+makepkg -sf
+cd $DIR
+mv ./aeolus-pkgs/aeolus-plymouth-theme/*.pkg.tar.zst
+rm -rf ./aeolus-pkgs/aeolus-plymouth-theme/
