@@ -17,7 +17,6 @@ sudo chmod -R 777 /.cache
 sudo chmod -R 777 /.cache/go-build
 sudo chmod +x ./pkg_aur.sh
 sudo chmod +x ./pkg_lme.sh
-sudo chmod +x ./x86_64/update.sh
 sudo chmod -R 777 aeolus-pkgs
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -27,6 +26,8 @@ cd ..
 rm -rf yay
 sudo chmod -R 777 .
 rm -rf aur-pkgs
+rm -rf ./x86_64
+mkdir ./x86_64
 sudo mkdir -p aur-pkgs
 sudo chmod -R 777 aur-pkgs
 sudo chmod +x aur-build.sh
