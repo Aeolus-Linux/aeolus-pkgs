@@ -42,7 +42,6 @@ jobs:
         rm -rf yay
         rm -rf pygtk
         rm -rf ./x86_64/*
-        mkdir x86_64
         git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive.git
         cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./x86_64/
         rm -rf linux-tkg-noninteractive
