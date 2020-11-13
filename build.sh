@@ -2,7 +2,7 @@
 
 BWDIR="$(pwd)"
 echo ${BWDIR}
-PKGDIRBW="$BWDIR/aeolus-pkgs"
+PKGDIRBW="$BWDIR/osmium-pkgs"
 sudo pacman -Syy --needed --noconfirm coreutils kmod linux-firmware bc git graphviz libinput imagemagick kmod git fakeroot libelf extra-cmake-modules pahole python-sphinx_rtd_theme xmlto crda autogen cmake 
 sudo pacman -Syy --needed --noconfirm python-sphinx grub git meson perl fish libevdev tmux libwacom libglade python2-cairo boost python2-gobject2 qt5-tools python2-numpy  vim zsh git go i3-wm python2 python pacman-contrib expac fzf libpulse 
 sudo pacman -Syy --needed --noconfirm libmpdclient boost-libs perl-data-dump perl sudo fakeroot mtdev gtk2-perl  tslib xorg-xset perl-file-desktopentry perl-gtk3 qt5-translations efibootmgr boost-libs python rsync fuse2 xorg-xauth libxinerama gtk3 libxrandr libxcursor 
@@ -16,7 +16,7 @@ sudo chmod -R 777 /.cache
 sudo chmod -R 777 /.cache/go-build
 sudo chmod +x ./pkg_aur.sh
 sudo chmod +x ./pkg_lme.sh
-sudo chmod -R 777 aeolus-pkgs
+sudo chmod -R 777 osmium-pkgs
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
@@ -32,18 +32,18 @@ sudo chmod -R 777 .
 cd ${BWDIR}
 pwd
 sh ./pkg_lme.sh
-cd aeolus-pkgs
+cd osmium-pkgs
 sudo chmod -R 777 .
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -s --noconfirm
 dir
 cd ${BWDIR}
-cp ./aeolus-pkgs/yay/*.pkg.tar.zst ./x86_64/
-rm -rf ./aeolus-pkgs/yay/
+cp ./osmium-pkgs/yay/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/yay/
 pwd
 cd ./x86_64 
-rm aeolus-pkgs.*
-repo-add -n aeolus-pkgs.db.tar.gz *.pkg.tar.zst
+rm osmium-pkgs.*
+repo-add -n osmium-pkgs.db.tar.gz *.pkg.tar.zst
 cd $BWDIR
 pwd
