@@ -33,20 +33,20 @@ jobs:
         tee -a /etc/sudoers > /dev/null <<EOT
         builderbob    ALL=(ALL) NOPASSWD:ALL
         EOT
-        git clone https://github.com/Aeolus-Linux/aeolus-pkgs.git
-        chmod -R 777 ./aeolus-pkgs/
-        chown -R builderbob:builderbob ./aeolus-pkgs/
-        cd aeolus-pkgs
+        git clone https://github.com/Osmium-Linux/osmium-pkgs.git
+        chmod -R 777 ./osmium-pkgs/
+        chown -R builderbob:builderbob ./osmium-pkgs/
+        cd osmium-pkgs
         rm -rf aur_pkgs
         mkdir aur_pkgs
         rm -rf yay
         rm -rf pygtk
         rm -rf ./x86_64/*
         mkdir x86_64
-        git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
+        git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive.git
         cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./x86_64/
         rm -rf linux-tkg-noninteractive
-        cd ./aeolus-pkgs/
+        cd ./osmium-pkgs/
         dir
         ls
         pwd
@@ -81,7 +81,7 @@ jobs:
       run: |
         # Hard-code user configuration
         pwd
-        cd aeolus-pkgs
+        cd osmium-pkgs
         git config user.email "tysayahi@gmail.com"
         git config user.name "Eile Kerning"
         # Update origin with token
