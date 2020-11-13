@@ -39,7 +39,7 @@ jobs:
         mkdir aur_pkgs
         rm -rf yay
         rm -rf pygtk
-        rm ./aeolus-pkgs/x86_64/*.pkg.tar.zst
+        rm ./x86_64/*
         chmod -R 777 ./aeolus-pkgs/
         chown -R builderbob:builderbob ./aeolus-pkgs/
         cd ./aeolus-pkgs/
@@ -58,7 +58,6 @@ jobs:
         sudo pacman -Syyu
         cd ..
         ls -l build.sh
-        rm ./x86_64/aeolus-pkgs.*
         git init
         git add *
         su -c "sh build.sh" builderbob
