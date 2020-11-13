@@ -3,7 +3,7 @@
 pkgname=ac-about-dev
 pkgver=1.0
 pkgrel=1
-pkgdesc="About the creator of Aeolus."
+pkgdesc="About the creator of Osmium."
 arch=('any')
 license=('GPL')
 provides=($pkgname)
