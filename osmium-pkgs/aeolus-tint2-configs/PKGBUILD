@@ -1,9 +1,9 @@
 # Maintainer: Eile Kerning <tysayahi@gmail.com>
 
-pkgname=aeolus-tint2-configs
+pkgname=osmium-tint2-configs
 pkgver=1.0
 pkgrel=1
-pkgdesc="Aeolus tint2 configs.."
+pkgdesc="Osmium tint2 configs.."
 arch=('any')
 license=('GPL')
 provides=($pkgname)
