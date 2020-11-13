@@ -1,4 +1,4 @@
-# Aeolus Repository
+# Osmium Repository
 
 <p align="left">
   <img src="https://img.shields.io/badge/Status%3F-Active-Green?style=for-the-badge">
@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Archcraft-Done-Blue?style=for-the-badge">
 </p>
 
-Compiled Packages Repository For Aeolus.
+Compiled Packages Repository For Osmium.
 
 ### List of packages
 
@@ -40,7 +40,7 @@ lib32-nvidia-utils-tkg
 lib32-opencl-nvidia-tkg
 opencl-nvidia-tkg
 
-# Aeolus Packages
+# Osmium Packages
 #ac-about-dev
 #ac-fonts
 #ac-get-started
