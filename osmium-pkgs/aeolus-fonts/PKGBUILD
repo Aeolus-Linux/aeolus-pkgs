@@ -1,9 +1,9 @@
 # Maintainer: Eile Kerning <tysayahi@gmail.com>
 
-pkgname=aeolus-fonts
+pkgname=osmium-fonts
 pkgver=1.0
 pkgrel=1
-pkgdesc="Fonts for Aeolus."
+pkgdesc="Fonts for Osmium."
 arch=('any')
 license=('GPL')
 provides=($pkgname)
