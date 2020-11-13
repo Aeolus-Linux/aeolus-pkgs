@@ -1,105 +1,105 @@
 #!/usr/bin/env bash
 
-## This script will generate aeolus pkg-files.
+## This script will generate osmium pkg-files.
 
 ## Dirs
 DIR="$(pwd)"
-PKGDIR="$DIR/aeolus-pkgs"
+PKGDIR="$DIR/osmium-pkgs"
 
 ## Packages
 PKGS=($(ls $PKGDIR))
 
 cd $PKGDIR
-cd aeolus-about-dev
+cd osmium-about-dev
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./aeolus-pkgs/aeolus-about-dev/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-about-dev/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
-cd aeolus-fonts
+cd osmium-fonts
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./aeolus-pkgs/aeolus-fonts/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-fonts/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
-cd aeolus-get-started
+cd osmium-get-started
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./aeolus-pkgs/aeolus-get-started/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-get-started/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
-cd aeolus-grid-icon-theme
+cd osmium-grid-icon-theme
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./aeolus-pkgs/aeolus-grid-icon-theme/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-grid-icon-theme/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
-cd aeolus-gtk-themepack
+cd osmium-gtk-themepack
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./aeolus-pkgs/aeolus-gtk-themepack/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-gtk-themepack/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
-cd aeolus-hybrid-icon-theme
+cd osmium-hybrid-icon-theme
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./aeolus-pkgs/aeolus-hybrid-icon-theme/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-hybrid-icon-theme/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
-cd aeolus-lxdm-theme
+cd osmium-lxdm-theme
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./aeolus-pkgs/aeolus-lxdm-theme/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-lxdm-theme/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
-cd aeolus-lxdm-theme-circuit
+cd osmium-lxdm-theme-circuit
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./aeolus-pkgs/aeolus-lxdm-theme-circuit/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-lxdm-theme-circuit/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
-cd aeolus-lxdm-theme-gears
+cd osmium-lxdm-theme-gears
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./aeolus-pkgs/aeolus-lxdm-theme-gears/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-lxdm-theme-gears/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
-cd aeolus-pixmaps
+cd osmium-pixmaps
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./aeolus-pkgs/aeolus-pixmaps/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-pixmaps/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
-cd aeolus-tint2-configs
+cd osmium-tint2-configs
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./aeolus-pkgs/aeolus-tint2-configs/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-tint2-configs/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
-cd aeolus-wallpapers
+cd osmium-wallpapers
 makepkg -sf
 rm -rf ./pkg/
 cd $DIR
-mv ./aeolus-pkgs/aeolus-wallpapers/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-wallpapers/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
-git clone https://github.com/Aeolus-Linux/nvidia-all-noninteractive.git
+git clone https://github.com/Osmium-Linux/nvidia-all-noninteractive.git
 cd nvidia-all-noninteractive
 makepkg -sf 
 cd $PKGDIR
 cd $DIR
-mv ./aeolus-pkgs/nvidia-all-noninteractive/*.pkg.tar.zst ./x86_64/
-rm -rf ./aeolus-pkgs/nvidia-all-noninteractive
+mv ./osmium-pkgs/nvidia-all-noninteractive/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/nvidia-all-noninteractive
 cd $PKGDIR
 git clone https://aur.archlinux.org/pygtk.git
 cd pygtk
 makepkg -si --noconfirm
 cd $DIR
 rm -rf pygtk
-mv ./aeolus-pkgs/pygtk/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/pygtk/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
-git clone https://github.com/Aeolus-Linux/aeolus-plymouth-theme.git
-cd aeolus-plymouth-theme
+git clone https://github.com/Osmium-Linux/osmium-plymouth-theme.git
+cd osmium-plymouth-theme
 makepkg -sf
 cd $DIR
-mv ./aeolus-pkgs/aeolus-plymouth-theme/*.pkg.tar.zst ./x86_64/
-rm -rf ./aeolus-pkgs/aeolus-plymouth-theme/
+mv ./osmium-pkgs/osmium-plymouth-theme/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/osmium-plymouth-theme/
