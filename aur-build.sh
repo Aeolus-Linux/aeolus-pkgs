@@ -23,13 +23,13 @@ cd ttf-iosevka && makepkg -s && cd ..
 git clone https://aur.archlinux.org/perl-linux-desktopfiles.git
 cd perl-linux-desktopfiles && makepkg -s && cd ..
 cd ..
-cp ./aur-pkgs/openbox-patched/*.pkg.tar.zst
-cp ./aur-pkgs/mkinitcpio-openswap/*.pkg.tar.zst
-cp ./aur-pkgs/plymouth/*.pkg.tar.zst
-cp ./aur-pkgs/oranchelo-icon-theme/*.pkg.tar.zst
-cp ./aur-pkgs/grub-theme-slaze-git/*.pkg.tar.zst
-cp ./aur-pkgs/rofi-calc/*.pkg.tar.zst
-cp ./aur-pkgs/obmenu-generator/*.pkg.tar.zst
-cp ./aur-pkgs/ttf-comfortaa/*.pkg.tar.zst
-cp ./aur-pkgs/ttf-iosevka/*.pkg.tar.zst
-cp ./aur-pkgs/perl-linux-desktopfiles/*.pkg.tar.zst
+cp ./aur-pkgs/openbox-patched/*.pkg.tar.zst ./x86_64
+cp ./aur-pkgs/mkinitcpio-openswap/*.pkg.tar.zst ./x86_64
+cp ./aur-pkgs/plymouth/*.pkg.tar.zst ./x86_64
+cp ./aur-pkgs/oranchelo-icon-theme/*.pkg.tar.zst ./x86_64
+cp ./aur-pkgs/grub-theme-slaze-git/*.pkg.tar.zst ./x86_64
+cp ./aur-pkgs/rofi-calc/*.pkg.tar.zst ./x86_64
+cp ./aur-pkgs/obmenu-generator/*.pkg.tar.zst ./x86_64
+cp ./aur-pkgs/ttf-comfortaa/*.pkg.tar.zst ./x86_64
+cp ./aur-pkgs/ttf-iosevka/*.pkg.tar.zst ./x86_64
+cp ./aur-pkgs/perl-linux-desktopfiles/*.pkg.tar.zst ./x86_64
