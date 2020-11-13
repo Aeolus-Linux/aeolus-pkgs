@@ -1,9 +1,9 @@
 # Maintainer: Eile Kerning <tysayahi@gmail.com>
 
-pkgname=aeolus-lxdm-theme
+pkgname=osmium-lxdm-theme
 pkgver=1.0
 pkgrel=1
-pkgdesc="The default lxdm theme for Aeolus."
+pkgdesc="The default lxdm theme for Osmium."
 arch=('any')
 license=('GPL')
 provides=($pkgname)
@@ -11,5 +11,5 @@ conflicts=($pkgname)
 depends=('lxdm-gtk3' 'adapta-gtk-theme')
 
 package() {
-	install -D -m644 aeolus/* -t $pkgdir/usr/share/lxdm/themes/aeolus
+	install -D -m644 osmium/* -t $pkgdir/usr/share/lxdm/themes/osmium
 }
