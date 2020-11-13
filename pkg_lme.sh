@@ -103,3 +103,15 @@ makepkg -sf
 cd $DIR
 mv ./osmium-pkgs/osmium-plymouth-theme/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/osmium-plymouth-theme/
+cd $PKGDIR
+git clone https://github.com/Frogging-Family/nvidia-all.git
+cd nvidia-all
+rm -rf customization.cfg
+git clone https://github.com/Osmium-Linux/nvidia-all-noninteractive.git
+cd ..
+cp ./nvidia-all/nvidia-all-noninteractive/fileskept/customization.cfg ./nvidia-all
+cd nvidia-all
+makepkg -sf
+cd $DIR
+mv ./osmium-pkgs/nvidia-all-noninteractive/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/nvidia-all-noninteractive/
