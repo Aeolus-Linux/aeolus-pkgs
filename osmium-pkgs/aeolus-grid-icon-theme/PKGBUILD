@@ -1,9 +1,9 @@
 # Maintainer: Eile Kerning <tysayahi@gmail.com>
 
-pkgname=aeolus-grid-icon-theme
+pkgname=osmium-grid-icon-theme
 pkgver=1.0
 pkgrel=1
-pkgdesc="Grid icon theme for Aeolus."
+pkgdesc="Grid icon theme for Osmium."
 arch=('any')
 license=('GPL')
 provides=($pkgname)
