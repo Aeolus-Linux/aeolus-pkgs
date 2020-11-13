@@ -1,9 +1,9 @@
 # Maintainer: Eile Kerning <tysayahi@gmail.com>
 
-pkgname=aeolus-lxdm-theme-gears
+pkgname=osmium-lxdm-theme-gears
 pkgver=1.0
 pkgrel=1
-pkgdesc="A gears styled lxdm theme for Aeolus."
+pkgdesc="A gears styled lxdm theme for Osmium."
 arch=('any')
 license=('GPL')
 provides=($pkgname)
@@ -11,5 +11,5 @@ conflicts=($pkgname)
 depends=('lxdm-gtk3' 'adapta-gtk-theme')
 
 package() {
-	install -D -m644 aeolus-gears/* -t $pkgdir/usr/share/lxdm/themes/aeolus-gears
+	install -D -m644 osmium-gears/* -t $pkgdir/usr/share/lxdm/themes/osmium-gears
 }
