@@ -1,4 +1,5 @@
 cd $BWDIR
+## Not recommended to do everything manual like this, however, there is less chance of anything going wrong this way
 cd aur-pkgs
 git clone https://aur.archlinux.org/openbox-patched.git
 cd openbox-patched && makepkg -s && cd ..
@@ -15,7 +16,8 @@ cd grub-theme-slaze-git && makepkg -s && cd ..
 git clone https://aur.archlinux.org/rofi-calc.git
 cd rofi-calc && makepkg -s && cd ..
 git clone https://aur.archlinux.org/obmenu-generator.git
-cd obmenu-generator && makepkg -s && cd ..
+## making obmenu-generator while skipping dep checks, not recommended but for some reason makepkg doesn't detect that its dependencies are already installed
+cd obmenu-generator && makepkg -sd && cd ..
 git clone https://aur.archlinux.org/ttf-comfortaa.git
 cd ttf-comfortaa && makepkg -s && cd ..
 git clone https://aur.archlinux.org/ttf-iosevka.git
