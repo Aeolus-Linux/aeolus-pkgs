@@ -33,7 +33,7 @@ jobs:
         tee -a /etc/sudoers > /dev/null <<EOT
         builderbob    ALL=(ALL) NOPASSWD:ALL
         EOT
-        git clone https://github.com/Aeolus-Linux/aeolus-pkgs/
+        git clone https://github.com/Aeolus-Linux/aeolus-pkgs.git
         chmod -R 777 ./aeolus-pkgs/
         chown -R builderbob:builderbob ./aeolus-pkgs/
         cd aeolus-pkgs
@@ -41,7 +41,11 @@ jobs:
         mkdir aur_pkgs
         rm -rf yay
         rm -rf pygtk
-        rm ./x86_64/*
+        rm -rf ./x86_64/*
+        mkdir x86_64
+        git clone https://github.com/Aeolus-Linux/linux-tkg-noninteractive.git
+        cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./x86_64/
+        rm -rf linux-tkg-noninteractive
         cd ./aeolus-pkgs/
         dir
         ls
