@@ -3,7 +3,7 @@
 pkgname=ac-get-started
 pkgver=1.0
 pkgrel=1
-pkgdesc="Archcraft OS Helper."
+pkgdesc="Osmium OS Helper."
 arch=('any')
 license=('GPL')
 provides=($pkgname)
