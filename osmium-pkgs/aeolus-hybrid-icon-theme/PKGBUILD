@@ -1,9 +1,9 @@
 # Maintainer: Eile Kerning <tysayahi@gmail.com>
 
-pkgname=aeolus-hybrid-icon-theme
+pkgname=osmium-hybrid-icon-theme
 pkgver=1.0
 pkgrel=1
-pkgdesc="Default icon theme for Aeolus OS."
+pkgdesc="Default icon theme for Osmium OS."
 arch=('any')
 license=('GPL')
 provides=($pkgname)
