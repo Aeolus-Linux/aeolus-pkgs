@@ -1,9 +1,9 @@
 # Maintainer: Eile Kerning <tysayahi@gmail.com>
 
-pkgname=aeolus-gtk-themepack
+pkgname=osmium-gtk-themepack
 pkgver=1.0
 pkgrel=1
-pkgdesc="All GTK themes for Aeolus."
+pkgdesc="All GTK themes for Osmium."
 arch=('any')
 license=('GPL')
 provides=($pkgname)
