@@ -101,5 +101,5 @@ git clone https://github.com/Aeolus-Linux/aeolus-plymouth-theme.git
 cd aeolus-plymouth-theme
 makepkg -sf
 cd $DIR
-mv ./aeolus-pkgs/aeolus-plymouth-theme/*.pkg.tar.zst
+mv ./aeolus-pkgs/aeolus-plymouth-theme/*.pkg.tar.zst ./x86_64/
 rm -rf ./aeolus-pkgs/aeolus-plymouth-theme/
