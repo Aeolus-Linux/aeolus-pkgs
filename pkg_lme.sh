@@ -113,5 +113,5 @@ cp ./nvidia-all/nvidia-all-noninteractive/fileskept/customization.cfg ./nvidia-a
 cd nvidia-all
 makepkg -sf
 cd $DIR
-mv ./osmium-pkgs/nvidia-all-noninteractive/*.pkg.tar.zst ./x86_64/
-rm -rf ./osmium-pkgs/nvidia-all-noninteractive/
+mv ./osmium-pkgs/nvidia-all/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/nvidia-all/
