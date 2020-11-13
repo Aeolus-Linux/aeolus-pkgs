@@ -1,9 +1,9 @@
 # Maintainer: Eile Kerning <tysayahi@gmail.com>
 
-pkgname=aeolus-pixmaps
+pkgname=osmium-pixmaps
 pkgver=1.0
 pkgrel=1
-pkgdesc="Aeolus icons & other graphics."
+pkgdesc="Osmium icons & other graphics."
 arch=('any')
 license=('GPL')
 provides=($pkgname)
