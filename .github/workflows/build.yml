@@ -34,6 +34,7 @@ jobs:
         builderbob    ALL=(ALL) NOPASSWD:ALL
         EOT
         git clone https://github.com/Aeolus-Linux/aeolus-pkgs/
+        cd aeolus-pkgs
         rm -rf aur_pkgs
         mkdir aur_pkgs
         rm -rf yay
