@@ -1,4 +1,5 @@
 ## Not recommended to do everything manual like this, however, there is less chance of anything going wrong this way
+$DIR1=$(pwd)
 cd aur-pkgs
 echo marker1
 pwd
@@ -26,9 +27,7 @@ cd ttf-comfortaa && makepkg -s && cd ..
 git clone https://aur.archlinux.org/ttf-iosevka.git
 cd ttf-iosevka && makepkg -s && cd ..
 git clone https://aur.archlinux.org/perl-linux-desktopfiles.git
-cd perl-linux-desktopfiles && makepkg -s && cd ..
-cd ..
-cd ..
+cd perl-linux-desktopfiles && makepkg -s && cd $DIR
 cp ./aur-pkgs/openbox-patched/*.pkg.tar.zst ./x86_64
 cp ./aur-pkgs/mkinitcpio-openswap/*.pkg.tar.zst ./x86_64
 cp ./aur-pkgs/plymouth/*.pkg.tar.zst ./x86_64
