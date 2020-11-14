@@ -45,7 +45,6 @@ jobs:
         git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive.git
         cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./x86_64/
         rm -rf linux-tkg-noninteractive
-        cd ..
         dir
         ls
         pwd
