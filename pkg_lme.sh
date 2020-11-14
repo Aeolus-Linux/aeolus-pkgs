@@ -106,6 +106,7 @@ rm -rf ./osmium-pkgs/osmium-plymouth-theme/
 cd $PKGDIR
 git clone https://github.com/Frogging-Family/nvidia-all.git
 cd nvidia-all
+sed -i 's/install -D -m755 "libnvoptix.so.${pkgver}" "${pkgdir}/usr/lib/libnvoptix.so.${pkgver}"/#deleted/g' PKGBUILD
 rm -rf customization.cfg
 git clone https://github.com/Osmium-Linux/nvidia-all-noninteractive.git
 cd ..
