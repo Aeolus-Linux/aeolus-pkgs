@@ -1,6 +1,8 @@
-cd $BWDIR
 ## Not recommended to do everything manual like this, however, there is less chance of anything going wrong this way
 cd aur-pkgs
+pwd
+ls
+dir
 git clone https://aur.archlinux.org/openbox-patched.git
 cd openbox-patched && makepkg -s && cd ..
 git clone https://aur.archlinux.org/mkinitcpio-openswap.git
