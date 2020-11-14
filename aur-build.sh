@@ -1,5 +1,6 @@
 ## Not recommended to do everything manual like this, however, there is less chance of anything going wrong this way
 cd aur-pkgs
+echo marker1
 pwd
 ls
 dir
@@ -36,4 +37,5 @@ cp ./aur-pkgs/rofi-calc/*.pkg.tar.zst ./x86_64
 cp ./aur-pkgs/obmenu-generator/*.pkg.tar.zst ./x86_64
 cp ./aur-pkgs/ttf-comfortaa/*.pkg.tar.zst ./x86_64
 cp ./aur-pkgs/ttf-iosevka/*.pkg.tar.zst ./x86_64
-cp ./aur-pkgs/perl-linux-desktopfiles/*.pkg.tar.zst ./x86_64
+cp ./aur-pkgs/perl-linux-desktopfiles/*.pkg.tar.zst ./x86_64\
+echo marker2
