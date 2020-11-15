@@ -116,3 +116,84 @@ makepkg -sf
 cd $DIR
 mv ./osmium-pkgs/nvidia-all/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/nvidia-all/
+cd $PKGDIR
+git clone https://aur.archlinux.org/openbox-patched.git
+cd openbox-patched
+makepkg -sf 
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/openbox-patched/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/openbox-patched
+cd $PKGDIR
+git clone https://aur.archlinux.org/mkinitcpio-openswap.git
+cd mkinitcpio-openswap
+makepkg -sf 
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/mkinitcpio-openswap/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/mkinitcpio-openswap
+cd $PKGDIR
+git clone https://aur.archlinux.org/plymouth.git
+cd plymouth
+makepkg -sf 
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/plymouth/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/plymouth
+cd $PKGDIR
+git clone https://aur.archlinux.org/oranchelo-icon-theme.git
+cd oranchelo-icon-theme
+makepkg -sf 
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/oranchelo-icon-theme/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/oranchelo-icon-theme
+cd $PKGDIR
+git clone https://aur.archlinux.org/tela-icon-theme.git
+cd tela-icon-theme
+makepkg -sf 
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/tela-icon-theme/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/tela-icon-theme
+cd $PKGDIR
+git clone https://aur.archlinux.org/grub-theme-slaze-git.git
+cd grub-theme-slaze-git
+makepkg -sf 
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/grub-theme-slaze-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/grub-theme-slaze-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/obmenu-generator.git
+cd obmenu-generator
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/obmenu-generator/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/obmenu-generator
+cd $PKGDIR
+git clone https://aur.archlinux.org/ttf-comfortaa.git
+cd ttf-comfortaa
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/ttf-comfortaa/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/ttf-comfortaa
+cd $PKGDIR
+git clone https://aur.archlinux.org/ttf-iosevka.git
+cd ttf-iosevka
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/ttf-iosevka/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/ttf-iosevka
+cd $PKGDIR
+git clone https://aur.archlinux.org/perl-linux-desktopfiles.git
+cd ttf-iosevka
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/perl-linux-desktopfiles/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/perl-linux-desktopfiles
+
