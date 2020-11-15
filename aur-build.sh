@@ -1,5 +1,6 @@
 ## Not recommended to do everything manual like this, however, there is less chance of anything going wrong this way
-$DIR1=$(pwd)
+$DIR1="$(pwd)"
+rm -rf aur-pkgs
 cd aur-pkgs
 echo marker1
 pwd
