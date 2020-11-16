@@ -228,3 +228,11 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/loksh-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/loksh-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/opensnap.git
+cd opensnap
+makepkg -sf 
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/opensnap/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/opensnap
