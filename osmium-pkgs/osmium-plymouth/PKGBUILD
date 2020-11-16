@@ -9,6 +9,5 @@ conflicts=($pkgname)
 depends=(plymouth)
 
 package() {
-	mkdir -p "$pkgdir/usr/share/plymouth/themes/"
-	cp -r * "$pkgdir/usr/share/plymouth/themes/"
+	install -D -m644 osmium/* -t $pkgdir/usr/share/plymouth/themes/osmium
 }
