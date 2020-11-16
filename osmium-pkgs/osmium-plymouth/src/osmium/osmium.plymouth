@@ -1,0 +1,9 @@
+[Plymouth Theme]
+Name=osmium
+Description=display rotating osmium logo infinitely
+Comment=created by Eile Kerning
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/osmium
+ScriptFile=/usr/share/plymouth/themes/osmium/osmium.script
