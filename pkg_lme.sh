@@ -82,6 +82,12 @@ rm -rf ./pkg/
 cd $DIR
 mv ./osmium-pkgs/osmium-wallpapers/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
+cd osmium-plymouth
+makepkg -sf 
+rm -rf ./pkg/
+cd $DIR
+mv ./osmium-pkgs/osmium-plymouth/*.pkg.tar.zst ./x86_64/
+cd $PKGDIR
 git clone https://github.com/Osmium-Linux/nvidia-all-noninteractive.git
 cd nvidia-all-noninteractive
 makepkg -sf 
