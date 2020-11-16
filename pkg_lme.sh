@@ -108,7 +108,7 @@ mv ./osmium-pkgs/osmium-plymouth/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
 git clone https://github.com/Osmium-Linux/nvidia-all-noninteractive.git
 cd nvidia-all-noninteractive
-makepkg -sf 
+makepkg -sfd
 cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/nvidia-all-noninteractive/*.pkg.tar.zst ./x86_64/
