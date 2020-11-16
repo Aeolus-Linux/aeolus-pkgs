@@ -1,0 +1,29 @@
+#Maintainer: Eile Kerning <tysayahi@gmail.com>
+
+pkgbase=osmium-plymouth-theme
+
+pkgname=(osmium-plymouth-theme) #initialized by loop at the bottom
+pkgver=r1.0000
+pkgrel=1
+pkgdesc="The plymouth theme for Osmium."
+arch=('any')
+url="https://github.com/adi1090x/plymouth-themes"
+license=('GPL')
+depends=('plymouth')
+
+source=("git+https://github.com/adi1090x/plymouth-themes.git")
+md5sums=('SKIP')
+
+pkgver() {
+  cd "plymouth-themes"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+do
+package_plymouth-theme-osmium-git() {
+    cd \$srcdir/plymouth/osmium
+    mkdir -p \$pkgdir/usr/share/plymouth/themes/osmium
+    find . -type f -exec install -Dm644 \"{}\" \"\${pkgdir}\"/usr/share/plymouth/themes/osmium/\"{}\" \\;
+}
+"
+done
