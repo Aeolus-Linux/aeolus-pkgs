@@ -202,4 +202,11 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/perl-linux-desktopfiles/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/perl-linux-desktopfiles
-
+cd $PKGDIR
+git clone https://aur.archlinux.org/loksh-git.git
+cd loksh-git
+makepkg -sf 
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/loksh-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/loksh-git
