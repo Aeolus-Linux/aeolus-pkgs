@@ -214,7 +214,7 @@ mv ./osmium-pkgs/ttf-iosevka/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/ttf-iosevka
 cd $PKGDIR
 git clone https://aur.archlinux.org/perl-linux-desktopfiles.git
-cd ttf-iosevka
+cd perl-linux-desktopfiles
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
