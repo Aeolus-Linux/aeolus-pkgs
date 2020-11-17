@@ -252,3 +252,11 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/openbox-arc-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/openbox-arc-git 
+cd $PKGDIR
+git clone https://aur.archlinux.org/python-gettext.git
+cd python-gettext
+makepkg -sf 
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/python-gettext/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/python-gettext
