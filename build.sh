@@ -26,7 +26,7 @@ rm -rf yay
 sudo chmod -R 777 .
 sudo chmod -R 777 aur-pkgs
 sudo chmod +x aur-build.sh
-sh aur-build.sh
+#sh aur-build.sh
 pwd
 sudo chmod -R 777 .
 cd ${BWDIR}
