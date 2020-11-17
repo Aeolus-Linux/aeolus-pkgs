@@ -24,9 +24,14 @@ jobs:
     steps:
     - name: Build packages
       run: |
+        tee -a /etc/pacman.conf > /dev/null <<EOT
+        [osmium-pkgs]
+        SigLevel = Optional TrustAll
+        Server = https://osmium-linux.github.io/osmium-pkgs/x86_64
+        EOT
         pacman -Syu --needed --noconfirm --noprogressbar 
         pacman -Syyu --needed --noconfirm sudo git --noprogressbar
-        pacman -S --needed --noconfirm base-devel binutils sudo midori fakeroot git lxdm-gtk3 arc-gtk-theme adapta-gtk-theme
+        pacman -Sy --needed --noconfirm base-devel binutils sudo fakeroot git lxdm-gtk3 arc-gtk-theme adapta-gtk-theme
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
         tee -a /etc/sudoers > /dev/null <<EOT
