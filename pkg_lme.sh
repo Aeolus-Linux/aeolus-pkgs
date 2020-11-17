@@ -236,3 +236,19 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/opensnap/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/opensnap
+cd $PKGDIR
+git clone https://aur.archlinux.org/arc-gtk-theme-git.git
+cd arc-gtk-theme-git
+makepkg -sf 
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/arc-gtk-theme-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/arc-gtk-theme-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/openbox-arc-git.git
+cd openbox-arc-git 
+makepkg -sf 
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/openbox-arc-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/openbox-arc-git 
