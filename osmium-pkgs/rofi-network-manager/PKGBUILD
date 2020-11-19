@@ -1,0 +1,26 @@
+pkgname=rofi-network-manager
+_pkgname=rofi-network-manager
+pkgver=1.0
+pkgrel=1
+pkgdesc="bash script providing WiFi menu for rofi"
+arch=('any')
+url='https://github.com/P3rf/rofi-network-manager.git'
+license=('unknown')
+install=rofi-wifi-menu.install
+depends=('rofi' 'nmcli')
+makedepends=('git')
+source=('git+https://github.com/P3rf/rofi-network-manager.git')
+sha256sums=('SKIP')
+provides=('rofi-network-manager')
+conflicts=('rofi-network-menu')
+
+pkgver() {
+	cd ${_pkgname}
+	printf "%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+	install -Dm755 "$srcdir/$_pkgname/rofi-network-manager.sh" "$pkgdir/usr/bin/rofi-network-manager"
+    sed -i 's/LOCATION=0/LOCATION=7/g' $srcdir/$_pkgname/rofi-network-manager.conf
+	install -Dm555 "$srcdir/$_pkgname/rofi-network-manager.conf" "$pkgdir/usr/bin/rofi-network-manager.conf"
+}

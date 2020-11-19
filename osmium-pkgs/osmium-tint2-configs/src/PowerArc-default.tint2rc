@@ -189,7 +189,7 @@ execp_cache_icon = 1
 execp_continuous = 0
 execp_markup = 1
 execp_tooltip = Menu
-execp_lclick_command = dmenu_run -i -fn 'mplus Nerd Font:size=9' -x 10 -y 40 -w 350 -p 'Search ' -nb '#e7e8eb' -nf '#2f343f' -sb '#e7e8eb' -sf '#5294E2' -o 0.9 -h 30 -l 5 -b
+execp_lclick_command = rofi -modi run,drun,window -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font "Noto Sans 8"
 execp_rclick_command = 
 execp_mclick_command = 
 execp_uwheel_command = 
