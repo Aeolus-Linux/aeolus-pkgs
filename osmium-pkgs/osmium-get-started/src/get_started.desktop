@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Getting Started
-Comment=Archcraft OS Helper
+Comment=Osmium OS Helper
 Exec=/usr/bin/get_started.sh
-Icon=distributor-logo-archcraft
+Icon=distributor-logo-osmium
 Type=Application
 Categories=GTK;System;Settings;

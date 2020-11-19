@@ -1,3 +1,3 @@
 #!/bin/bash
 
-midori -a file:///usr/share/adi1090x/index.html
+midori -a file:///usr/share/eile-kerning/index.html

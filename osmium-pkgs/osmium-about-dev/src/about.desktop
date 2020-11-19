@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=About Creator
-Comment=About Aditya Shakya (@adi1090x)
+Comment=About Osmium (@eile-kerning)
 Exec=/usr/bin/about.sh
-Icon=distributor-logo-archcraft
+Icon=distributor-logo-osmium
 Type=Application
 Categories=GTK;System;Settings;
