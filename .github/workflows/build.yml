@@ -34,51 +34,51 @@ jobs:
         dir
         ls
         pwd
-        #pacman -Sy --needed --noconfirm base-devel binutils sudo fakeroot git lxdm-gtk3 arc-gtk-theme adapta-gtk-theme
-        #useradd -p builderbob -c builderbob -m builderbob
-        #echo "builderbob:builderbob"|chpasswd
-        #tee -a /etc/sudoers > /dev/null <<EOT
-        #builderbob    ALL=(ALL) NOPASSWD:ALL
-        #EOT
+        pacman -Sy --needed --noconfirm base-devel binutils sudo fakeroot git lxdm-gtk3 arc-gtk-theme adapta-gtk-theme
+        useradd -p builderbob -c builderbob -m builderbob
+        echo "builderbob:builderbob"|chpasswd
+        tee -a /etc/sudoers > /dev/null <<EOT
+        builderbob    ALL=(ALL) NOPASSWD:ALL
+        EOT
         git clone https://github.com/Osmium-Linux/osmium-pkgs.git
         chmod -R 777 ./osmium-pkgs/
-        #chown -R builderbob:builderbob ./osmium-pkgs/
+        chown -R builderbob:builderbob ./osmium-pkgs/
         cd osmium-pkgs
         chmod +x test.sh
         ./test.sh
-        #rm -rf aur_pkgs
-        #mkdir aur_pkgs
-        #rm -rf yay
-        #rm -rf pygtk
-        #rm -rf ./x86_64/*
-        #git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive.git
-        #cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./x86_64/
-        #rm -rf linux-tkg-noninteractive
-        #dir
-        #ls
-        #pwd
-        #pacman -Syyu --noconfirm
-        #chmod 777 build.sh
-        #chmod +x build.sh
-        #chown builderbob:builderbob build.sh 
-        #pwd
-        #cd x86_64 
-        #pwd
-        #DBDIR="$(pwd)"
-        #printf 'y\n' | sudo pacman -Scc
-        #sudo pacman -Syyu
-        #cd ..
-        #ls -l build.sh
-        #git init
-        #git add *
-        #su -c "sh build.sh" builderbob
-        #rm -rf aur_pkgs
-        #mkdir aur_pkgs
-        #rm -rf yay
-        #rm -rf pygtk
-        #cd ./x86_64/
-        #git add *
-        #cd ..
+        rm -rf aur_pkgs
+        mkdir aur_pkgs
+        rm -rf yay
+        rm -rf pygtk
+        rm -rf ./x86_64/*
+        git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive.git
+        cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./x86_64/
+        rm -rf linux-tkg-noninteractive
+        dir
+        ls
+        pwd
+        pacman -Syyu --noconfirm
+        chmod 777 build.sh
+        chmod +x build.sh
+        chown builderbob:builderbob build.sh 
+        pwd
+        cd x86_64 
+        pwd
+        DBDIR="$(pwd)"
+        printf 'y\n' | sudo pacman -Scc
+        sudo pacman -Syyu
+        cd ..
+        ls -l build.sh
+        git init
+        git add *
+        su -c "sh build.sh" builderbob
+        rm -rf aur_pkgs
+        mkdir aur_pkgs
+        rm -rf yay
+        rm -rf pygtk
+        cd ./x86_64/
+        git add *
+        cd ..
     - name: Commit to repository
       env:
         GITHUB_TOKEN: ${{ secrets.github_token }}
@@ -92,7 +92,7 @@ jobs:
         git config user.email "tysayahi@gmail.com"
         git config user.name "Eile Kerning"
         # Update origin with token
-        #git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         # Checkout the branch so we can push back to it
         git checkout master
         git add .
