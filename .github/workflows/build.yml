@@ -44,8 +44,6 @@ jobs:
         chmod -R 777 ./osmium-pkgs/
         chown -R builderbob:builderbob ./osmium-pkgs/
         cd osmium-pkgs
-        chmod +x test.sh
-        ./test.sh
         rm -rf aur_pkgs
         mkdir aur_pkgs
         rm -rf yay
