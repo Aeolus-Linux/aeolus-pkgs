@@ -53,9 +53,22 @@ package() {
 	sed -i 's/rofi-network-manager.conf/rofi-network-manager-r.conf/g' $srcdir/$_pkgname/rofi-network-manager-r
 	sed -i 's/rofi-network-manager.conf/rofi-network-manager-br.conf/g' $srcdir/$_pkgname/rofi-network-manager-br
 	mkdir -p $pkgdir/usr/bin/
-	mv $srcdir/$_pkgname/rofi-network-manager.sh rofi-network-manager
-	install -Dm755 "$srcdir/$_pkgname/rofi-network-manager-*" "$pkgdir/usr/bin/"
-	install -Dm755 "$srcdir/$_pkgname/rofi-network-manager" "$pkgdir/usr/bin/"
+	install -Dm755 "$srcdir/$_pkgname/rofi-network-manager.sh" "$pkgdir/usr/bin/"
+	install -Dm755 "$srcdir/$_pkgname/rofi-network-manager-bl" "$pkgdir/usr/bin/"
 	install -Dm555 "$srcdir/$_pkgname/rofi-network-manager.conf" "$pkgdir/usr/bin/"
-	install -Dm555 "$srcdir/$_pkgname/rofi-network-manager-*.conf*" "$pkgdir/usr/bin/"
+	install -Dm555 "$srcdir/$_pkgname/rofi-network-manager-bl.conf" "$pkgdir/usr/bin/"
+	install -Dm755 "$srcdir/$_pkgname/rofi-network-manager-l" "$pkgdir/usr/bin/"
+	install -Dm555 "$srcdir/$_pkgname/rofi-network-manager-l.conf" "$pkgdir/usr/bin/"
+	install -Dm755 "$srcdir/$_pkgname/rofi-network-manager-tl" "$pkgdir/usr/bin/"
+	install -Dm555 "$srcdir/$_pkgname/rofi-network-manager-tl.conf" "$pkgdir/usr/bin/"
+	install -Dm755 "$srcdir/$_pkgname/rofi-network-manager-t" "$pkgdir/usr/bin/"
+	install -Dm555 "$srcdir/$_pkgname/rofi-network-manager-t.conf" "$pkgdir/usr/bin/"
+	install -Dm755 "$srcdir/$_pkgname/rofi-network-manager-tr" "$pkgdir/usr/bin/"
+	install -Dm555 "$srcdir/$_pkgname/rofi-network-manager-tr.conf" "$pkgdir/usr/bin/"
+	install -Dm755 "$srcdir/$_pkgname/rofi-network-manager-r" "$pkgdir/usr/bin/"
+	install -Dm555 "$srcdir/$_pkgname/rofi-network-manager-r.conf" "$pkgdir/usr/bin/"
+	install -Dm755 "$srcdir/$_pkgname/rofi-network-manager-br" "$pkgdir/usr/bin/"
+	install -Dm555 "$srcdir/$_pkgname/rofi-network-manager-br.conf" "$pkgdir/usr/bin/"
+	install -Dm755 "$srcdir/$_pkgname/rofi-network-manager-b" "$pkgdir/usr/bin/"
+	install -Dm555 "$srcdir/$_pkgname/rofi-network-manager-b.conf" "$pkgdir/usr/bin/"
 }
