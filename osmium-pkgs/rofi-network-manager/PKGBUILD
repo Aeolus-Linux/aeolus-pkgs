@@ -52,7 +52,7 @@ package() {
 	sed -i 's/rofi-network-manager.conf/rofi-network-manager-tr.conf/g' $srcdir/$_pkgname/rofi-network-manager-tr
 	sed -i 's/rofi-network-manager.conf/rofi-network-manager-r.conf/g' $srcdir/$_pkgname/rofi-network-manager-r
 	sed -i 's/rofi-network-manager.conf/rofi-network-manager-br.conf/g' $srcdir/$_pkgname/rofi-network-manager-br
-	mkdir $pkgdir/usr/bin/
+	mkdir -p $pkgdir/usr/bin/
 	install -Dm755 "$srcdir/$_pkgname/*" "$pkgdir/usr/bin/"
 	install -Dm555 "$srcdir/$_pkgname/*" "$pkgdir/usr/bin/"
 }
