@@ -17,6 +17,7 @@ pkgver() {
 package() {
     git clone https://github.com/rtlewis88/rtl88-Themes.git
     cd rtl88-Themes
+    git checkout --detach
     git for-each-ref refs/remotes/origin --format='../%(refname:lstrip=3) %(refname:lstrip=3)'|grep -v ' HEAD$' |xargs -n 2 git worktree add
     for b in ./*/*/; do cp -r "$b" ./; rm -fr "$b"; done
     mkdir -p "$pkgdir/usr/share/themes/"
