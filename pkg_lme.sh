@@ -40,6 +40,12 @@ rm -rf ./pkg/
 cd $DIR
 mv ./osmium-pkgs/osmium-lxdm-theme-gears/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
+cd rofi-network-manager 
+makepkg -sf 
+rm -rf ./pkg/
+cd $DIR
+mv ./osmium-pkgs/rofi-network-manager/*.pkg.tar.zst ./x86_64/
+cd $PKGDIR
 cd osmium-get-started
 makepkg -sf 
 rm -rf ./pkg/
