@@ -266,3 +266,9 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/python-gettext/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/python-gettext
+cd $PKGDIR
+cd rtl88-Themes 
+makepkg -sf 
+rm -rf ./pkg/
+cd $DIR
+mv ./osmium-pkgs/rtl88-Themes/*.pkg.tar.zst ./x86_64/
