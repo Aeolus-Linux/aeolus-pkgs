@@ -1,0 +1,28 @@
+pkgname=rtl88-Themes
+_pkgname=rtl88-Themes
+pkgver=1.0
+pkgrel=1
+pkgdesc="Themes from rtl88"
+arch=('any')
+url='https://github.com/rtlewis88/rtl88-Themes/tree/rtl88-Themes.git'
+license=('unknown')
+install=rofi-network-manager.install
+depends=('rofi' 'networkmanager')
+makedepends=('git')
+source=('git+https://github.com/rtlewis88/rtl88-Themes/tree/rtl88-Themes.git')
+sha256sums=('SKIP')
+provides=('rtl88-Themes')
+conflicts=('rtl88-Themes')
+
+pkgver() {
+	cd ${_pkgname}
+	printf "%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+    cd $srcdir
+    git for-each-ref refs/remotes/origin --format='../%(refname:lstrip=3) %(refname:lstrip=3)'|grep -v ' HEAD$' |xargs -n 2 git worktree add
+    for b in ./*/*/; do cp -r "$b" ./; rm -fr "$b"; done
+    mkdir -p "$pkgdir/usr/share/themes/"
+	cp -r * "$pkgdir/usr/share/themes/"
+}
