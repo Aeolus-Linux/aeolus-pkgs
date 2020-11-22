@@ -12,7 +12,7 @@ provides=('rtl88-Themes')
 conflicts=('rtl88-Themes')
 
 pkgver() {
-	cd ${_pkgname}
+	cd rtl88-Themes-pkg
 	printf "%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
