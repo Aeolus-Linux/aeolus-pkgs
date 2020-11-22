@@ -2,10 +2,12 @@ pkgname=rtl88-Themes
 _pkgname=rtl88-Themes
 pkgver=1.0
 pkgrel=1
+url='https://github.com/Osmium-Linux/rtl88-Themes-pkg.git'	
 pkgdesc="Themes from rtl88"
 arch=('any')
 license=('unknown')
-makedepends=('git')
+source=('git+https://github.com/Osmium-Linux/rtl88-Themes-pkg.git')	
+sha256sums=('SKIP')
 provides=('rtl88-Themes')
 conflicts=('rtl88-Themes')
 
@@ -15,11 +17,6 @@ pkgver() {
 }
 
 package() {
-    git clone https://github.com/rtlewis88/rtl88-Themes.git
-    cd rtl88-Themes
-    git checkout --detach
-    git for-each-ref refs/remotes/origin --format='../%(refname:lstrip=3) %(refname:lstrip=3)'|grep -v ' HEAD$' |xargs -n 2 git worktree add
-    for b in ./*/*/; do cp -r "$b" ./; rm -fr "$b"; done
     mkdir -p "$pkgdir/usr/share/themes/"
 	cp -r * "$pkgdir/usr/share/themes/"
 }
