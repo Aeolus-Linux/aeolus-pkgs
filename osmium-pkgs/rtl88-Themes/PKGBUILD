@@ -1,5 +1,5 @@
-pkgname=rtl88-Themes
-_pkgname=rtl88-Themes
+pkgname=rtl88-themes
+_pkgname=rtl88-themes
 pkgver=497.91b279b2
 pkgrel=1
 url='https://github.com/Osmium-Linux/rtl88-Themes-pkg.git'	
@@ -8,8 +8,8 @@ arch=('any')
 license=('unknown')
 source=('git+https://github.com/Osmium-Linux/rtl88-Themes-pkg.git')	
 sha256sums=('SKIP')
-provides=('rtl88-Themes')
-conflicts=('rtl88-Themes')
+provides=('rtl88-themes')
+conflicts=('rtl88-themes')
 
 pkgver() {
 	cd rtl88-Themes-pkg
@@ -18,5 +18,5 @@ pkgver() {
 
 package() {
     mkdir -p "$pkgdir/usr/share/themes/"
-	cp -r ./rtl88-Themes-pkg/* "$pkgdir/usr/share/themes/"
+	cp -r $srcdir/rtl88-Themes-pkg/* "$pkgdir/usr/share/themes/"
 }
