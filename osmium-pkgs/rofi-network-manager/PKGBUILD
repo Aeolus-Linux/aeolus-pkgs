@@ -6,7 +6,6 @@ pkgdesc="bash script providing WiFi menu for rofi"
 arch=('any')
 url='https://github.com/P3rf/rofi-network-manager.git'
 license=('unknown')
-install=rofi-network-manager.install
 depends=('rofi' 'networkmanager')
 makedepends=('git')
 source=('git+https://github.com/P3rf/rofi-network-manager.git')
@@ -20,7 +19,39 @@ pkgver() {
 }
 
 package() {
-	install -Dm755 "$srcdir/$_pkgname/rofi-network-manager.sh" "$pkgdir/usr/bin/rofi-network-manager"
-    sed -i 's/LOCATION=0/LOCATION=7/g' $srcdir/$_pkgname/rofi-network-manager.conf
-	install -Dm555 "$srcdir/$_pkgname/rofi-network-manager.conf" "$pkgdir/usr/bin/rofi-network-manager.conf"
+	sed -i 's/NOTIFICATIONS_INIT="off"/NOTIFICATIONS_INIT="on"/g' $srcdir/$_pkgname/rofi-network-manager.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.conf $srcdir/$_pkgname/rofi-network-manager-bl.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.sh $srcdir/$_pkgname/rofi-network-manager-bl
+	sed -i 's/LOCATION=0/LOCATION=7/g' $srcdir/$_pkgname/rofi-network-manager-bl.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.conf $srcdir/$_pkgname/rofi-network-manager-l.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.sh $srcdir/$_pkgname/rofi-network-manager-l
+	sed -i 's/LOCATION=0/LOCATION=8/g' $srcdir/$_pkgname/rofi-network-manager-l.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.conf $srcdir/$_pkgname/rofi-network-manager-tl.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.sh $srcdir/$_pkgname/rofi-network-manager-tl
+	sed -i 's/LOCATION=0/LOCATION=1/g' $srcdir/$_pkgname/rofi-network-manager-tl.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.conf $srcdir/$_pkgname/rofi-network-manager-t.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.sh $srcdir/$_pkgname/rofi-network-manager-t
+	sed -i 's/LOCATION=0/LOCATION=2/g' $srcdir/$_pkgname/rofi-network-manager-t.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.conf $srcdir/$_pkgname/rofi-network-manager-tr.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.sh $srcdir/$_pkgname/rofi-network-manager-tr
+	sed -i 's/LOCATION=0/LOCATION=3/g' $srcdir/$_pkgname/rofi-network-manager-tr.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.conf $srcdir/$_pkgname/rofi-network-manager-r.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.sh $srcdir/$_pkgname/rofi-network-manager-r
+	sed -i 's/LOCATION=0/LOCATION=4/g' $srcdir/$_pkgname/rofi-network-manager-r.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.conf $srcdir/$_pkgname/rofi-network-manager-br.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.sh $srcdir/$_pkgname/rofi-network-manager-br
+	sed -i 's/LOCATION=0/LOCATION=5/g' $srcdir/$_pkgname/rofi-network-manager-br.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.conf $srcdir/$_pkgname/rofi-network-manager-b.conf
+	cp $srcdir/$_pkgname/rofi-network-manager.sh $srcdir/$_pkgname/rofi-network-manager-b
+	sed -i 's/LOCATION=0/LOCATION=6/g' $srcdir/$_pkgname/rofi-network-manager-b.conf
+	sed -i 's/rofi-network-manager.conf/rofi-network-manager-b.conf/g' $srcdir/$_pkgname/rofi-network-manager-b
+	sed -i 's/rofi-network-manager.conf/rofi-network-manager-bl.conf/g' $srcdir/$_pkgname/rofi-network-manager-bl
+	sed -i 's/rofi-network-manager.conf/rofi-network-manager-l.conf/g' $srcdir/$_pkgname/rofi-network-manager-l
+	sed -i 's/rofi-network-manager.conf/rofi-network-manager-tl.conf/g' $srcdir/$_pkgname/rofi-network-manager-tl
+	sed -i 's/rofi-network-manager.conf/rofi-network-manager-t.conf/g' $srcdir/$_pkgname/rofi-network-manager-t
+	sed -i 's/rofi-network-manager.conf/rofi-network-manager-tr.conf/g' $srcdir/$_pkgname/rofi-network-manager-tr
+	sed -i 's/rofi-network-manager.conf/rofi-network-manager-r.conf/g' $srcdir/$_pkgname/rofi-network-manager-r
+	sed -i 's/rofi-network-manager.conf/rofi-network-manager-br.conf/g' $srcdir/$_pkgname/rofi-network-manager-br
+	install -Dm755 "$srcdir/$_pkgname/*" "$pkgdir/usr/bin/"
+	install -Dm555 "$srcdir/$_pkgname/*" "$pkgdir/usr/bin/"
 }
