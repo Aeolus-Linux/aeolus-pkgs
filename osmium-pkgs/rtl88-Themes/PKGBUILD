@@ -1,6 +1,6 @@
 pkgname=rtl88-themes
 _pkgname=rtl88-themes
-pkgver=497.91b279b2
+pkgver=499.ea56117b
 pkgrel=1
 url='https://github.com/Osmium-Linux/rtl88-Themes-pkg.git'	
 pkgdesc="Themes from rtl88"
