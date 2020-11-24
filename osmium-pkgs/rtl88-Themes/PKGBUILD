@@ -18,5 +18,6 @@ pkgver() {
 
 package() {
     mkdir -p "$pkgdir/usr/share/themes/"
-	cp -r $srcdir/rtl88-Themes-pkg/* "$pkgdir/usr/share/themes/"
+    cp -r $srcdir "$pkgdir/usr/share/themes/"
+    rm -rf $srcdir
 }
