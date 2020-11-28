@@ -273,3 +273,11 @@ rm -rf ./pkg/
 rm -rf rtl88-Themes-pkg
 cd $DIR
 mv ./osmium-pkgs/rtl88-Themes/*.pkg.tar.zst ./x86_64/
+cd $PKGDIR
+git clone https://aur.archlinux.org/webmin.git
+cd webmin
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/webmin/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/webmin
