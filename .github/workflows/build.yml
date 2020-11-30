@@ -6,11 +6,11 @@ name: CI
 # events but only for the master branch
 on: 
   schedule: 
-    - cron: "*/30 11 * * *"
+    - cron: "*10 01 * * 1"
   workflow_dispatch:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  osmium-no-deps:
     runs-on: ubuntu-latest
 
     container:
@@ -29,12 +29,6 @@ jobs:
         SigLevel = Optional TrustAll
         Server = https://osmium-linux.github.io/osmium-pkgs/x86_64
         EOT
-        pacman -Syu --needed --noconfirm --noprogressbar 
-        pacman -Syyu --needed --noconfirm sudo git --noprogressbar
-        dir
-        ls
-        pwd
-        pacman -Sy --needed --noconfirm base-devel binutils sudo fakeroot git lxdm-gtk3 arc-gtk-theme adapta-gtk-theme
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
         tee -a /etc/sudoers > /dev/null <<EOT
@@ -46,35 +40,20 @@ jobs:
         cd osmium-pkgs
         rm -rf aur_pkgs
         mkdir aur_pkgs
-        rm -rf yay
-        rm -rf pygtk
-        rm -rf ./x86_64/
-        mkdir -p ./x86_64/
-        git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive.git
-        cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./x86_64/
-        rm -rf linux-tkg-noninteractive
-        dir
-        ls
-        pwd
-        pacman -Syyu --noconfirm
         chmod 777 build.sh
         chmod +x build.sh
         chown builderbob:builderbob build.sh 
-        pwd
         cd x86_64 
-        pwd
         DBDIR="$(pwd)"
         printf 'y\n' | sudo pacman -Scc
-        sudo pacman -Syyu
+        sudo pacman -Syyu --noconfirm
         cd ..
         ls -l build.sh
         git init
         git add *
         su -c "sh build.sh" builderbob
-        rm -rf aur_pkgs
-        mkdir aur_pkgs
-        rm -rf yay
-        rm -rf pygtk
+        chmod +x no-deps.sh
+        su -c "sh no-deps.sh" builderbob
         cd ./x86_64/
         git add *
         cd ..
@@ -82,7 +61,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.github_token }}
         COMMIT_MSG: |
-          <Update Packages>
+          <Update Osmium Custom Packages (No Deps)>
           skip-checks: true
       run: |
         # Hard-code user configuration
@@ -97,4 +76,69 @@ jobs:
         git add .
         # Only commit and push if we have changes
         git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
+  osmium-lxdm:
+    runs-on: ubuntu-latest
 
+    container:
+      image: archlinux:latest
+      volumes:
+        - /proc:/proc
+        - /sys/fs/cgroup/systemd/actions_job:/sys/fs/cgroup/systemd/actions_job
+        - /sys/fs/cgroup:/sys/fs/cgroup
+      options: --privileged
+
+    steps:
+    - name: Build packages
+      run: |
+        tee -a /etc/pacman.conf > /dev/null <<EOT
+        [osmium-pkgs]
+        SigLevel = Optional TrustAll
+        Server = https://osmium-linux.github.io/osmium-pkgs/x86_64
+        EOT
+        useradd -p builderbob -c builderbob -m builderbob
+        echo "builderbob:builderbob"|chpasswd
+        tee -a /etc/sudoers > /dev/null <<EOT
+        builderbob    ALL=(ALL) NOPASSWD:ALL
+        EOT
+        git clone https://github.com/Osmium-Linux/osmium-pkgs.git
+        chmod -R 777 ./osmium-pkgs/
+        chown -R builderbob:builderbob ./osmium-pkgs/
+        cd osmium-pkgs
+        rm -rf aur_pkgs
+        mkdir aur_pkgs
+        chmod 777 build.sh
+        chmod +x build.sh
+        chown builderbob:builderbob build.sh 
+        cd x86_64 
+        DBDIR="$(pwd)"
+        printf 'y\n' | sudo pacman -Scc
+        sudo pacman -Syyu --noconfirm
+        cd ..
+        ls -l build.sh
+        git init
+        git add *
+        su -c "sh build.sh" builderbob
+        chmod +x lxdm-themes.sh
+        su -c "sh lxdm-themes.sh" builderbob
+        cd ./x86_64/
+        git add *
+        cd ..
+    - name: Commit to repository
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_token }}
+        COMMIT_MSG: |
+          <Update Osmium Custom LXDM Themes>
+          skip-checks: true
+      run: |
+        # Hard-code user configuration
+        pwd
+        cd osmium-pkgs
+        git config user.email "tysayahi@gmail.com"
+        git config user.name "Eile Kerning"
+        # Update origin with token
+        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        # Checkout the branch so we can push back to it
+        git checkout master
+        git add .
+        # Only commit and push if we have changes
+        git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)

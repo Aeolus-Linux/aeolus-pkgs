@@ -1,15 +1,17 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CIS
+name: CI
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on: 
+  schedule: 
+    - cron: "*01 01 * * 1"
   workflow_dispatch:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
-    runs-on: self-hosted
+  clean:
+    runs-on: ubuntu-latest
 
     container:
       image: archlinux:latest
@@ -20,55 +22,18 @@ jobs:
       options: --privileged
 
     steps:
-    - name: Build packages
+    - name: Clean Repo
       run: |
-        tee -a /etc/pacman.conf > /dev/null <<EOT
-        [osmium-pkgs]
-        SigLevel = Optional TrustAll
-        Server = https://osmium-linux.github.io/osmium-pkgs/x86_64
-        EOT
-        pacman -Syu --needed --noconfirm --noprogressbar 
-        pacman -Syyu --needed --noconfirm sudo git --noprogressbar
-        pacman -Sy --needed --noconfirm base-devel binutils sudo fakeroot git lxdm-gtk3 arc-gtk-theme adapta-gtk-theme
-        useradd -p builderbob -c builderbob -m builderbob
-        echo "builderbob:builderbob"|chpasswd
-        tee -a /etc/sudoers > /dev/null <<EOT
-        builderbob    ALL=(ALL) NOPASSWD:ALL
-        EOT
-        git clone https://github.com/Osmium-Linux/osmium-pkgs.git
+        git clone --depth 1 https://github.com/Osmium-Linux/osmium-pkgs.git
         chmod -R 777 ./osmium-pkgs/
-        chown -R builderbob:builderbob ./osmium-pkgs/
         cd osmium-pkgs
-        rm -rf aur_pkgs
-        mkdir aur_pkgs
-        rm -rf yay
-        rm -rf pygtk
-        rm -rf ./x86_64/*
+        rm -rf ./x86_64/
+        mkdir -p ./x86_64/
         git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive.git
         cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./x86_64/
         rm -rf linux-tkg-noninteractive
-        dir
-        ls
-        pwd
-        pacman -Syyu --noconfirm
-        chmod 777 build.sh
-        chmod +x build.sh
-        chown builderbob:builderbob build.sh 
-        pwd
-        cd x86_64 
-        pwd
-        DBDIR="$(pwd)"
-        printf 'y\n' | sudo pacman -Scc
-        sudo pacman -Syyu
-        cd ..
-        ls -l build.sh
         git init
         git add *
-        su -c "sh build.sh" builderbob
-        rm -rf aur_pkgs
-        mkdir aur_pkgs
-        rm -rf yay
-        rm -rf pygtk
         cd ./x86_64/
         git add *
         cd ..
@@ -76,7 +41,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.github_token }}
         COMMIT_MSG: |
-          <Update Packages>
+          <Clean Repository>
           skip-checks: true
       run: |
         # Hard-code user configuration
@@ -91,3 +56,4 @@ jobs:
         git add .
         # Only commit and push if we have changes
         git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
+
