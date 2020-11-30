@@ -14,11 +14,11 @@ sudo mkdir -p /.cache/go-build
 sudo chmod -R 777 /.cache
 sudo chmod -R 777 /.cache/go-build
 sudo chmod -R 777 osmium-pkgs
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si --noconfirm
-yay -Sy --needed --noconfirm plymouth findutils openbox-patched thrash-protect perl-linux-desktopfiles mkinitcpio-openswap ckbcomp
-cd ..
-rm -rf yay
+#git clone https://aur.archlinux.org/yay.git
+#cd yay
+#makepkg -si --noconfirm
+#yay -Sy --needed --noconfirm plymouth findutils openbox-patched thrash-protect perl-linux-desktopfiles mkinitcpio-openswap ckbcomp
+#cd ..
+#rm -rf yay
 cd $BWDIR
-pwd
+
