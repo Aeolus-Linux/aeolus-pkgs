@@ -4,8 +4,8 @@ BWDIR="$(pwd)"
 echo ${BWDIR}
 PKGDIRBW="$BWDIR/osmium-pkgs"
 sudo pacman -Syu --noconfirm --needed
-sudo pacman -Sy --needed --noconfirm meson coreutils kmod linux-firmware git graphviz
-sudo pacman -Sy --needed --noconfirm  fakeroot extra-cmake-modules autogen cmake 
+sudo pacman -Sy --needed --noconfirm meson coreutils kmod linux-firmware git
+sudo pacman -Sy --needed --noconfirm  fakeroot extra-cmake-modules autogen cmake
 sudo chmod -R 777 .
 sudo mkdir -p /go/pkg/mod/cache/download/github.com
 sudo chmod -R 777 /go
