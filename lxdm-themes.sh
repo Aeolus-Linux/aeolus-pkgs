@@ -9,7 +9,7 @@ PKGDIR="$DIR/osmium-pkgs"
 ## Packages
 PKGS=($(ls $PKGDIR))
 
-sudo pacman -Sy --noconfirm lxdm-gtk3 adapta-gtk-theme
+sudo pacman -Sy --noconfirm lxdm-gtk3 adapta-gtk-theme arc-gtk-theme
 
 cd $PKGDIR
 cd osmium-lxdm-theme
