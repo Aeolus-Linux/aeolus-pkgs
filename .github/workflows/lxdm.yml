@@ -29,11 +29,11 @@ jobs:
         tee -a /etc/sudoers > /dev/null <<EOT
         builderbob    ALL=(ALL) NOPASSWD:ALL
         EOT
-        tee -a /etc/pacman.conf > /dev/null <<EOT
-        [osmium-pkgs]
-        SigLevel = Optional TrustAll
-        Server = https://osmium-linux.github.io/osmium-pkgs/x86_64
-        EOT
+        #tee -a /etc/pacman.conf > /dev/null <<EOT
+        #[osmium-pkgs]
+        #SigLevel = Optional TrustAll
+        #Server = https://osmium-linux.github.io/osmium-pkgs/x86_64
+        #EOT
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
         tee -a /etc/sudoers > /dev/null <<EOT
@@ -52,7 +52,6 @@ jobs:
         cd x86_64 
         DBDIR="$(pwd)"
         printf 'y\n' | sudo pacman -Scc
-        sudo pacman -Syyu --noconfirm
         cd ..
         ls -l build.sh
         git init
