@@ -24,6 +24,11 @@ jobs:
     steps:
     - name: Build packages
       run: |
+        useradd -p builderbob -c builderbob -m builderbob
+        echo "builderbob:builderbob"|chpasswd
+        tee -a /etc/sudoers > /dev/null <<EOT
+        builderbob    ALL=(ALL) NOPASSWD:ALL
+        EOT
         tee -a /etc/pacman.conf > /dev/null <<EOT
         [osmium-pkgs]
         SigLevel = Optional TrustAll
