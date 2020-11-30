@@ -113,12 +113,16 @@ cd $DIR
 mv ./osmium-pkgs/osmium-plymouth/*.pkg.tar.zst ./x86_64/
 cd $PKGDIR
 git clone https://github.com/Osmium-Linux/nvidia-all-noninteractive.git
-cd nvidia-all-noninteractive
+git clone https://github.com/Frogging-Family/nvidia-all
+rm ./nvidia-all/customization.cfg 
+cp ./nvidia-all-noninteractive/fileskept/customization.cfg ./nvidia-all/
+cd nvidia-all
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/nvidia-all-noninteractive/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/nvidia-all/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/nvidia-all-noninteractive
+rm -rf ./osmium-pkgs/nvidia-all
 cd $PKGDIR
 git clone https://aur.archlinux.org/pygtk.git
 cd pygtk
