@@ -24,6 +24,11 @@ jobs:
     steps:
     - name: Build packages
       run: |
+        useradd -p builderbob -c builderbob -m builderbob
+        echo "builderbob:builderbob"|chpasswd
+        tee -a /etc/sudoers > /dev/null <<EOT
+        builderbob    ALL=(ALL) NOPASSWD:ALL
+        EOT
         pacman -Sy git --noconfirm
         git clone https://github.com/Osmium-Linux/osmium-pkgs.git
         chmod -R 777 ./osmium-pkgs/
