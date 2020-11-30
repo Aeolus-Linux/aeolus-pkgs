@@ -34,7 +34,7 @@ jobs:
         #SigLevel = Optional TrustAll
         #Server = https://osmium-linux.github.io/osmium-pkgs/x86_64
         #EOT
-        pacman -Sy --noconfirm git
+        pacman -Sy --noconfirm git sudo coreutils
         git clone https://github.com/Osmium-Linux/osmium-pkgs.git
         chmod -R 777 ./osmium-pkgs/
         chown -R builderbob:builderbob ./osmium-pkgs/
