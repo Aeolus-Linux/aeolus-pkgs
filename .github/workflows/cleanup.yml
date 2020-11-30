@@ -24,6 +24,7 @@ jobs:
     steps:
     - name: Clean Repo
       run: |
+        pacman -Sy --noconfirm git
         git clone --depth 1 https://github.com/Osmium-Linux/osmium-pkgs.git
         chmod -R 777 ./osmium-pkgs/
         cd osmium-pkgs
