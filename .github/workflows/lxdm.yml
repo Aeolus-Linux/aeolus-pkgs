@@ -46,7 +46,7 @@ jobs:
         chown builderbob:builderbob build.sh 
         cd x86_64 
         DBDIR="$(pwd)"
-        printf 'y\n' | sudo pacman -Scc
+        printf 'y\n' | pacman -Scc
         cd ..
         ls -l build.sh
         git init
