@@ -24,16 +24,6 @@ jobs:
     steps:
     - name: Build packages
       run: |
-        tee -a /etc/pacman.conf > /dev/null <<EOT
-        [osmium-pkgs]
-        SigLevel = Optional TrustAll
-        Server = https://osmium-linux.github.io/osmium-pkgs/x86_64
-        EOT
-        useradd -p builderbob -c builderbob -m builderbob
-        echo "builderbob:builderbob"|chpasswd
-        tee -a /etc/sudoers > /dev/null <<EOT
-        builderbob    ALL=(ALL) NOPASSWD:ALL
-        EOT
         pacman -Sy git --noconfirm
         git clone https://github.com/Osmium-Linux/osmium-pkgs.git
         chmod -R 777 ./osmium-pkgs/
