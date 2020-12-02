@@ -7,7 +7,6 @@ pkgdesc="Suru-Plus-Colourise is a program to change the colors of different Suru
 arch=('any')
 license=('GPL')
 provides=($pkgname)
-source=(https://github.com/gusbemacbe/suru-plus-colourise)
 conflicts=($pkgname)
 depends=()
 pkgver() {
