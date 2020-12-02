@@ -18,6 +18,7 @@ sudo pacman -Sy openssl perl perl-net-ssleay perl-socket6
 sudo pacman -Sy perl-module-build
 #Yay
 sudo pacman -Sy sudo go
+#Oomox bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip ##AUR, Fix later breeze-icons colorz gksu python-colorthief python-haishoku xorg-xrdb
 ##AUR Packages
 #Installing Yay
 git clone https://aur.archlinux.org/yay-bin.git
@@ -366,3 +367,14 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/resvg/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/resvg
+
+#Yay
+cd $PKGDIR
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/yay/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/yay
+
