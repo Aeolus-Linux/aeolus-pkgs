@@ -27,6 +27,8 @@ cd ..
 rm -rf yay-bin
 #Webmin
 yay -Sy perl-authen-pam perl-encode-detect 
+#Oomox
+yay -Sy resvg
 
 ###Build
 
@@ -354,3 +356,13 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/oomox/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/oomox
+
+#Resvg
+cd $PKGDIR
+git clone https://aur.archlinux.org/resvg.git
+cd resvg
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/resvg/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/resvg
