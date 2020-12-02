@@ -337,10 +337,20 @@ rm -rf ./osmium-pkgs/perl-authen-pam
 
 #Suru Icon Theme
 cd $PKGDIR
-git clone https://aur.archlinux.orgsuru-icon-theme-git.git
+git clone https://aur.archlinux.org/suru-icon-theme-git.git
 cd suru-icon-theme-git
 makepkg -sf
 cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/suru-icon-theme-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/suru-icon-theme-git
+
+#Oomox
+cd $PKGDIR
+git clone https://aur.archlinux.org/oomox.git
+cd oomox
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/oomox/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/oomox
