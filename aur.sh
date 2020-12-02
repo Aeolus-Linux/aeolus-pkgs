@@ -259,3 +259,19 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/themix-gui-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/themix-gui-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/perl-encode-detect.git
+cd perl-encode-detect
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/perl-encode-detect/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/perl-encode-detect
+cd $PKGDIR
+git clone https://aur.archlinux.org/perl-authen-pam.git
+cd perl-authen-pam
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/perl-authen-pam/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/perl-authen-pam
