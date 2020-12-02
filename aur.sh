@@ -9,10 +9,17 @@ PKGDIR="$DIR/osmium-pkgs"
 ## Packages
 PKGS=($(ls $PKGDIR))
 
+##Pacman Packages
 #Themix 
 sudo pacman -Sy findutils sed git python 
 #Webmin
-sudo pacman -Sy
+sudo pacman -Sy openssl perl perl-net-ssleay perl-socket6
+#Perl Modules
+sudo pacman -Sy perl-module-build
+##AUR Packages
+#Installing Yay
+#Webmin
+yay -Sy perl-authen-pam perl-encode-detect 
 cd $PKGDIR
 git clone https://aur.archlinux.org/webmin.git
 cd webmin
