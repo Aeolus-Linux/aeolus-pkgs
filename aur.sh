@@ -9,6 +9,10 @@ PKGDIR="$DIR/osmium-pkgs"
 ## Packages
 PKGS=($(ls $PKGDIR))
 
+#Themix 
+sudo pacman -Sy findutils sed git python 
+#Webmin
+sudo pacman -Sy
 cd $PKGDIR
 git clone https://aur.archlinux.org/webmin.git
 cd webmin
@@ -176,3 +180,75 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/python-gettext/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/python-gettext
+cd $PKGDIR
+git clone https://aur.archlinux.org/suru-plus-aspromauros-git.git
+cd suru-plus-aspromauros-git
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/suru-plus-aspromauros-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/suru-plus-aspromauros-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/suru-plus-dark-git.git
+cd suru-plus-dark-git
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/suru-plus-dark-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/suru-plus-dark-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/suru-plus-git.git
+cd suru-plus-git
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/suru-plus-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/suru-plus-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/suru-plus-pack-git.git
+cd suru-plus-pack-git
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/suru-plus-pack-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/suru-plus-pack-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/suru-plus-telinkrin-git.git
+cd suru-plus-telinkrin-git
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/suru-plus-telinkrin-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/suru-plus-telinkrin-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-icons-suru-plus-aspromauros-git.git
+cd themix-icons-suru-plus-aspromauros-git
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-icons-suru-plus-aspromauros-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-icons-suru-plus-aspromauros-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-icons-suru-plus-git.git
+cd themix-icons-suru-plus-git
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-icons-suru-plus-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-icons-suru-plus-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-full-git.git
+cd themix-full-git
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-full-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-full-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-gui-git.git
+cd themix-gui-git
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-gui-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-gui-git
