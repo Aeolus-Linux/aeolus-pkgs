@@ -1,0 +1,15 @@
+# Maintainer: Eile Kerning <tysayahi@gmail.com>
+
+pkgname=suru-plus-colourise
+pkgver=1.0
+pkgrel=1
+pkgdesc="Suru-Plus-Colourise is a program to change the colors of different Suru++ icon packs"
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+
+package() {
+	mkdir -p $pkgdir/usr/local/bin/ && sudo wget https://git.io/fhbxw -O $pkgdir/usr/local/bin/suru-plus-colourise && sudo chmod a+x $pkgdir/usr/local/bin/suru-plus-colourise
+}
