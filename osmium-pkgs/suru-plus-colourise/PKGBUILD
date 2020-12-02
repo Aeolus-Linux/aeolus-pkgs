@@ -7,8 +7,13 @@ pkgdesc="Suru-Plus-Colourise is a program to change the colors of different Suru
 arch=('any')
 license=('GPL')
 provides=($pkgname)
+source=(https://github.com/gusbemacbe/suru-plus-colourise)
 conflicts=($pkgname)
 depends=()
+pkgver() {
+	cd ${_pkgname}
+	printf "%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
 
 package() {
 	mkdir -p $pkgdir/usr/local/bin/ && sudo wget https://git.io/fhbxw -O $pkgdir/usr/local/bin/suru-plus-colourise && sudo chmod a+x $pkgdir/usr/local/bin/suru-plus-colourise
