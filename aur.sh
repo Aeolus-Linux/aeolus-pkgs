@@ -16,10 +16,21 @@ sudo pacman -Sy findutils sed git python
 sudo pacman -Sy openssl perl perl-net-ssleay perl-socket6
 #Perl Modules
 sudo pacman -Sy perl-module-build
+#Yay
+sudo pacman -Sy sudo go
 ##AUR Packages
 #Installing Yay
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -sfi
+cd ..
+rm -rf yay-bin
 #Webmin
 yay -Sy perl-authen-pam perl-encode-detect 
+
+###Build
+
+#Webmin
 cd $PKGDIR
 git clone https://aur.archlinux.org/webmin.git
 cd webmin
@@ -28,9 +39,14 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/webmin/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/webmin
+
+#Nvidia-All
 cd $PKGDIR
 git clone https://github.com/Osmium-Linux/nvidia-all-noninteractive.git
 git clone https://github.com/Frogging-Family/nvidia-all
+cd nvidia-all
+sed -i 's/install -D -m755 "libnvoptix.so.${pkgver}"/#deleted/g' PKGBUILD
+cd ..
 rm ./nvidia-all/customization.cfg 
 cp ./nvidia-all-noninteractive/fileskept/customization.cfg ./nvidia-all/
 cd nvidia-all
@@ -40,6 +56,8 @@ cd $DIR
 mv ./osmium-pkgs/nvidia-all/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/nvidia-all-noninteractive
 rm -rf ./osmium-pkgs/nvidia-all
+
+#Pygtk
 cd $PKGDIR
 git clone https://aur.archlinux.org/pygtk.git
 cd pygtk
@@ -47,6 +65,8 @@ makepkg -si --noconfirm
 cd $DIR
 rm -rf pygtk
 mv ./osmium-pkgs/pygtk/*.pkg.tar.zst ./x86_64/
+
+#Osmium Plymouth Theme
 cd $PKGDIR
 git clone https://github.com/Osmium-Linux/osmium-plymouth-theme.git
 cd osmium-plymouth-theme
@@ -54,19 +74,8 @@ makepkg -sf
 cd $DIR
 mv ./osmium-pkgs/osmium-plymouth-theme/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/osmium-plymouth-theme/
-cd $PKGDIR
-git clone https://github.com/Frogging-Family/nvidia-all.git
-cd nvidia-all
-sed -i 's/install -D -m755 "libnvoptix.so.${pkgver}"/#deleted/g' PKGBUILD
-rm -rf customization.cfg
-git clone https://github.com/Osmium-Linux/nvidia-all-noninteractive.git
-cd ..
-cp ./nvidia-all/nvidia-all-noninteractive/fileskept/customization.cfg ./nvidia-all
-cd nvidia-all
-makepkg -sf
-cd $DIR
-mv ./osmium-pkgs/nvidia-all/*.pkg.tar.zst ./x86_64/
-rm -rf ./osmium-pkgs/nvidia-all/
+
+#Openbox Patched
 cd $PKGDIR
 git clone https://aur.archlinux.org/openbox-patched.git
 cd openbox-patched
@@ -75,6 +84,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/openbox-patched/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/openbox-patched
+
+#Mkinitcpio Openswap
 cd $PKGDIR
 git clone https://aur.archlinux.org/mkinitcpio-openswap.git
 cd mkinitcpio-openswap
@@ -83,6 +94,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/mkinitcpio-openswap/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/mkinitcpio-openswap
+
+#Plymouth
 cd $PKGDIR
 git clone https://aur.archlinux.org/plymouth.git
 cd plymouth
@@ -91,6 +104,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/plymouth/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/plymouth
+
+#Oranchelo Icon Theme
 cd $PKGDIR
 git clone https://aur.archlinux.org/oranchelo-icon-theme.git
 cd oranchelo-icon-theme
@@ -99,6 +114,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/oranchelo-icon-theme/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/oranchelo-icon-theme
+
+#Tela Icon Theme
 cd $PKGDIR
 git clone https://aur.archlinux.org/tela-icon-theme.git
 cd tela-icon-theme
@@ -107,6 +124,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/tela-icon-theme/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/tela-icon-theme
+
+#Grub theme slaze
 cd $PKGDIR
 git clone https://aur.archlinux.org/grub-theme-slaze-git.git
 cd grub-theme-slaze-git
@@ -115,6 +134,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/grub-theme-slaze-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/grub-theme-slaze-git
+
+#Obmenu Generator
 cd $PKGDIR
 git clone https://aur.archlinux.org/obmenu-generator.git
 cd obmenu-generator
@@ -123,6 +144,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/obmenu-generator/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/obmenu-generator
+
+#TTF Comfortaa
 cd $PKGDIR
 git clone https://aur.archlinux.org/ttf-comfortaa.git
 cd ttf-comfortaa
@@ -131,6 +154,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/ttf-comfortaa/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/ttf-comfortaa
+
+#TTF Iosevka
 cd $PKGDIR
 git clone https://aur.archlinux.org/ttf-iosevka.git
 cd ttf-iosevka
@@ -139,6 +164,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/ttf-iosevka/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/ttf-iosevka
+
+#PERL Linux Desktopfiles
 cd $PKGDIR
 git clone https://aur.archlinux.org/perl-linux-desktopfiles.git
 cd perl-linux-desktopfiles
@@ -147,6 +174,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/perl-linux-desktopfiles/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/perl-linux-desktopfiles
+
+#LOKSH Git
 cd $PKGDIR
 git clone https://aur.archlinux.org/loksh-git.git
 cd loksh-git
@@ -155,6 +184,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/loksh-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/loksh-git
+
+#Opensnap
 cd $PKGDIR
 git clone https://aur.archlinux.org/opensnap.git
 cd opensnap
@@ -163,6 +194,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/opensnap/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/opensnap
+
+#Arc GTK Theme Git
 cd $PKGDIR
 git clone https://aur.archlinux.org/arc-gtk-theme-git.git
 cd arc-gtk-theme-git
@@ -171,6 +204,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/arc-gtk-theme-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/arc-gtk-theme-git
+
+#Openbox Arc Theme
 cd $PKGDIR
 git clone https://aur.archlinux.org/openbox-arc-git.git
 cd openbox-arc-git 
@@ -179,6 +214,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/openbox-arc-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/openbox-arc-git 
+
+#Python Gettext
 cd $PKGDIR
 git clone https://aur.archlinux.org/python-gettext.git
 cd python-gettext
@@ -187,6 +224,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/python-gettext/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/python-gettext
+
+#Suru Plus Aspromauros git
 cd $PKGDIR
 git clone https://aur.archlinux.org/suru-plus-aspromauros-git.git
 cd suru-plus-aspromauros-git
@@ -195,6 +234,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/suru-plus-aspromauros-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/suru-plus-aspromauros-git
+
+#Suru Plus Dark Git
 cd $PKGDIR
 git clone https://aur.archlinux.org/suru-plus-dark-git.git
 cd suru-plus-dark-git
@@ -203,6 +244,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/suru-plus-dark-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/suru-plus-dark-git
+
+#Suru Plus Git
 cd $PKGDIR
 git clone https://aur.archlinux.org/suru-plus-git.git
 cd suru-plus-git
@@ -211,6 +254,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/suru-plus-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/suru-plus-git
+
+#Suru Plus Pack Git
 cd $PKGDIR
 git clone https://aur.archlinux.org/suru-plus-pack-git.git
 cd suru-plus-pack-git
@@ -219,6 +264,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/suru-plus-pack-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/suru-plus-pack-git
+
+#Suru Plus Telinkrin git
 cd $PKGDIR
 git clone https://aur.archlinux.org/suru-plus-telinkrin-git.git
 cd suru-plus-telinkrin-git
@@ -227,6 +274,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/suru-plus-telinkrin-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/suru-plus-telinkrin-git
+
+#Themix Icons Suru Plus Aspromauros Git
 cd $PKGDIR
 git clone https://aur.archlinux.org/themix-icons-suru-plus-aspromauros-git.git
 cd themix-icons-suru-plus-aspromauros-git
@@ -235,6 +284,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/themix-icons-suru-plus-aspromauros-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/themix-icons-suru-plus-aspromauros-git
+
+#Themix Icons Suru Plus Git
 cd $PKGDIR
 git clone https://aur.archlinux.org/themix-icons-suru-plus-git.git
 cd themix-icons-suru-plus-git
@@ -243,6 +294,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/themix-icons-suru-plus-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/themix-icons-suru-plus-git
+
+#Themix Full Git
 cd $PKGDIR
 git clone https://aur.archlinux.org/themix-full-git.git
 cd themix-full-git
@@ -251,6 +304,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/themix-full-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/themix-full-git
+
+#Themix Gui Git
 cd $PKGDIR
 git clone https://aur.archlinux.org/themix-gui-git.git
 cd themix-gui-git
@@ -259,6 +314,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/themix-gui-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/themix-gui-git
+
+#Perl Encode Detect
 cd $PKGDIR
 git clone https://aur.archlinux.org/perl-encode-detect.git
 cd perl-encode-detect
@@ -267,6 +324,8 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/perl-encode-detect/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/perl-encode-detect
+
+#Perl Authen Pam
 cd $PKGDIR
 git clone https://aur.archlinux.org/perl-authen-pam.git
 cd perl-authen-pam
