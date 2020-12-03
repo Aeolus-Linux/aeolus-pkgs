@@ -46,6 +46,5 @@ jobs:
         echo 6 
         echo git add .
         echo 7
-        # Only commit and push if we have changes
-        git commit -m "${COMMIT_MSG}" && git push origin master
+        git push origin master
 
