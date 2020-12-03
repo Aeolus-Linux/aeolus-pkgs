@@ -19,11 +19,11 @@ jobs:
         sudo apt install git default-jre -y 
         java -version
         git clone --mirror https://github.com/Osmium-Linux/osmium-pkgs.git
-        git init
         wget https://repo1.maven.org/maven2/com/madgag/bfg/1.13.0/bfg-1.13.0.jar
-        java -jar bfg-*.jar bfg --strip-blobs-bigger-than 80M osmium-pkgs.git
+        java -jar bfg-*.jar bfg --strip-blobs-bigger-than 80M ./osmium-pkgs.git
         cd osmium-pkgs.git
         git reflog expire --expire=now --all && git gc --prune=now --aggressive
+        cd ..
         rm bfg-*.jar
     - name: Commit to repository
       env:
