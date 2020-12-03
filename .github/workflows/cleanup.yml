@@ -26,10 +26,9 @@ jobs:
         cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./x86_64/
         rm -rf linux-tkg-noninteractive
         git init
-        git add *
-        cd ./x86_64/
-        git add *
-        cd ..
+        git reflog expire --all --expire=now
+        git gc --prune=now --aggressive
+        git add ./x86_64/*
     - name: Commit to repository
       env:
         GITHUB_TOKEN: ${{ secrets.github_token }}
