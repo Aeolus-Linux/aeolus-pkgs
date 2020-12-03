@@ -17,7 +17,7 @@ jobs:
     - name: Clean Repo
       run: |
         sudo apt install git default-jre -y 
-        java --version
+        java -version
         git clone --depth 1 https://github.com/Osmium-Linux/osmium-pkgs.git
         chmod -R 777 ./osmium-pkgs/
         cd osmium-pkgs
