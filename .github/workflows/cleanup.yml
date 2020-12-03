@@ -17,12 +17,12 @@ jobs:
     - name: Clean Repo
       run: |
         sudo apt install git -y 
-        git clone --depth 1 https://github.com/Osmium-Linux/osmium-pkgs.git --bare
+        git clone --depth 1 https://github.com/Osmium-Linux/osmium-pkgs.git
         chmod -R 777 ./osmium-pkgs/
         cd osmium-pkgs
         rm -rf ./x86_64/
         mkdir -p ./x86_64/
-        git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive.git --bare
+        git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive.git
         cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./x86_64/
         rm -rf linux-tkg-noninteractive
         git init
