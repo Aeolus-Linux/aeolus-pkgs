@@ -50,5 +50,5 @@ jobs:
         echo 6 
         echo git add .
         echo 7
-        git push origin master
+        git push -f origin master
 
