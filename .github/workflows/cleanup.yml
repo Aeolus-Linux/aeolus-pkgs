@@ -18,9 +18,10 @@ jobs:
       run: |
         sudo apt install git default-jre -y 
         java -version
-        git clone --depth 1 https://github.com/Osmium-Linux/osmium-pkgs.git
+        git clone --mirror https://github.com/Osmium-Linux/osmium-pkgs.git
         chmod -R 777 ./osmium-pkgs/
         cd osmium-pkgs
+        dir
         rm -rf ./x86_64/
         mkdir -p ./x86_64/
         git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive.git
