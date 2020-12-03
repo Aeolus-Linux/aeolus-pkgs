@@ -49,6 +49,7 @@ jobs:
         # Checkout the branch so we can push back to it
         echo 6 
         echo git add .
+        git config --unset remote.origin.mirror
         echo 7
-        git push -f origin master
+        git push -f origin +master
 
