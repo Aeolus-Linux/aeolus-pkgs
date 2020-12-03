@@ -71,13 +71,13 @@ rm -rf pygtk
 mv ./osmium-pkgs/pygtk/*.pkg.tar.zst ./x86_64/
 
 #Osmium Plymouth Theme
-cd $PKGDIR
-git clone https://github.com/Osmium-Linux/osmium-plymouth-theme.git
-cd osmium-plymouth-theme
-makepkg -sf
-cd $DIR
-mv ./osmium-pkgs/osmium-plymouth-theme/*.pkg.tar.zst ./x86_64/
-rm -rf ./osmium-pkgs/osmium-plymouth-theme/
+#cd $PKGDIR
+#git clone https://github.com/Osmium-Linux/osmium-plymouth-theme.git
+#cd osmium-plymouth-theme
+#makepkg -sf
+#cd $DIR
+#mv ./osmium-pkgs/osmium-plymouth-theme/*.pkg.tar.zst ./x86_64/
+#rm -rf ./osmium-pkgs/osmium-plymouth-theme/
 
 #Openbox Patched
 cd $PKGDIR
