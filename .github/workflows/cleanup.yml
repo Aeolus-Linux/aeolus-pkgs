@@ -34,13 +34,18 @@ jobs:
         # Hard-code user configuration
         pwd
         cd osmium-pkgs.git
+        echo 1
         git config user.email "tysayahi@gmail.com"
+        echo 2
         git config user.name "Eile Kerning"
+        echo 3
         # Update origin with token
         git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        echo 4
         # Checkout the branch so we can push back to it
-        git checkout master
+        echo 6 
         git add .
+        echo 7
         # Only commit and push if we have changes
-        git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
+        git commit -m "${COMMIT_MSG}" && git push origin master
 
