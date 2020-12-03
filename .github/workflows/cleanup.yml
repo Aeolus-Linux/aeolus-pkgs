@@ -16,7 +16,8 @@ jobs:
     steps:
     - name: Clean Repo
       run: |
-        sudo apt install git -y 
+        sudo apt install git default-jre -y 
+        java --version
         git clone --depth 1 https://github.com/Osmium-Linux/osmium-pkgs.git
         chmod -R 777 ./osmium-pkgs/
         cd osmium-pkgs
@@ -26,8 +27,10 @@ jobs:
         cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./x86_64/
         rm -rf linux-tkg-noninteractive
         git init
-        git reflog expire --all --expire=now
-        git gc --prune=now --aggressive
+        wget https://repo1.maven.org/maven2/com/madgag/bfg/1.13.0/bfg-1.13.0.jar
+        java -jar bfg-*.jar bfg --strip-blobs-bigger-than 80M osmium-pkgs.git
+        git reflog expire --expire=now --all && git gc --prune=now --aggressive
+        rm bfg-*.jar
         git add ./x86_64/*
     - name: Commit to repository
       env:
