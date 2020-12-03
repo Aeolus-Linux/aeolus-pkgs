@@ -19,20 +19,12 @@ jobs:
         sudo apt install git default-jre -y 
         java -version
         git clone --mirror https://github.com/Osmium-Linux/osmium-pkgs.git
-        chmod -R 777 ./osmium-pkgs/
-        cd osmium-pkgs
-        dir
-        rm -rf ./x86_64/
-        mkdir -p ./x86_64/
-        git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive.git
-        cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./x86_64/
-        rm -rf linux-tkg-noninteractive
         git init
         wget https://repo1.maven.org/maven2/com/madgag/bfg/1.13.0/bfg-1.13.0.jar
         java -jar bfg-*.jar bfg --strip-blobs-bigger-than 80M osmium-pkgs.git
+        cd osmium-pkgs.git
         git reflog expire --expire=now --all && git gc --prune=now --aggressive
         rm bfg-*.jar
-        git add ./x86_64/*
     - name: Commit to repository
       env:
         GITHUB_TOKEN: ${{ secrets.github_token }}
@@ -42,7 +34,7 @@ jobs:
       run: |
         # Hard-code user configuration
         pwd
-        cd osmium-pkgs
+        cd osmium-pkgs.git
         git config user.email "tysayahi@gmail.com"
         git config user.name "Eile Kerning"
         # Update origin with token
