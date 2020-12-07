@@ -20,6 +20,38 @@ sudo pacman -Sy perl-module-build
 sudo pacman -Sy sudo go
 #Oomox 
 sudo pacman -Sy bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip ##AUR, Fix later breeze-icons colorz gksu python-colorthief python-haishoku xorg-xrdb
+#Pygtk
+sudo pacman -Sy libglade python2-cairo python2-gobject2 python2-numpy
+#Openbox Patched
+sudo pacman -Sy imlib2 librsvg libsm libxcursor libxinerama libxml2 libxrandr pango startup-notification python2-pyxdg
+#Mkinitcpio Openswap
+sudo pacman -Sy mkinitcpio
+#Plymouth
+sudo pacman -Sy libdrm pango docbook-xsl cantarell-fonts ttf-dejavu xf86-video-fbdev
+#Tela Icon Theme
+sudo pacman -Sy gtk-update-icon-cache hicolor-icon-theme
+#Grub Theme Slaze
+sudo pacman -Sy grub
+#Obmenu Generator
+sudo pacman -Sy perl-data-dump openbox perl-linux-desktopfiles perl gtk2-perl perl-file-desktopentry perl-gtk3
+#Loksh
+sudo pacman -Sy libbsd meson
+#Opensnap
+sudo pacman -Sy wmctrl
+#Arc Gtk theme 
+sudo pacman -Sy inkscape optipng sassc gnome-themes-extra gtk-engine-murrine
+#Python Gettext
+sudo pacman -Sy python-setuptools python2-setuptools
+#Themix Icons Suru Plus Aspromauros
+sudo pacman -Sy findutils sed git python
+#Themix Icons Suru Plus
+sudo pacman -Sy gnome-icon-theme gnome-icon-theme-symbolic
+#Themix Gui
+sudo pacman -Sy gtk3 xorg-xrdb python-gobject
+#Perl Encode Detect
+sudo pacman -Sy perl perl-module-build
+#Resvg
+sudo pacman -Sy rust cairo gdk-pixbuf2 clang cmake extra-cmake-modules kio pango qt5-base qt5-tools 
 ##AUR Packages
 #Installing Yay
 git clone https://aur.archlinux.org/yay-bin.git
@@ -30,8 +62,15 @@ rm -rf yay-bin
 #Webmin
 yay -Sy perl-authen-pam perl-encode-detect 
 #Oomox
-yay -Sy resvg
-
+yay -Sy resvg colorz gksu python-colorthief python-haishoku
+#Obmenu Generator
+yay -Sy perl-linux-desktopfiles
+#Themix Icons Suru Plus
+yay -Sy yaru-icon-theme
+#Themix Full
+yay -Sy themix-export-spotify-git themix-icons-archdroid-git themix-icons-gnome-colors-git\
+themix-icons-numix-git themix-icons-papirus-git themix-icons-suru-plus-aspromauros-git\
+themix-icons-suru-plus-git themix-import-images-git themix-plugin-base16-git themix-theme-materia-git themix-theme-oomox-git
 ###Build
 
 #Webmin
@@ -379,3 +418,22 @@ cd $DIR
 mv ./osmium-pkgs/yay/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/yay
 
+#humanity-icon-theme
+cd $PKGDIR
+git clone https://aur.archlinux.org/humanity-icon-theme.git
+cd yay
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/humanity-icon-theme/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/humanity-icon-theme
+
+#yaru-icon-theme
+cd $PKGDIR
+git clone https://aur.archlinux.org/yaru.git
+cd yay
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/yaru/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/yaru
