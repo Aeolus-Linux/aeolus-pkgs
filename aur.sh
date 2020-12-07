@@ -52,6 +52,18 @@ sudo pacman -Sy gtk3 xorg-xrdb python-gobject
 sudo pacman -Sy perl perl-module-build
 #Resvg
 sudo pacman -Sy rust cairo gdk-pixbuf2 clang cmake extra-cmake-modules kio pango qt5-base qt5-tools 
+#Colorz
+sudo pacman -Sy python python-pillow python-scipy
+#Gconf
+sudo pacman -Sy dbus-glib libldap libxml2 polkit python gnome-common gobject-introspection gtk-doc intltool
+#Libgksu colormap fix
+sudo pacman -Sy gtk2 libgnome-keyring libgtop startup-notification gtk-doc intltool
+#Gksu 
+sudo pacman -Sy xorg-xauth gtk-doc intltool
+#Themix Icons Archdroid
+sudo pacman -Sy findutils sed git python breeze-icons gnome-icon-theme gnome-icon-theme-symbolic oxygen-icons
+#Themix Plugin Base16
+sudo pacman -Sy python-pystache python-yaml
 ##AUR Packages
 #Installing Yay
 git clone https://aur.archlinux.org/yay-bin.git
@@ -421,7 +433,7 @@ rm -rf ./osmium-pkgs/yay
 #humanity-icon-theme
 cd $PKGDIR
 git clone https://aur.archlinux.org/humanity-icon-theme.git
-cd yay
+cd humanity-icon-theme
 makepkg -sf
 cd $PKGDIR
 cd $DIR
@@ -431,9 +443,149 @@ rm -rf ./osmium-pkgs/humanity-icon-theme
 #yaru-icon-theme
 cd $PKGDIR
 git clone https://aur.archlinux.org/yaru.git
-cd yay
+cd yaru
 makepkg -sf
 cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/yaru/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/yaru
+
+#Colorz
+cd $PKGDIR
+git clone https://aur.archlinux.org/colorz.git
+cd colorz
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/colorz/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/colorz
+
+#Gconf
+cd $PKGDIR
+git clone https://aur.archlinux.org/gconf.git
+cd gconf
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/gconf/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/gconf
+
+#libgksu-colormap-fix
+cd $PKGDIR
+git clone https://aur.archlinux.org/libgksu-colormap-fix.git
+cd libgksu-colormap-fix
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/libgksu-colormap-fix/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/libgksu-colormap-fix
+
+#python-colorthief
+cd $PKGDIR
+git clone https://aur.archlinux.org/python-colorthief.git
+cd python-colorthief
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/python-colorthief/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/python-colorthief
+
+#python-haishoku
+cd $PKGDIR
+git clone https://aur.archlinux.org/python-haishoku.git
+cd python-haishoku
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/python-haishoku/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/python-haishoku
+
+#themix-export-spotify-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-export-spotify-git.git
+cd themix-export-spotify-git
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-export-spotify-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-export-spotify-git
+
+#themix-icons-archdroid-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-icons-archdroid-git.git
+cd themix-icons-archdroid-git
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-icons-archdroid-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-icons-archdroid-git
+
+#themix-icons-gnome-colors-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-icons-gnome-colors-git.git
+cd themix-icons-gnome-colors-git
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-icons-gnome-colors-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-icons-gnome-colors-git
+
+#themix-icons-numix-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-icons-numix-git.git
+cd themix-icons-numix-git
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-icons-numix-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-icons-numix-git
+
+#themix-icons-papirus-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-icons-papirus-git.git
+cd themix-icons-papirus-git
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-icons-papirus-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-icons-papirus-git
+
+#themix-icons-suru-plus-aspromauros-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-icons-suru-plus-aspromauros-git.git
+cd themix-icons-suru-plus-aspromauros-git
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-icons-suru-plus-aspromauros-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-icons-suru-plus-aspromauros-git
+
+#themix-icons-suru-plus-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-icons-suru-plus-git.git
+cd themix-icons-suru-plus-git
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-icons-suru-plus-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-icons-suru-plus-git
+
+#themix-import-images-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-import-images-git.git
+cd themix-import-images-git
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-import-images-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-import-images-git
+
+#themix-plugin-base16-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-plugin-base16-git.git
+cd themix-plugin-base16-git
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-plugin-base16-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-plugin-base16-git
