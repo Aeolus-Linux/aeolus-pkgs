@@ -24,6 +24,7 @@ jobs:
     steps:
     - name: Build packages
       run: |
+        #!/bin/bash -x
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
         tee -a /etc/sudoers > /dev/null <<EOT
