@@ -66,9 +66,9 @@ sudo pacman -Sy findutils sed git python breeze-icons gnome-icon-theme gnome-ico
 sudo pacman -Sy python-pystache python-yaml
 ##AUR Packages
 #Installing Yay
-git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin
-makepkg -sfi
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 cd ..
 rm -rf yay-bin
 #Webmin
