@@ -589,3 +589,23 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/themix-plugin-base16-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/themix-plugin-base16-git
+
+#themix-theme-materia-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-theme-materia-git.git
+cd themix-theme-materia-git
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-theme-materia-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-theme-materia-git
+
+#themix-theme-oomox-git
+cd $PKGDIR
+git clone https://aur.archlinux.org/themix-theme-oomox-git.git
+cd themix-theme-oomox-git
+makepkg -sf
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/themix-theme-oomox-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/themix-theme-oomox-git
