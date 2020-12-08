@@ -16,8 +16,8 @@ sudo pacman -Sy findutils sed git python
 sudo pacman -Sy openssl perl perl-net-ssleay perl-socket6
 #Perl Modules
 sudo pacman -Sy perl-module-build
-#Yay
-sudo pacman -Sy sudo go
+#Paru
+sudo pacman -Sy asp bat rust
 #Oomox 
 sudo pacman -Sy bc findutils gdk-pixbuf2 glib42 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip ##AUR, Fix later breeze-icons colorz gksu python-colorthief python-haishoku xorg-xrdb
 #Pygtk
@@ -66,26 +66,26 @@ sudo pacman -Sy findutils sed git python breeze-icons gnome-icon-theme gnome-ico
 sudo pacman -Sy python-pystache python-yaml
 #Openbox Patched
 ##AUR Packages
-#Installing Yay
+#Installing Paru
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 cd ..
 rm -rf paru
 #Webmin
-yay -Sy perl-authen-pam perl-encode-detect 
+Paru -Sy perl-authen-pam perl-encode-detect 
 #Oomox
-yay -Sy resvg colorz gksu python-colorthief python-haishoku
+Paru -Sy resvg colorz gksu python-colorthief python-haishoku
 #Obmenu Generator
-yay -Sy perl-linux-desktopfiles
+Paru -Sy perl-linux-desktopfiles
 #Themix Icons Suru Plus
-yay -Sy yaru-icon-theme
+Paru -Sy yaru-icon-theme
 #Themix Full
-yay -Sy themix-export-spotify-git themix-icons-archdroid-git themix-icons-gnome-colors-git\
+Paru -Sy themix-export-spotify-git themix-icons-archdroid-git themix-icons-gnome-colors-git\
 themix-icons-numix-git themix-icons-papirus-git themix-icons-suru-plus-aspromauros-git\
 themix-icons-suru-plus-git themix-import-images-git themix-plugin-base16-git themix-theme-materia-git themix-theme-oomox-git
 #unknown
-yay -Sy pygtk
+Paru -Sy pygtk
 ###Build
 
 #Webmin
@@ -423,15 +423,15 @@ cd $DIR
 mv ./osmium-pkgs/resvg/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/resvg
 
-#Yay
+#Paru
 cd $PKGDIR
-git clone https://aur.archlinux.org/yay.git
-cd yay
+git clone https://aur.archlinux.org/Paru.git
+cd Paru
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/yay/*.pkg.tar.zst ./x86_64/
-rm -rf ./osmium-pkgs/yay
+mv ./osmium-pkgs/Paru/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/Paru
 
 #humanity-icon-theme
 cd $PKGDIR
