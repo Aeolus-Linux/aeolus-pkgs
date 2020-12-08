@@ -73,19 +73,19 @@ makepkg -si
 cd ..
 rm -rf paru
 #Webmin
-Paru -Sy perl-authen-pam perl-encode-detect 
+paru -Sy perl-authen-pam perl-encode-detect 
 #Oomox
-Paru -Sy resvg colorz gksu python-colorthief python-haishoku
+paru -Sy resvg colorz gksu python-colorthief python-haishoku
 #Obmenu Generator
-Paru -Sy perl-linux-desktopfiles
+paru -Sy perl-linux-desktopfiles
 #Themix Icons Suru Plus
-Paru -Sy yaru-icon-theme
+paru -Sy yaru-icon-theme
 #Themix Full
-Paru -Sy themix-export-spotify-git themix-icons-archdroid-git themix-icons-gnome-colors-git\
+paru -Sy themix-export-spotify-git themix-icons-archdroid-git themix-icons-gnome-colors-git\
 themix-icons-numix-git themix-icons-papirus-git themix-icons-suru-plus-aspromauros-git\
 themix-icons-suru-plus-git themix-import-images-git themix-plugin-base16-git themix-theme-materia-git themix-theme-oomox-git
 #unknown
-Paru -Sy pygtk
+paru -Sy pygtk
 ###Build
 
 #Webmin
