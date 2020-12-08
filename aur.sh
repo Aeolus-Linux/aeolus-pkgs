@@ -67,11 +67,11 @@ sudo pacman -Sy python-pystache python-yaml
 #Openbox Patched
 ##AUR Packages
 #Installing Yay
-git clone https://aur.archlinux.org/yay.git
-cd yay
+git clone https://aur.archlinux.org/paru.git
+cd paru
 makepkg -si
 cd ..
-rm -rf yay-bin
+rm -rf paru
 #Webmin
 yay -Sy perl-authen-pam perl-encode-detect 
 #Oomox
