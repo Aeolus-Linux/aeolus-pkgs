@@ -32,7 +32,7 @@ jobs:
         EOT
         pacman -Sy git sudo --noconfirm
         git clone https://github.com/Osmium-Linux/osmium-pkgs.git
-        cd osmium-pkgs
+        cd ./osmium-pkgs/x86_64
         repo-add -n osmium-pkgs.db.tar.gz *.pkg.tar.zst
     - name: Commit to repository
       env:
