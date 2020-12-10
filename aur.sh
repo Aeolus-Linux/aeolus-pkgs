@@ -10,6 +10,8 @@ PKGDIR="$DIR/osmium-pkgs"
 PKGS=($(ls $PKGDIR))
 
 ##Pacman Packages
+#TLP UI
+sudo pacman -Sy python-gojbect tlp git python-setuptools
 #Themix 
 sudo pacman -Sy findutils sed git python 
 #Webmin
@@ -612,3 +614,13 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/themix-theme-oomox-git/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/themix-theme-oomox-git
+
+#TLP UI
+cd $PKGDIR
+git clone https://aur.archlinux.org/tlpui-git.git
+cd tlpui-git
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/tlpui-git/*.pkg.tar.zst ./x86_64/
+rm -rf ./osmium-pkgs/tlpui-git
