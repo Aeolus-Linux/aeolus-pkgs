@@ -97,7 +97,7 @@ cd webmin
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/webmin/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/webmin/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/webmin
 
 #Nvidia-All
@@ -113,7 +113,7 @@ cd nvidia-all
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/nvidia-all/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/nvidia-all/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/nvidia-all-noninteractive
 rm -rf ./osmium-pkgs/nvidia-all
 
@@ -124,7 +124,7 @@ cd pygtk
 makepkg -sfd
 cd $DIR
 rm -rf pygtk
-mv ./osmium-pkgs/pygtk/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/pygtk/*.pkg.tar.zst ./w86_64/
 
 #Osmium Plymouth Theme
 #cd $PKGDIR
@@ -132,7 +132,7 @@ mv ./osmium-pkgs/pygtk/*.pkg.tar.zst ./x86_64/
 #cd osmium-plymouth-theme
 #makepkg -sfd
 #cd $DIR
-#mv ./osmium-pkgs/osmium-plymouth-theme/*.pkg.tar.zst ./x86_64/
+#mv ./osmium-pkgs/osmium-plymouth-theme/*.pkg.tar.zst ./w86_64/
 #rm -rf ./osmium-pkgs/osmium-plymouth-theme/
 
 #Openbox Patched
@@ -142,7 +142,7 @@ cd openbox-patched
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/openbox-patched/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/openbox-patched/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/openbox-patched
 
 #Mkinitcpio Openswap
@@ -152,7 +152,7 @@ cd mkinitcpio-openswap
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/mkinitcpio-openswap/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/mkinitcpio-openswap/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/mkinitcpio-openswap
 
 #Plymouth
@@ -162,7 +162,7 @@ cd plymouth
 makepkg -sfd 
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/plymouth/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/plymouth/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/plymouth
 
 #Oranchelo Icon Theme
@@ -172,7 +172,7 @@ cd oranchelo-icon-theme
 makepkg -sfd 
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/oranchelo-icon-theme/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/oranchelo-icon-theme/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/oranchelo-icon-theme
 
 #Tela Icon Theme
@@ -182,7 +182,7 @@ cd tela-icon-theme
 makepkg -sfd 
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/tela-icon-theme/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/tela-icon-theme/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/tela-icon-theme
 
 #Grub theme slaze
@@ -192,7 +192,7 @@ cd grub-theme-slaze-git
 makepkg -sfd 
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/grub-theme-slaze-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/grub-theme-slaze-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/grub-theme-slaze-git
 
 #Obmenu Generator
@@ -202,7 +202,7 @@ cd obmenu-generator
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/obmenu-generator/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/obmenu-generator/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/obmenu-generator
 
 #TTF Comfortaa
@@ -212,7 +212,7 @@ cd ttf-comfortaa
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/ttf-comfortaa/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/ttf-comfortaa/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/ttf-comfortaa
 
 #TTF Iosevka
@@ -222,7 +222,7 @@ cd ttf-iosevka
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/ttf-iosevka/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/ttf-iosevka/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/ttf-iosevka
 
 #PERL Linux Desktopfiles
@@ -232,7 +232,7 @@ cd perl-linux-desktopfiles
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/perl-linux-desktopfiles/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/perl-linux-desktopfiles/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/perl-linux-desktopfiles
 
 #LOKSH Git
@@ -242,7 +242,7 @@ cd loksh-git
 makepkg -sfd 
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/loksh-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/loksh-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/loksh-git
 
 #Opensnap
@@ -252,7 +252,7 @@ cd opensnap
 makepkg -sfd 
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/opensnap/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/opensnap/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/opensnap
 
 #Arc GTK Theme Git
@@ -262,7 +262,7 @@ cd arc-gtk-theme-git
 makepkg -sfd 
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/arc-gtk-theme-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/arc-gtk-theme-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/arc-gtk-theme-git
 
 #Openbox Arc Theme
@@ -272,7 +272,7 @@ cd openbox-arc-git
 makepkg -sfd 
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/openbox-arc-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/openbox-arc-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/openbox-arc-git 
 
 #Python Gettext
@@ -282,7 +282,7 @@ cd python-gettext
 makepkg -sfd 
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/python-gettext/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/python-gettext/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/python-gettext
 
 #Suru Plus Aspromauros git
@@ -292,7 +292,7 @@ cd suru-plus-aspromauros-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/suru-plus-aspromauros-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/suru-plus-aspromauros-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/suru-plus-aspromauros-git
 
 #Suru Plus Dark Git
@@ -302,7 +302,7 @@ cd suru-plus-dark-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/suru-plus-dark-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/suru-plus-dark-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/suru-plus-dark-git
 
 #Suru Plus Git
@@ -312,7 +312,7 @@ cd suru-plus-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/suru-plus-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/suru-plus-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/suru-plus-git
 
 #Suru Plus Pack Git
@@ -322,7 +322,7 @@ cd suru-plus-pack-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/suru-plus-pack-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/suru-plus-pack-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/suru-plus-pack-git
 
 #Suru Plus Telinkrin git
@@ -332,7 +332,7 @@ cd suru-plus-telinkrin-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/suru-plus-telinkrin-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/suru-plus-telinkrin-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/suru-plus-telinkrin-git
 
 #Themix Icons Suru Plus Aspromauros Git
@@ -342,7 +342,7 @@ cd themix-icons-suru-plus-aspromauros-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-icons-suru-plus-aspromauros-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-icons-suru-plus-aspromauros-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-icons-suru-plus-aspromauros-git
 
 #Themix Icons Suru Plus Git
@@ -352,7 +352,7 @@ cd themix-icons-suru-plus-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-icons-suru-plus-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-icons-suru-plus-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-icons-suru-plus-git
 
 #Themix Full Git
@@ -362,7 +362,7 @@ cd themix-full-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-full-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-full-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-full-git
 
 #Themix Gui Git
@@ -372,7 +372,7 @@ cd themix-gui-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-gui-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-gui-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-gui-git
 
 #Perl Encode Detect
@@ -382,7 +382,7 @@ cd perl-encode-detect
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/perl-encode-detect/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/perl-encode-detect/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/perl-encode-detect
 
 #Perl Authen Pam
@@ -392,7 +392,7 @@ cd perl-authen-pam
 makepkg -sf
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/perl-authen-pam/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/perl-authen-pam/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/perl-authen-pam
 
 #Suru Icon Theme
@@ -402,7 +402,7 @@ cd suru-icon-theme-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/suru-icon-theme-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/suru-icon-theme-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/suru-icon-theme-git
 
 #Oomox
@@ -412,7 +412,7 @@ cd oomox
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/oomox/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/oomox/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/oomox
 
 #Resvg
@@ -422,7 +422,7 @@ cd resvg
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/resvg/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/resvg/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/resvg
 
 #Paru
@@ -432,7 +432,7 @@ cd Paru
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/Paru/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/Paru/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/Paru
 
 #humanity-icon-theme
@@ -442,7 +442,7 @@ cd humanity-icon-theme
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/humanity-icon-theme/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/humanity-icon-theme/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/humanity-icon-theme
 
 #yaru-icon-theme
@@ -452,7 +452,7 @@ cd yaru
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/yaru/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/yaru/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/yaru
 
 #Colorz
@@ -462,7 +462,7 @@ cd colorz
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/colorz/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/colorz/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/colorz
 
 #Gconf
@@ -472,7 +472,7 @@ cd gconf
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/gconf/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/gconf/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/gconf
 
 #libgksu-colormap-fix
@@ -482,7 +482,7 @@ cd libgksu-colormap-fix
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/libgksu-colormap-fix/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/libgksu-colormap-fix/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/libgksu-colormap-fix
 
 #python-colorthief
@@ -492,7 +492,7 @@ cd python-colorthief
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/python-colorthief/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/python-colorthief/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/python-colorthief
 
 #python-haishoku
@@ -502,7 +502,7 @@ cd python-haishoku
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/python-haishoku/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/python-haishoku/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/python-haishoku
 
 #themix-export-spotify-git
@@ -512,7 +512,7 @@ cd themix-export-spotify-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-export-spotify-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-export-spotify-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-export-spotify-git
 
 #themix-icons-archdroid-git
@@ -522,7 +522,7 @@ cd themix-icons-archdroid-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-icons-archdroid-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-icons-archdroid-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-icons-archdroid-git
 
 #themix-icons-gnome-colors-git
@@ -532,7 +532,7 @@ cd themix-icons-gnome-colors-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-icons-gnome-colors-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-icons-gnome-colors-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-icons-gnome-colors-git
 
 #themix-icons-numix-git
@@ -542,7 +542,7 @@ cd themix-icons-numix-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-icons-numix-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-icons-numix-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-icons-numix-git
 
 #themix-icons-papirus-git
@@ -552,7 +552,7 @@ cd themix-icons-papirus-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-icons-papirus-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-icons-papirus-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-icons-papirus-git
 
 #themix-icons-suru-plus-aspromauros-git
@@ -562,7 +562,7 @@ cd themix-icons-suru-plus-aspromauros-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-icons-suru-plus-aspromauros-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-icons-suru-plus-aspromauros-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-icons-suru-plus-aspromauros-git
 
 #themix-icons-suru-plus-git
@@ -572,7 +572,7 @@ cd themix-icons-suru-plus-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-icons-suru-plus-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-icons-suru-plus-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-icons-suru-plus-git
 
 #themix-import-images-git
@@ -582,7 +582,7 @@ cd themix-import-images-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-import-images-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-import-images-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-import-images-git
 
 #themix-plugin-base16-git
@@ -592,7 +592,7 @@ cd themix-plugin-base16-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-plugin-base16-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-plugin-base16-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-plugin-base16-git
 
 #themix-theme-materia-git
@@ -602,7 +602,7 @@ cd themix-theme-materia-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-theme-materia-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-theme-materia-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-theme-materia-git
 
 #themix-theme-oomox-git
@@ -612,7 +612,7 @@ cd themix-theme-oomox-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/themix-theme-oomox-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/themix-theme-oomox-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/themix-theme-oomox-git
 
 #TLP UI
@@ -622,5 +622,5 @@ cd tlpui-git
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/tlpui-git/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/tlpui-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/tlpui-git
