@@ -21,7 +21,7 @@ sudo pacman -Sy perl-module-build
 #Paru
 sudo pacman -Sy asp bat rust
 #Oomox 
-sudo pacman -Sy bc findutils gdk-pixbuf2 glib42 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip ##AUR, Fix later breeze-icons colorz gksu python-colorthief python-haishoku xorg-xrdb
+sudo pacman -Sy bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip ##AUR, Fix later breeze-icons colorz gksu python-colorthief python-haishoku xorg-xrdb
 #Pygtk
 sudo pacman -Sy libglade python2-cairo python2-gobject2 python2-numpy
 #Openbox Patched
