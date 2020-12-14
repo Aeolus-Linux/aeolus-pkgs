@@ -44,6 +44,7 @@ jobs:
           <Update Aur Pkgs>
           skip-checks: true
       run: |
+        #!/bin/bash -x
         # Hard-code user configuration
         pwd
         cd osmium-pkgs
