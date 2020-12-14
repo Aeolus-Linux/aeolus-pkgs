@@ -40,7 +40,7 @@ jobs:
         chmod 777 build.sh
         chmod +x build.sh
         chown builderbob:builderbob build.sh 
-        cd x86_64 
+        cd w86_64 
         DBDIR="$(pwd)"
         printf 'y\n' | pacman -Scc
         cd ..
@@ -50,7 +50,7 @@ jobs:
         su -c "sh build.sh" builderbob
         chmod +x aur.sh
         su -c "sh aur.sh" builderbob
-        cd ./x86_64/
+        cd ./w86_64/
         git add *
         cd ..
     - name: Commit to repository
