@@ -32,7 +32,7 @@ jobs:
         #tee -a /etc/pacman.conf > /dev/null <<EOT
         #[osmium-pkgs]
         #SigLevel = Optional TrustAll
-        #Server = https://osmium-linux.github.io/osmium-pkgs/x86_64
+        #Server = https://osmium-linux.github.io/osmium-pkgs/w86_64
         #EOT
         pacman -Sy --noconfirm git sudo coreutils
         git clone https://github.com/Osmium-Linux/osmium-pkgs.git
@@ -44,7 +44,7 @@ jobs:
         chmod 777 build.sh
         chmod +x build.sh
         chown builderbob:builderbob build.sh 
-        cd x86_64 
+        cd w86_64 
         DBDIR="$(pwd)"
         printf 'y\n' | pacman -Scc
         cd ..
@@ -54,7 +54,7 @@ jobs:
         su -c "sh build.sh" builderbob
         chmod +x lxdm-themes.sh
         su -c "sh lxdm-themes.sh" builderbob
-        cd ./x86_64/
+        cd ./w86_64/
         git add *
         cd ..
     - name: Commit to repository
