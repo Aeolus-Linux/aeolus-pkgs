@@ -19,9 +19,11 @@ sudo pacman -Sy openssl perl perl-net-ssleay perl-socket6
 #Perl Modules
 sudo pacman -Sy perl-module-build
 #Paru
-sudo pacman -Sy asp bat 
+sudo pacman -Sy asp bat rust
 #rust (Broken for some reason, using rustup)
-curl https://sh.rustup.rs -sSf | sh -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rust.sh
+./rust.sh -y
+source ~/.cargo/env
 #Oomox 
 sudo pacman -Sy bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick\
 librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip 
@@ -56,7 +58,10 @@ sudo pacman -Sy gtk3 xorg-xrdb python-gobject
 #Perl Encode Detect
 sudo pacman -Sy perl perl-module-build
 #Resvg
-sudo pacman -Sy rust cairo gdk-pixbuf2 clang cmake extra-cmake-modules kio pango qt5-base qt5-tools 
+sudo pacman -Sy rust rustup cairo gdk-pixbuf2 clang cmake extra-cmake-modules kio pango qt5-base qt5-tools 
+rustup toolchain install stable
+rustup default stable
+rustc -V
 #Colorz
 sudo pacman -Sy python python-pillow python-scipy
 #Gconf
