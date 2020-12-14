@@ -21,7 +21,7 @@ sudo pacman -Sy perl-module-build
 #Paru
 sudo pacman -Sy asp bat 
 #rust (Broken for some reason, using rustup)
-curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly
+curl https://sh.rustup.rs -sSf | sh
 #Oomox 
 sudo pacman -Sy bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip ##AUR, Fix later breeze-icons colorz gksu python-colorthief python-haishoku xorg-xrdb
 #Pygtk
