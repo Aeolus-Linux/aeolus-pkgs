@@ -22,6 +22,7 @@ sudo pacman -Sy perl-module-build
 sudo pacman -Sy asp bat rust
 #rust (Broken for some reason, using rustup)
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rust.sh
+chmod +x ./rust.sh
 ./rust.sh -y
 source ~/.cargo/env
 #Oomox 
