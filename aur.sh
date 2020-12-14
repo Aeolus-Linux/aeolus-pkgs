@@ -66,7 +66,8 @@ sudo pacman -Sy xorg-xauth gtk-doc intltool
 sudo pacman -Sy findutils sed git python breeze-icons gnome-icon-theme gnome-icon-theme-symbolic oxygen-icons
 #Themix Plugin Base16
 sudo pacman -Sy python-pystache python-yaml
-#Openbox Patched
+#Unknown
+sudo pacman -Sy gnome-common
 ##AUR Packages
 #Installing Paru
 git clone https://aur.archlinux.org/paru.git
