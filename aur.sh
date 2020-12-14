@@ -45,7 +45,7 @@ sudo pacman -Sy perl-data-dump openbox perl gtk2-perl perl-file-desktopentry per
 #Loksh
 sudo pacman -Sy libbsd meson
 #Opensnap
-sudo pacman -Sy wmctrl
+sudo pacman -Sy wmctrl gtk3 libx11
 #Arc Gtk theme 
 sudo pacman -Sy inkscape optipng sassc gnome-themes-extra gtk-engine-murrine
 #Python Gettext
