@@ -24,6 +24,7 @@ jobs:
     steps:
     - name: Build packages
       run: |
+        #!/bin/bash -x
         tee -a /etc/pacman.conf > /dev/null <<EOT
         [osmium-pkgs]
         SigLevel = Optional TrustAll
