@@ -67,12 +67,12 @@ sudo pacman -Sy findutils sed git python breeze-icons gnome-icon-theme gnome-ico
 #Themix Plugin Base16
 sudo pacman -Sy python-pystache python-yaml
 #Unknown
-sudo pacman -Sy gnome-common
+sudo pacman -Sy gnome-common linux-headers
 ##AUR Packages
 #Installing Paru
 git clone https://aur.archlinux.org/paru.git
 cd paru
-makepkg -si
+makepkg -sid
 cd ..
 rm -rf paru
 #Webmin
