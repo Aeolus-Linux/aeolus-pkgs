@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -x
 
 BWDIR="$(pwd)"
 echo ${BWDIR}
