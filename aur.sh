@@ -23,7 +23,8 @@ sudo pacman -Sy asp bat
 #rust (Broken for some reason, using rustup)
 curl https://sh.rustup.rs -sSf | sh
 #Oomox 
-sudo pacman -Sy bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip ##AUR, Fix later breeze-icons colorz gksu python-colorthief python-haishoku xorg-xrdb
+sudo pacman -Sy bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick\
+librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip 
 #Pygtk
 sudo pacman -Sy libglade python2-cairo python2-gobject2 python2-numpy
 #Openbox Patched
@@ -37,7 +38,7 @@ sudo pacman -Sy gtk-update-icon-cache hicolor-icon-theme
 #Grub Theme Slaze
 sudo pacman -Sy grub
 #Obmenu Generator
-sudo pacman -Sy perl-data-dump openbox perl-linux-desktopfiles perl gtk2-perl perl-file-desktopentry perl-gtk3
+sudo pacman -Sy perl-data-dump openbox perl gtk2-perl perl-file-desktopentry perl-gtk3
 #Loksh
 sudo pacman -Sy libbsd meson
 #Opensnap
