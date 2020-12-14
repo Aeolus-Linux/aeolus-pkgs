@@ -16,8 +16,7 @@ jobs:
     steps:
     - name: Clean Repo
       run: |
-        #!/bin/bash
-        set -x #echo on
+        #!/bin/bash -x
         sudo apt install git default-jre -y 
         java -version
         git clone --mirror https://github.com/Osmium-Linux/osmium-pkgs.git
@@ -34,8 +33,7 @@ jobs:
           skip-checks: true
       run: |
         # Hard-code user configuration
-        #!/bin/bash
-        set -x #echo on
+        #!/bin/bash -x
         pwd
         cd osmium-pkgs.git
         echo 1
