@@ -19,12 +19,12 @@ sudo pacman -Sy openssl perl perl-net-ssleay perl-socket6
 #Perl Modules
 sudo pacman -Sy perl-module-build
 #Paru
-sudo pacman -Sy asp bat rust
+sudo pacman -Sy asp bat rust rustup
 #rust (Broken for some reason, using rustup)
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rust.sh
-chmod +x ./rust.sh
-./rust.sh -y
-source ~/.cargo/env
+#curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rust.sh
+#chmod +x ./rust.sh
+#./rust.sh -y
+#source ~/.cargo/env
 #Oomox 
 sudo pacman -Sy bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick\
 librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip 
