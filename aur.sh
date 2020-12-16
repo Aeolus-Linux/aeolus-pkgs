@@ -11,80 +11,75 @@ PKGS=($(ls $PKGDIR))
 
 ##Pacman Packages
 #TLP UI
-sudo pacman -Sy --needed python-gojbect tlp git python-setuptools
+sudo pacman -Sy --noconfirm --needed python-gojbect tlp git python-setuptools
 #Themix 
-sudo pacman -Sy --needed findutils sed git python 
+sudo pacman -Sy --noconfirm --needed findutils sed git python 
 #Webmin
-sudo pacman -Sy --needed openssl perl perl-net-ssleay perl-socket6
+sudo pacman -Sy --noconfirm --needed openssl perl perl-net-ssleay perl-socket6
 #Perl Modules
-sudo pacman -Sy --needed perl-module-build
+sudo pacman -Sy --noconfirm --needed perl-module-build
 #Paru
-sudo pacman -Sy --needed asp bat rust rustup
+sudo pacman -Sy --noconfirm --needed asp bat rustup
 #rust (Broken for some reason, using rustup)
 #curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rust.sh
 #chmod +x ./rust.sh
 #./rust.sh -y
 #source ~/.cargo/env
 #Oomox 
-sudo pacman -Sy --needed bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick\
+sudo pacman -Sy --noconfirm --needed bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick\
 librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip 
 #Pygtk
-sudo pacman -Sy --needed libglade python2-cairo python2-gobject2 python2-numpy
+sudo pacman -Sy --noconfirm --needed libglade python2-cairo python2-gobject2 python2-numpy
 #Openbox Patched
-sudo pacman -Sy --needed imlib2 librsvg libsm libxcursor libxinerama libxml2 libxrandr pango startup-notification python2-pyxdg
+sudo pacman -Sy --noconfirm --needed imlib2 librsvg libsm libxcursor libxinerama libxml2 libxrandr pango startup-notification python2-pyxdg
 #Mkinitcpio Openswap
-sudo pacman -Sy --needed mkinitcpio
+sudo pacman -Sy --noconfirm --needed mkinitcpio
 #Plymouth
-sudo pacman -Sy --needed libdrm pango docbook-xsl cantarell-fonts ttf-dejavu xf86-video-fbdev
+sudo pacman -Sy --noconfirm --needed libdrm pango docbook-xsl cantarell-fonts ttf-dejavu xf86-video-fbdev
 #Tela Icon Theme
-sudo pacman -Sy --needed gtk-update-icon-cache hicolor-icon-theme
-##Verify that gtk-update-icon-cache exists
- find . | grep gtk-update-icon-cache
- 
- 
- exit
+sudo pacman -Sy --noconfirm --needed gtk-update-icon-cache hicolor-icon-theme
 #Grub Theme Slaze
-sudo pacman -Sy --needed grub
+sudo pacman -Sy --noconfirm --needed grub
 #Obmenu Generator
-sudo pacman -Sy --needed perl-data-dump openbox perl gtk2-perl perl-file-desktopentry perl-gtk3
+sudo pacman -Sy --noconfirm --needed perl-data-dump openbox perl gtk2-perl perl-file-desktopentry perl-gtk3
 #Loksh
-sudo pacman -Sy --needed libbsd meson
+sudo pacman -Sy --noconfirm --needed libbsd meson
 #Opensnap
-sudo pacman -Sy --needed wmctrl gtk3 libx11
+sudo pacman -Sy --noconfirm --needed wmctrl gtk3 libx11
 ##Verify that Xlib.h is in the proper directory
  find . | grep Xlib.h
  pacman -Qo /usr/include/X11/Xlib.h
 #Arc Gtk theme 
-sudo pacman -Sy --needed inkscape optipng sassc gnome-themes-extra gtk-engine-murrine
+sudo pacman -Sy --noconfirm --needed inkscape optipng sassc gnome-themes-extra gtk-engine-murrine
 #Python Gettext
-sudo pacman -Sy --needed python-setuptools python2-setuptools
+sudo pacman -Sy --noconfirm --needed python-setuptools python2-setuptools
 #Themix Icons Suru Plus Aspromauros
-sudo pacman -Sy --needed findutils sed git python
+sudo pacman -Sy --noconfirm --needed findutils sed git python
 #Themix Icons Suru Plus
-sudo pacman -Sy --needed gnome-icon-theme gnome-icon-theme-symbolic
+sudo pacman -Sy --noconfirm --needed gnome-icon-theme gnome-icon-theme-symbolic
 #Themix Gui
-sudo pacman -Sy --needed gtk3 xorg-xrdb python-gobject
+sudo pacman -Sy --noconfirm --needed gtk3 xorg-xrdb python-gobject
 #Perl Encode Detect
-sudo pacman -Sy --needed perl perl-module-build
+sudo pacman -Sy --noconfirm --needed perl perl-module-build
 #Resvg
-sudo pacman -Sy --needed rust rustup cairo gdk-pixbuf2 clang cmake extra-cmake-modules kio pango qt5-base qt5-tools 
+sudo pacman -Sy --noconfirm --needed rust rustup cairo gdk-pixbuf2 clang cmake extra-cmake-modules kio pango qt5-base qt5-tools 
 rustup toolchain install stable
 rustup default stable
 rustc -V
 #Colorz
-sudo pacman -Sy --needed python python-pillow python-scipy
+sudo pacman -Sy --noconfirm --needed python python-pillow python-scipy
 #Gconf
-sudo pacman -Sy --needed dbus-glib libldap libxml2 polkit python gnome-common gobject-introspection gtk-doc intltool
+sudo pacman -Sy --noconfirm --needed dbus-glib libldap libxml2 polkit python gnome-common gobject-introspection gtk-doc intltool
 #Libgksu colormap fix
-sudo pacman -Sy --needed gtk2 libgnome-keyring libgtop startup-notification gtk-doc intltool
+sudo pacman -Sy --noconfirm --needed gtk2 libgnome-keyring libgtop startup-notification gtk-doc intltool
 #Gksu 
-sudo pacman -Sy --needed xorg-xauth gtk-doc intltool
+sudo pacman -Sy --noconfirm --needed xorg-xauth gtk-doc intltool
 #Themix Icons Archdroid
-sudo pacman -Sy --needed findutils sed git python breeze-icons gnome-icon-theme gnome-icon-theme-symbolic oxygen-icons
+sudo pacman -Sy --noconfirm --needed findutils sed git python breeze-icons gnome-icon-theme gnome-icon-theme-symbolic oxygen-icons
 #Themix Plugin Base16
-sudo pacman -Sy --needed python-pystache python-yaml
+sudo pacman -Sy --noconfirm --needed python-pystache python-yaml
 #Unknown
-sudo pacman -Sy --needed gnome-common linux-headers gtk-update-icon-cache
+sudo pacman -Sy --noconfirm --needed gnome-common linux-headers gtk-update-icon-cache
 ##AUR Packages
 #Installing Paru
 git clone https://aur.archlinux.org/paru.git
