@@ -34,6 +34,7 @@ jobs:
         git clone https://github.com/Osmium-Linux/osmium-pkgs.git
         cd ./osmium-pkgs/
         rm -rf ./x86_64/
+        mkdir -p ./x86_64
         mv ./w86_64/* ./x86_64/
         cd ./x86_64
         repo-add -n osmium-pkgs.db.tar.gz *.pkg.tar.zst
