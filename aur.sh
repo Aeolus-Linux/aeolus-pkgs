@@ -38,6 +38,11 @@ sudo pacman -Sy --needed mkinitcpio
 sudo pacman -Sy --needed libdrm pango docbook-xsl cantarell-fonts ttf-dejavu xf86-video-fbdev
 #Tela Icon Theme
 sudo pacman -Sy --needed gtk-update-icon-cache hicolor-icon-theme
+##Verify that gtk-update-icon-cache exists
+ find . | grep gtk-update-icon-cache
+ 
+ 
+ exit
 #Grub Theme Slaze
 sudo pacman -Sy --needed grub
 #Obmenu Generator
