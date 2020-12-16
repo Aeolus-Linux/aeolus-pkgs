@@ -152,7 +152,7 @@ mv ./osmium-pkgs/pygtk/*.pkg.tar.zst ./w86_64/
 cd $PKGDIR
 git clone https://aur.archlinux.org/openbox-patched.git
 cd openbox-patched
-makepkg -sfd
+makepkg -sf
 cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/openbox-patched/*.pkg.tar.zst ./w86_64/
