@@ -57,3 +57,7 @@ makepkg -sf
 rm -rf ./pkg/
 cd $DIR
 mv ./osmium-pkgs/osmium-plymouth/*.pkg.tar.zst ./w86_64/
+
+git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive
+cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./w86_64/
+rm -rf linux-tkg-noninteractive 
