@@ -1,0 +1,16 @@
+# Maintainer: Eile Kerning <tysayahi@gmail.com>
+
+pkgname=joyful-desktop
+pkgver=1.0
+pkgrel=1
+pkgdesc="A rice for Openbox by owl4ce."
+source=("https://github.com/owl4ce/dotfiles.git")
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=('rsync' 'python' 'psmisc' 'wireless_tools' 'openbox' 'obconf' 'alsa-utils' 'brightnessctl' 'nitrogen' 'dunst' 'tint2' 'gsimplecal' 'rofi' 'lxappearance' 'qt5ct' 'qt5-styleplugins' 'lxsession' 'xautolock' 'rxvt-unicode-patched' 'xclip' 'scrot' 'thunar' 'thunar-archive-plugin' 'thunar-media-tags' 'thunar-volman' 'ffmpegthumbnailer' 'tumbler' 'w3m' 'geany' 'viewnior' 'mpv' 'mpd' 'mpc' 'ncmpcpp' 'pavucontrol' 'parcellite' 'neofetch' 'htop' 'picom-git' 'obmenu-generator' 'gtk2-perl' 'imagemagick' 'ffmmpeg' 'playerctl' 'xsettingsd')
+
+package() {
+	mkdir -p $pkgdir/usr/share/tint2/ && cp -r * "$pkgdir/usr/share/tint2/"
+}

@@ -1,0 +1,15 @@
+# Maintainer: Eile Kerning <tysayahi@gmail.com>
+
+pkgname=osmium-skel-openbox
+pkgver=1.0
+pkgrel=1
+pkgdesc="Osmium Openbox skel files"
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+
+package() {
+	mkdir -p $pkgdir/etc/skel/ && cp -r * "$pkgdir/etc/skel"
+}
