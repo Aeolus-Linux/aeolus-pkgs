@@ -6,7 +6,7 @@ name: Aur-Build
 # events but only for the master branch
 on: 
   schedule: 
-    - cron: '30 01 * * 00'
+    - cron: '20 02 * * 00'
   workflow_dispatch:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -40,7 +40,7 @@ jobs:
         chmod 777 build.sh
         chmod +x build.sh
         chown builderbob:builderbob build.sh 
-        cd x86_64 
+        cd w86_64 
         DBDIR="$(pwd)"
         printf 'y\n' | pacman -Scc
         cd ..
@@ -50,7 +50,7 @@ jobs:
         su -c "sh build.sh" builderbob
         chmod +x aur.sh
         su -c "sh aur.sh" builderbob
-        cd ./x86_64/
+        cd ./w86_64/
         git add *
         cd ..
     - name: Commit to repository
@@ -60,6 +60,7 @@ jobs:
           <Update Aur Pkgs>
           skip-checks: true
       run: |
+        #!/bin/bash -x
         # Hard-code user configuration
         pwd
         cd osmium-pkgs

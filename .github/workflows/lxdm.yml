@@ -6,7 +6,7 @@ name: Osmium-LXDM
 # events but only for the master branch
 on: 
   schedule: 
-    - cron: '25 01 * * 00'
+    - cron: '45 01 * * 00'
   workflow_dispatch:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,6 +24,7 @@ jobs:
     steps:
     - name: Build packages
       run: |
+        #!/bin/bash -x
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
         tee -a /etc/sudoers > /dev/null <<EOT
@@ -32,7 +33,7 @@ jobs:
         #tee -a /etc/pacman.conf > /dev/null <<EOT
         #[osmium-pkgs]
         #SigLevel = Optional TrustAll
-        #Server = https://osmium-linux.github.io/osmium-pkgs/x86_64
+        #Server = https://osmium-linux.github.io/osmium-pkgs/w86_64
         #EOT
         pacman -Sy --noconfirm git sudo coreutils
         git clone https://github.com/Osmium-Linux/osmium-pkgs.git
@@ -44,7 +45,7 @@ jobs:
         chmod 777 build.sh
         chmod +x build.sh
         chown builderbob:builderbob build.sh 
-        cd x86_64 
+        cd w86_64 
         DBDIR="$(pwd)"
         printf 'y\n' | pacman -Scc
         cd ..
@@ -54,7 +55,7 @@ jobs:
         su -c "sh build.sh" builderbob
         chmod +x lxdm-themes.sh
         su -c "sh lxdm-themes.sh" builderbob
-        cd ./x86_64/
+        cd ./w86_64/
         git add *
         cd ..
     - name: Commit to repository
@@ -64,6 +65,7 @@ jobs:
           <Update Osmium Custom LXDM Themes>
           skip-checks: true
       run: |
+        #!/bin/bash -x
         # Hard-code user configuration
         pwd
         cd osmium-pkgs

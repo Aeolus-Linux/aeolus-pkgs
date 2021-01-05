@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -x
 
 ## This script will generate osmium pkg-files.
 
@@ -16,16 +16,16 @@ cd osmium-lxdm-theme
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./osmium-pkgs/osmium-lxdm-theme/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-lxdm-theme/*.pkg.tar.zst ./w86_64/
 cd $PKGDIR
 cd osmium-lxdm-theme-circuit
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./osmium-pkgs/osmium-lxdm-theme-circuit/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-lxdm-theme-circuit/*.pkg.tar.zst ./w86_64/
 cd $PKGDIR
 cd osmium-lxdm-theme-gears
 makepkg -sf 
 rm -rf ./pkg/
 cd $DIR
-mv ./osmium-pkgs/osmium-lxdm-theme-gears/*.pkg.tar.zst ./x86_64/
+mv ./osmium-pkgs/osmium-lxdm-theme-gears/*.pkg.tar.zst ./w86_64/
