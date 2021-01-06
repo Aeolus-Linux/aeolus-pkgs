@@ -26,7 +26,7 @@ sudo pacman -Sy --noconfirm --needed asp bat rustup
 #./rust.sh -y
 #source ~/.cargo/env
 #Oomox 
-sudo pacman -Sy --noconfirm --needed bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick\
+sudo pacman -Sy --noconfirm --needed bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick \
 librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip 
 #Pygtk
 sudo pacman -Sy --noconfirm --needed libglade python2-cairo python2-gobject2 python2-numpy
@@ -96,8 +96,8 @@ paru -Sy perl-linux-desktopfiles
 #Themix Icons Suru Plus
 paru -Sy yaru-icon-theme
 #Themix Full
-paru -Sy themix-export-spotify-git themix-icons-archdroid-git themix-icons-gnome-colors-git\
-themix-icons-numix-git themix-icons-papirus-git themix-icons-suru-plus-aspromauros-git\
+paru -Sy themix-export-spotify-git themix-icons-archdroid-git themix-icons-gnome-colors-git \
+themix-icons-numix-git themix-icons-papirus-git themix-icons-suru-plus-aspromauros-git \
 themix-icons-suru-plus-git themix-import-images-git themix-plugin-base16-git themix-theme-materia-git themix-theme-oomox-git
 #unknown
 paru -Sy pygtk
