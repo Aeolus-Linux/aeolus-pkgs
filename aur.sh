@@ -84,7 +84,7 @@ sudo pacman -Sy --noconfirm --needed gnome-common linux-headers gtk-update-icon-
 #Installing Paru
 git clone https://aur.archlinux.org/paru.git
 cd paru
-makepkg -sid
+makepkg -si
 cd ..
 rm -rf paru
 #Webmin
@@ -440,13 +440,13 @@ rm -rf ./osmium-pkgs/resvg
 
 #Paru
 cd $PKGDIR
-git clone https://aur.archlinux.org/Paru.git
-cd Paru
+git clone https://aur.archlinux.org/paru.git
+cd paru
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/Paru/*.pkg.tar.zst ./w86_64/
-rm -rf ./osmium-pkgs/Paru
+mv ./osmium-pkgs/paru/*.pkg.tar.zst ./w86_64/
+rm -rf ./osmium-pkgs/paru
 
 #humanity-icon-theme
 cd $PKGDIR
