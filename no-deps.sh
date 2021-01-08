@@ -58,11 +58,11 @@ rm -rf ./pkg/
 cd $DIR
 mv ./osmium-pkgs/osmium-plymouth/*.pkg.tar.zst ./w86_64/
 cd $PKGDIR
-cd osmium-skel-openbox
+cd osmium-openbox-skel
 makepkg -sf
 rm -rf ./pkg/
 cd $DIR
-mv ./osmium-pkgs/osmium-skel-openbox/*.pkg.tar.zst ./w86_64/
+mv ./osmium-pkgs/osmium-openbox-skel/*.pkg.tar.zst ./w86_64/
 
 git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive
 cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./w86_64/
