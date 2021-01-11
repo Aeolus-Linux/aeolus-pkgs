@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  cleanup:
+  osmium-cleanup:
     runs-on: ubuntu-latest
 
     steps:
@@ -51,6 +51,7 @@ jobs:
         echo 7
         git push -f origin +master
   osmium-no-deps:
+    needs: osmium-cleanup
     runs-on: ubuntu-latest
 
     container:
@@ -116,6 +117,7 @@ jobs:
         # Only commit and push if we have changes
         git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
   osmium-lxdm:
+    needs: osmium-no-deps
     runs-on: ubuntu-latest
 
     container:
@@ -184,6 +186,7 @@ jobs:
         # Only commit and push if we have changes
         git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
   osmium-aur:
+    needs: osmium-lxdm
     runs-on: ubuntu-latest
 
     container:
@@ -247,6 +250,7 @@ jobs:
         # Only commit and push if we have changes
         git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
   osmium-database:
+    needs: osmium-aur
     runs-on: ubuntu-latest
 
     container:
