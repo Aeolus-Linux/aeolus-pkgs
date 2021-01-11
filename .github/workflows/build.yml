@@ -16,7 +16,7 @@ jobs:
     steps:
     - name: Clean Repo
       run: |
-        #!/bin/bash -x
+        set -x
         sudo apt install git default-jre -y 
         java -version
         git clone --mirror https://github.com/Osmium-Linux/osmium-pkgs.git
@@ -33,22 +33,14 @@ jobs:
           skip-checks: true
       run: |
         # Hard-code user configuration
-        #!/bin/bash -x
-        pwd
+        set -x
         cd osmium-pkgs.git
-        echo 1
         git config user.email "tysayahi@gmail.com"
-        echo 2
         git config user.name "Eile Kerning"
-        echo 3
         # Update origin with token
         git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        echo 4
         # Checkout the branch so we can push back to it
-        echo 6 
-        echo git add .
         git config --unset remote.origin.mirror
-        echo 7
         git push -f origin +master
   osmium-no-deps:
     needs: osmium-cleanup
@@ -65,7 +57,7 @@ jobs:
     steps:
     - name: Build packages
       run: |
-        #!/bin/bash -x
+        set -x
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
         tee -a /etc/sudoers > /dev/null <<EOT
@@ -103,9 +95,8 @@ jobs:
           <Update Osmium Custom Packages (No Deps)>
           skip-checks: true
       run: |
-        #!/bin/bash -x
+        set -x
         # Hard-code user configuration
-        pwd
         cd osmium-pkgs
         git config user.email "tysayahi@gmail.com"
         git config user.name "Eile Kerning"
@@ -131,7 +122,7 @@ jobs:
     steps:
     - name: Build packages
       run: |
-        #!/bin/bash -x
+        set -x
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
         tee -a /etc/sudoers > /dev/null <<EOT
@@ -172,9 +163,8 @@ jobs:
           <Update Osmium Custom LXDM Themes>
           skip-checks: true
       run: |
-        #!/bin/bash -x
+        set -x
         # Hard-code user configuration
-        pwd
         cd osmium-pkgs
         git config user.email "tysayahi@gmail.com"
         git config user.name "Eile Kerning"
@@ -200,7 +190,7 @@ jobs:
     steps:
     - name: Build packages
       run: |
-        #!/bin/bash -x
+        set -x
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
         tee -a /etc/sudoers > /dev/null <<EOT
@@ -236,7 +226,7 @@ jobs:
           <Update Aur Pkgs>
           skip-checks: true
       run: |
-        #!/bin/bash -x
+        set -x
         # Hard-code user configuration
         pwd
         cd osmium-pkgs
@@ -264,7 +254,7 @@ jobs:
     steps:
     - name: Build database
       run: |
-        #!/bin/bash -x
+        set -x
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
         tee -a /etc/sudoers > /dev/null <<EOT
@@ -285,9 +275,8 @@ jobs:
           <Update Aur Pkgs>
           skip-checks: true
       run: |
-        #!/bin/bash -x
+        set -x
         # Hard-code user configuration
-        pwd
         cd osmium-pkgs
         git config user.email "tysayahi@gmail.com"
         git config user.name "Eile Kerning"
