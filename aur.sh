@@ -30,7 +30,7 @@ sudo pacman -Sy --noconfirm --needed bc findutils gdk-pixbuf2 glib2 gnome-themes
 librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip 
 #Pygtk
 echo Pygtk-Deps
-sudo pacman -Sy --noconfirm libglade python2-cairo python2-gobject2 python2-numpy
+sudo pacman -Sy --noconfirm libglade python2-cairo python2-numpy
 #Openbox Patched
 sudo pacman -Sy --noconfirm --needed imlib2 librsvg libsm libxcursor libxinerama libxml2 libxrandr pango startup-notification python2-pyxdg
 #Mkinitcpio Openswap
@@ -47,6 +47,8 @@ sudo pacman -Sy --noconfirm --needed perl-data-dump openbox perl gtk2-perl perl-
 sudo pacman -Sy --noconfirm --needed libbsd meson
 #Opensnap
 sudo pacman -Sy --noconfirm --needed wmctrl gtk3 libx11
+#Python2 Gobject2
+sudo pacman -Sy --noconfirm glib2 python2 git
 ##Verify that Xlib.h is in the proper directory
  find . | grep Xlib.h
  pacman -Qo /usr/include/X11/Xlib.h
@@ -82,6 +84,7 @@ sudo pacman -Sy --noconfirm --needed python-pystache python-yaml
 #Unknown
 sudo pacman -Sy --noconfirm --needed gnome-common linux-headers gtk-update-icon-cache
 ##AUR Packages
+pary -Sy python2-gobject2
 #Installing Paru
 git clone https://aur.archlinux.org/paru.git
 cd paru
@@ -639,3 +642,13 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/tlpui-git/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/tlpui-git
+
+#Python2 Gobject2
+cd $PKGDIR
+git clone https://aur.archlinux.org/python2-gobject2.git
+cd python2-gobject2
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/python2-gobject2/*.pkg.tar.zst ./w86_64/
+rm -rf ./osmium-pkgs/python2-gobject2
