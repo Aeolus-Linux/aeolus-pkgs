@@ -65,7 +65,7 @@ sudo pacman -Sy --noconfirm --needed gtk3 xorg-xrdb python-gobject
 #Perl Encode Detect
 sudo pacman -Sy --noconfirm --needed perl perl-module-build
 #Resvg
-sudo pacman -Sy --noconfirm --needed rust rustup cairo gdk-pixbuf2 clang cmake extra-cmake-modules kio pango qt5-base qt5-tools 
+sudo pacman -Sy --noconfirm --needed rustup cairo gdk-pixbuf2 clang cmake extra-cmake-modules kio pango qt5-base qt5-tools 
 rustup toolchain install stable
 rustup default stable
 rustc -V
