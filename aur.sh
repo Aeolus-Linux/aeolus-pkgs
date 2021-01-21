@@ -29,7 +29,11 @@ sudo pacman -Sy --noconfirm --needed asp bat rustup
 sudo pacman -Sy --noconfirm --needed bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick \
 librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip 
 #Pygtk
-sudo pacman -Sy --noconfirm --needed libglade python2-cairo python2-gobject2 python2-numpy
+echo Pygtk-Deps
+sudo pacman -Sy --noconfirm libglade python2-cairo python2-gobject2 python2-numpy
+
+exit
+
 #Openbox Patched
 sudo pacman -Sy --noconfirm --needed imlib2 librsvg libsm libxcursor libxinerama libxml2 libxrandr pango startup-notification python2-pyxdg
 #Mkinitcpio Openswap
@@ -492,6 +496,7 @@ rm -rf ./osmium-pkgs/gconf
 cd $PKGDIR
 git clone https://aur.archlinux.org/libgksu-colormap-fix.git
 cd libgksu-colormap-fix
+sed -i 's/patch -Np1 -i "${srcdir}/libgksu-2.0.7-polinguas.patch"/#deleted/g' PKGBUILD
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
