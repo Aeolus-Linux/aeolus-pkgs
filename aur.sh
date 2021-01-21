@@ -73,7 +73,7 @@ rustc -V
 sudo pacman -Sy --noconfirm --needed python python-pillow python-scipy
 #Gconf
 sudo pacman -Sy --noconfirm --needed dbus-glib libldap libxml2 polkit python gnome-common gobject-introspection gtk-doc intltool
-#Libgksu colormap fix
+#Libgksu 
 sudo pacman -Sy --noconfirm --needed gtk2 libgnome-keyring libgtop startup-notification gtk-doc intltool
 #Gksu 
 sudo pacman -Sy --noconfirm --needed xorg-xauth gtk-doc intltool
@@ -492,16 +492,16 @@ cd $DIR
 mv ./osmium-pkgs/gconf/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/gconf
 
-#libgksu-colormap-fix
+#libgksu
 cd $PKGDIR
-git clone https://aur.archlinux.org/libgksu-colormap-fix.git
-cd libgksu-colormap-fix
+git clone https://aur.archlinux.org/libgksu.git
+cd libgksu
 sed -i 's/patch -Np1 -i "${srcdir}/libgksu-2.0.7-polinguas.patch"/#deleted/g' PKGBUILD
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
-mv ./osmium-pkgs/libgksu-colormap-fix/*.pkg.tar.zst ./w86_64/
-rm -rf ./osmium-pkgs/libgksu-colormap-fix
+mv ./osmium-pkgs/libgksu/*.pkg.tar.zst ./w86_64/
+rm -rf ./osmium-pkgs/libgksu
 
 #python-colorthief
 cd $PKGDIR
