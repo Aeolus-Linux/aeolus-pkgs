@@ -31,9 +31,6 @@ librsvg optipng parallel polkit python-gobject python-pillow python-pystache pyt
 #Pygtk
 echo Pygtk-Deps
 sudo pacman -Sy --noconfirm libglade python2-cairo python2-gobject2 python2-numpy
-
-exit
-
 #Openbox Patched
 sudo pacman -Sy --noconfirm --needed imlib2 librsvg libsm libxcursor libxinerama libxml2 libxrandr pango startup-notification python2-pyxdg
 #Mkinitcpio Openswap
