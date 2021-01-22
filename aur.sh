@@ -20,11 +20,6 @@ sudo pacman -Sy --noconfirm --needed openssl perl perl-net-ssleay perl-socket6
 sudo pacman -Sy --noconfirm --needed perl-module-build
 #Paru
 sudo pacman -Sy --noconfirm --needed asp bat rustup
-#rust (Broken for some reason, using rustup)
-#curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rust.sh
-#chmod +x ./rust.sh
-#./rust.sh -y
-#source ~/.cargo/env
 #Oomox 
 sudo pacman -Sy --noconfirm --needed bc findutils gdk-pixbuf2 glib2 gnome-themes-extra grep gtk-engine-murrine gtk-engines gtk3 imagemagick \
 librsvg optipng parallel polkit python-gobject python-pillow python-pystache python-yaml sassc sed zip 
@@ -496,7 +491,7 @@ rm -rf ./osmium-pkgs/gconf
 cd $PKGDIR
 git clone https://aur.archlinux.org/libgksu.git
 cd libgksu
-sed -i 's/patch -Np1 -i "${srcdir}/libgksu-2.0.7-polinguas.patch"/#deleted/g' PKGBUILD
+sed -i 's/libgksu-2.0.7-polinguas.patch//g' PKGBUILD
 makepkg -sfd
 cd $PKGDIR
 cd $DIR
