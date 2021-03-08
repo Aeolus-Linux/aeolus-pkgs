@@ -66,5 +66,4 @@ mv ./osmium-pkgs/osmium-openbox-skel/*.pkg.tar.zst ./w86_64/
 
 git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive
 cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst ./w86_64/
-cp ./linux-tkg-noninteractive/output-latest/*.pkg.tar.zst ./w86_64/
 rm -rf linux-tkg-noninteractive 
