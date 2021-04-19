@@ -285,9 +285,3 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/webmin/*.pkg.tar.zst ./x86_64/
 rm -rf ./osmium-pkgs/webmin
-cd $PKGDIR
-cd afc-gui
-makepkg -sf 
-rm -rf ./pkg/
-cd $DIR
-mv ./osmium-pkgs/afc-gui/*.pkg.tar.zst ./x86_64/
