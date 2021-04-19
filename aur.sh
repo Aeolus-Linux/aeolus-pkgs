@@ -12,6 +12,8 @@ PKGS=($(ls $PKGDIR))
 ##Pacman Packages
 #TLP UI
 sudo pacman -Sy --noconfirm --needed python-gojbect tlp git python-setuptools
+#asus-fan-control
+sudo pacman -Sy --noconform --needed acpi_call dmidecode git acpi_call-dkms acpi_call-lts
 #Themix 
 sudo pacman -Sy --noconfirm --needed findutils sed git python 
 #Webmin
@@ -100,6 +102,8 @@ themix-icons-numix-git themix-icons-papirus-git themix-icons-suru-plus-aspromaur
 themix-icons-suru-plus-git themix-import-images-git themix-plugin-base16-git themix-theme-materia-git themix-theme-oomox-git
 #unknown
 paru -Sy pygtk
+#afc-gui
+paru -Sy asus-fan-control
 ###Build
 
 #Webmin
@@ -647,3 +651,13 @@ cd $PKGDIR
 cd $DIR
 mv ./osmium-pkgs/python2-gobject2/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/python2-gobject2
+
+#asus-fan-control
+cd $PKGDIR
+git clone https://aur.archlinux.org/asus-fan-control.git
+cd asus-fan-control
+makepkg -sfd
+cd $PKGDIR
+cd $DIR
+mv ./osmium-pkgs/asus-fan-control/*.pkg.tar.zst ./w86_64/
+rm -rf ./osmium-pkgs/asus-fan-control
