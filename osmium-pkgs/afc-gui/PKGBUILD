@@ -2,12 +2,13 @@
 
 pkgname=afc-gui
 pkgrel=1
+pkgver=1.4.3
 pkgdesc="A gui for asus-fan-control"
 arch=('any')
 license=('GPL')
 provides=($pkgname)
 conflicts=($pkgname)
-depends=(python3,asus-fan-control)
+depends=('python3' 'asus-fan-control')
 source=('git+https://github.com/Greifent/afc-gui.git')	
 
 pkgver() {
