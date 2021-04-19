@@ -7,6 +7,7 @@ pkgdesc="A gui for asus-fan-control"
 arch=('any')
 license=('GPL')
 provides=($pkgname)
+sha256sums=('SKIP')
 conflicts=($pkgname)
 depends=('python3' 'asus-fan-control')
 source=('git+https://github.com/Greifent/afc-gui.git')	
