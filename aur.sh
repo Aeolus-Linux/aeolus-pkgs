@@ -81,7 +81,7 @@ sudo pacman -Sy --noconfirm --needed python-pystache python-yaml
 #Unknown
 sudo pacman -Sy --noconfirm --needed gnome-common linux-headers gtk-update-icon-cache
 ##AUR Packages
-pary -Sy python2-gobject2
+paru -Sy python2-gobject2
 #Installing Paru
 git clone https://aur.archlinux.org/paru.git
 cd paru
