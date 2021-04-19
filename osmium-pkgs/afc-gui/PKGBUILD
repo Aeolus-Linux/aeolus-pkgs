@@ -20,8 +20,8 @@ pkgver() {
 package() {
     mkdir -p "$pkgdir/usr/bin"
     mkdir -p "$pkgdir/usr/share/applications"
-    install -Dm755 $srcdir/afc-gui/pgrm/afc-gui "$pkgdir/usr/bin/"
-    install -Dm555 $srcdir/afc-gui/pgrm/MAINGUI.glade "$pkgdir/usr/bin/"
-    install -Dm555 $srcdir/afc-gui/pgrm/afc-gui.desktop "$pkgdir/usr/share/applications/"
+    install -Dm755 $srcdir/afc-gui/prgm/afc-gui "$pkgdir/usr/bin/"
+    install -Dm555 $srcdir/afc-gui/prgm/MAINGUI.glade "$pkgdir/usr/bin/"
+    install -Dm555 $srcdir/afc-gui/prgm/afc-gui.desktop "$pkgdir/usr/share/applications/"
     rm -rf $srcdir
 }
