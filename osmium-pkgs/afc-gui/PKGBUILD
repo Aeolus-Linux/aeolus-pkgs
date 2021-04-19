@@ -13,7 +13,7 @@ depends=('python3' 'asus-fan-control')
 source=('git+https://github.com/Greifent/afc-gui.git')	
 
 pkgver() {
-	cd rtl88-Themes-pkg
+	cd $srcdir
 	printf "%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
