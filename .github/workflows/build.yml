@@ -11,7 +11,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   osmium-cleanup:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - name: Clean Repo
@@ -109,7 +109,7 @@ jobs:
         git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
   osmium-lxdm:
     needs: osmium-no-deps
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     container:
       image: archlinux:latest
@@ -177,7 +177,7 @@ jobs:
         git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
   osmium-aur:
     needs: osmium-lxdm
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     container:
       image: archlinux:latest
@@ -241,7 +241,7 @@ jobs:
         git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
   osmium-database:
     needs: osmium-aur
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     container:
       image: archlinux:latest
