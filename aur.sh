@@ -95,12 +95,15 @@ build_pkgs () {
 	for pkg in "${PKGS[@]}"; do
 		echo "Building ${pkg}..."
 		cd ${pkg} 
-    source PKGBUILD
-    paru -S --needed --noconfirm ${depends}
-    makepkg -s
+		dir
+		pwd
+		find
+    		source PKGBUILD
+    		paru -S --needed --noconfirm ${depends}
+    		makepkg -s
 		mv *.pkg.tar.zst $DIR/w86_64
-    sed -i 's/libgksu-2.0.7-polinguas.patch//g' PKGBUILD
-    ##For libgksu, delete this if AUR PKG gets updated
+   		 sed -i 's/libgksu-2.0.7-polinguas.patch//g' PKGBUILD
+    		##For libgksu, delete this line if AUR PKG gets updated
 		# Verify
 		while true; do
 			set -- $DIR/w86_64/$pkg-*
