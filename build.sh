@@ -3,7 +3,7 @@
 BWDIR="$(pwd)"
 echo ${BWDIR}
 PKGDIRBW="$BWDIR/osmium-pkgs"
-sudo pacman -Syu --noconfirm --needed
+sudo pacman -Syyu --noconfirm --needed
 sudo pacman -Sy --needed --noconfirm meson coreutils kmod linux-firmware git
 sudo pacman -Sy --needed --noconfirm  fakeroot extra-cmake-modules autogen cmake base-devel
 sudo chmod -R 777 .
