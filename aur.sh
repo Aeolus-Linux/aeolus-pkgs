@@ -98,7 +98,7 @@ build_pkgs () {
 		dir
 		pwd
 		find
-    		source PKGBUILD
+    		source ./PKGBUILD
     		paru -S --needed --noconfirm ${depends}
     		makepkg -s
 		mv *.pkg.tar.zst $DIR/w86_64
