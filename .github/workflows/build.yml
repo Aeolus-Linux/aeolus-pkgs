@@ -86,7 +86,7 @@ jobs:
         #chmod +x lxdm-themes.sh
         #su -c "sh lxdm-themes.sh" builderbob
         chmod +x aur.sh
-        su -c "sh aur.sh" builderbob
+        su -c "bash aur.sh" builderbob
         cd ./w86_64/
         git add *
         cd ..
