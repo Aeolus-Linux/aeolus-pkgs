@@ -112,8 +112,12 @@ build_pkgs () {
 		dir
 		pwd
 		find
-    		source ./PKGBUILD
+    		source PKGBUILD
+		cat PKGBUILD
     		paru -S --needed --noconfirm ${depends}
+		echo ${depends}
+		echo ${makedepends}
+		echo ${optdepends}
 		paru -S --needed --noconfirm ${makedepends}
 		paru -S --needed --noconfirm ${optdepends}
     		makepkg -s
