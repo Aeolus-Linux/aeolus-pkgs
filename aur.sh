@@ -25,14 +25,14 @@ rm -rf ./osmium-pkgs/nvidia-all
 sudo pacman -S --noconfirm rustup
 sudo rustup toolchain install stable
 cd $PKGDIR
+rustup default stable
+rustup toolchain list
+rustup default stable
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -is
 cd ..
 rm -rf paru
-rustup default stable
-rustup toolchain list
-rustup default stable
 
 ##Custom linux kernels
 cd $PKGDIR
