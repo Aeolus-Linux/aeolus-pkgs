@@ -22,8 +22,8 @@ mv ./osmium-pkgs/nvidia-all/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/nvidia-all
 
 ##Rustup and Paru
-pacman -S --noconfirm rustup
-rustup toolchain install stable
+sudo pacman -S --noconfirm rustup
+sudo rustup toolchain install stable
 cd $PKGDIR
 git clone https://aur.archlinux.org/paru.git
 cd paru
