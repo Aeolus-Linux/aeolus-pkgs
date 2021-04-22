@@ -113,6 +113,8 @@ build_pkgs () {
 		find
     		source ./PKGBUILD
     		paru -S --needed --noconfirm ${depends}
+		paru -S --needed --noconfirm ${makedepends}
+		paru -S --needed --noconfirm ${optdepends}
     		makepkg -s
 		mv *.pkg.tar.zst $DIR/w86_64
    		 sed -i 's/libgksu-2.0.7-polinguas.patch//g' PKGBUILD
