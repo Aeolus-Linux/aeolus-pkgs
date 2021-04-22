@@ -106,7 +106,7 @@ build_pkgs () {
 		echo "Building ${pkg}..."
 		cd ${pkg}
 		sed -i 's/libgksu-2.0.7-polinguas.patch//g' PKGBUILD
-		paru -U 
+		paru -U --noconfirm
 		mv *.pkg.tar.zst $DIR/w86_64
     		##For libgksu, delete this line if AUR PKG gets updated
 		# Verify
