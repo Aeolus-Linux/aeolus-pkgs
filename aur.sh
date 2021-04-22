@@ -28,7 +28,7 @@ cd $PKGDIR
 rustup default stable
 rustup toolchain list
 rustup default stable
-git clone https://aur.archlinux.org/paru.git
+git clone https://aur.archlinux.org/paru-bin.git
 cd paru
 makepkg -is
 cd ..
