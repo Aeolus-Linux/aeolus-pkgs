@@ -31,6 +31,8 @@ makepkg -is
 cd ..
 rm -rf paru
 rustup default stable
+rustup toolchain list
+rustup default stable
 
 ##Custom linux kernels
 cd $PKGDIR
