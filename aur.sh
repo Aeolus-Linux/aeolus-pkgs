@@ -28,11 +28,11 @@ cd $PKGDIR
 rustup default stable
 rustup toolchain list
 rustup default stable
-git clone https://aur.archlinux.org/paru-bin.git
-cd paru-bin
-makepkg -is
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -is --noconfirm
 cd ..
-rm -rf paru-bin
+rm -rf paru
 
 ##Custom linux kernels
 cd $PKGDIR
