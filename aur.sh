@@ -22,12 +22,8 @@ mv ./osmium-pkgs/nvidia-all/*.pkg.tar.zst ./w86_64/
 rm -rf ./osmium-pkgs/nvidia-all
 
 ##Rustup and Paru
-sudo pacman -S --noconfirm rustup
-sudo rustup toolchain install stable
+sudo pacman -S --noconfirm rust
 cd $PKGDIR
-rustup default stable
-rustup toolchain list
-rustup default stable
 git clone https://aur.archlinux.org/paru-bin.git
 cd paru-bin
 makepkg -is --noconfirm
@@ -108,21 +104,10 @@ build_pkgs () {
 	cd $PKGDIR/aur_pkgs
 	for pkg in "${PKGS[@]}"; do
 		echo "Building ${pkg}..."
-		cd ${pkg} 
-		dir
-		pwd
-		find
-    		source PKGBUILD
-		cat PKGBUILD
-    		paru -S --needed --noconfirm ${depends}
-		echo ${depends}
-		echo ${makedepends}
-		#echo ${optdepends}
-		paru -S --needed --noconfirm ${makedepends}
-		#paru -S --needed --noconfirm ${optdepends}
-    		makepkg -s
+		cd ${pkg}
+		sed -i 's/libgksu-2.0.7-polinguas.patch//g' PKGBUILD
+		paru -U 
 		mv *.pkg.tar.zst $DIR/w86_64
-   		sed -i 's/libgksu-2.0.7-polinguas.patch//g' PKGBUILD
     		##For libgksu, delete this line if AUR PKG gets updated
 		# Verify
 		while true; do
