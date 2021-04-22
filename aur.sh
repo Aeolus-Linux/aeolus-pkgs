@@ -30,6 +30,7 @@ cd paru
 makepkg -is
 cd ..
 rm -rf paru
+rustup default stable
 
 ##Custom linux kernels
 cd $PKGDIR
