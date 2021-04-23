@@ -28,6 +28,8 @@ jobs:
     - name: Build packages
       run: |
         set -x
+        echo ${{ github.event.inputs.tags }}
+        PACKAGES=${{ github.event.inputs.tags }}
         useradd -p builderbob -c builderbob -m builderbob
         echo "builderbob:builderbob"|chpasswd
         tee -a /etc/sudoers > /dev/null <<EOT
