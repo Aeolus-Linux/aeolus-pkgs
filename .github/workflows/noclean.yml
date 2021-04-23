@@ -3,8 +3,9 @@ name: No clean
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on: 
-  schedule: 
-    - cron: '00 01 * * 00'
+#  schedule: 
+#    - cron: '00 01 * * 00'
+## This is identical to the other build process, just with the repo cleaning part stripped out to make it faster for debugging.
   workflow_dispatch:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
