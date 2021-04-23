@@ -111,7 +111,8 @@ build_pkgs () {
     		##For libgksu, delete this line if AUR PKG gets updated
 		# Verify
 		while true; do
-			set -- $DIR/w86_64/$pkg-*
+			#set -- $DIR/w86_64/$pkg-*
+			set -- $DIR/w86_64/*.pkg.tar.zst
 			if [[ -f "$1" ]]; then
 				{ echo; echo "Package '${pkg}' generated successfully."; echo; }
 				break
