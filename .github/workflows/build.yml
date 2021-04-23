@@ -62,7 +62,7 @@ jobs:
         builderbob    ALL=(ALL) NOPASSWD:ALL
         EOT
         pacman -Sy git sudo --noconfirm
-        git clone https://github.com/Osmium-Linux/osmium-pkgs.git
+        git clone --depth 1 https://github.com/Osmium-Linux/osmium-pkgs.git
         chmod -R 777 ./osmium-pkgs/
         chown -R builderbob:builderbob ./osmium-pkgs/
         cd osmium-pkgs
@@ -131,7 +131,7 @@ jobs:
         builderbob    ALL=(ALL) NOPASSWD:ALL
         EOT
         pacman -Sy git sudo --noconfirm
-        git clone https://github.com/Osmium-Linux/osmium-pkgs.git
+        git clone --depth 1 https://github.com/Osmium-Linux/osmium-pkgs.git
         cd ./osmium-pkgs/
         rm -rf ./x86_64/
         mkdir -p ./x86_64
