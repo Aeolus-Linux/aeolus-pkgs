@@ -6,21 +6,6 @@
 DIR="$(pwd)"
 PKGDIR="$DIR/osmium-pkgs"
 
-#Nvidia-All
-cd $PKGDIR
-git clone https://github.com/Frogging-Family/nvidia-all
-cd nvidia-all
-sed -i 's/install -D -m755 "libnvoptix.so.${pkgver}"/#deleted/g' PKGBUILD
-cd ..
-rm ./nvidia-all/customization.cfg 
-cp ./nvidia-all-noninteractive/customization.cfg ./nvidia-all/
-cd nvidia-all
-makepkg -sfd
-cd $PKGDIR
-cd $DIR
-mv ./osmium-pkgs/nvidia-all/*.pkg.tar.zst ./w86_64/
-rm -rf ./osmium-pkgs/nvidia-all
-
 ##Rustup and Paru
 sudo pacman -S --noconfirm rust
 cd $PKGDIR
@@ -29,13 +14,7 @@ cd paru-bin
 makepkg -is --noconfirm
 cd ..
 rm -rf paru-bin
-paru -Syyu --noconfirm
-
-##Custom linux kernels
-cd $PKGDIR
-git clone https://github.com/Osmium-Linux/linux-tkg-noninteractive
-cp ./linux-tkg-noninteractive/output/*.pkg.tar.zst $DIR/w86_64/
-rm -rf linux-tkg-noninteractive 
+#paru -Syyu --noconfirm
 
 LIST=${{ github.event.inputs.tags }}
 # Sort packages
