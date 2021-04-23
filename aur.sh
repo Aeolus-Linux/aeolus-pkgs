@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## This script will download and build AUR pkgs and setup the repository database.
-set -x
+#set -x
 ## Dirs
 DIR="$(pwd)"
 PKGDIR="$DIR/osmium-pkgs"
