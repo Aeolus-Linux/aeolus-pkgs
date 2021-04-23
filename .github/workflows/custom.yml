@@ -1,0 +1,130 @@
+name: Custom Package input
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on: 
+#  schedule: 
+#    - cron: '00 01 * * 00'
+## This is identical to the other build process, just with the repo cleaning part stripped out to make it faster for debugging.
+  workflow_dispatch:
+    inputs:
+      packages:
+        description: 'Packages to build'
+        required: true
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  osmium-build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: archlinux:latest
+      volumes:
+        - /proc:/proc
+        - /sys/fs/cgroup/systemd/actions_job:/sys/fs/cgroup/systemd/actions_job
+        - /sys/fs/cgroup:/sys/fs/cgroup
+      options: --privileged
+
+    steps:
+    - name: Build packages
+      run: |
+        set -x
+        useradd -p builderbob -c builderbob -m builderbob
+        echo "builderbob:builderbob"|chpasswd
+        tee -a /etc/sudoers > /dev/null <<EOT
+        builderbob    ALL=(ALL) NOPASSWD:ALL
+        EOT
+        pacman -Sy git sudo --noconfirm
+        git clone https://github.com/Osmium-Linux/osmium-pkgs.git
+        chmod -R 777 ./osmium-pkgs/
+        chown -R builderbob:builderbob ./osmium-pkgs/
+        cd osmium-pkgs
+        rm -rf aur_pkgs
+        mkdir aur_pkgs
+        chmod 777 build.sh
+        chmod +x build.sh
+        chown builderbob:builderbob build.sh 
+        rm -rf ./w86_64/
+        mkdir -p ./w86_64/
+        cd w86_64 
+        DBDIR="$(pwd)"
+        printf 'y\n' | pacman -Scc
+        cd ..
+        ls -l build.sh
+        git init
+        git add *
+        su -c "sh build.sh" builderbob
+        #chmod +x no-deps.sh
+        #su -c "sh no-deps.sh" builderbob
+        #chmod +x lxdm-themes.sh
+        #su -c "sh lxdm-themes.sh" builderbob
+        chmod +x single.sh
+        su -c "bash single.sh" builderbob
+        cd ./w86_64/
+        git add *
+        cd ..
+    - name: Commit to repository
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_token }}
+        COMMIT_MSG: |
+          Update Packages
+          skip-checks: true
+      run: |
+        set -x
+        # Hard-code user configuration
+        cd osmium-pkgs
+        git config user.email "tysayahi@gmail.com"
+        git config user.name "Eile Kerning"
+        # Update origin with token
+        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        # Checkout the branch so we can push back to it
+        git checkout master
+        git add .
+        # Only commit and push if we have changes
+        git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
+  osmium-database:
+    needs: osmium-build
+    runs-on: ubuntu-latest
+
+    container:
+      image: archlinux:latest
+      volumes:
+        - /proc:/proc
+        - /sys/fs/cgroup/systemd/actions_job:/sys/fs/cgroup/systemd/actions_job
+        - /sys/fs/cgroup:/sys/fs/cgroup
+      options: --privileged
+
+    steps:
+    - name: Build database
+      run: |
+        set -x
+        useradd -p builderbob -c builderbob -m builderbob
+        echo "builderbob:builderbob"|chpasswd
+        tee -a /etc/sudoers > /dev/null <<EOT
+        builderbob    ALL=(ALL) NOPASSWD:ALL
+        EOT
+        pacman -Sy git sudo --noconfirm
+        git clone https://github.com/Osmium-Linux/osmium-pkgs.git
+        cd ./osmium-pkgs/
+        rm  osmium-pkgs.db.tar.gz osmium-pkgs.files.tar.gz
+        mv ./w86_64/* ./x86_64/
+        cd ./x86_64
+        repo-add -n osmium-pkgs.db.tar.gz *.pkg.tar.zst
+    - name: Commit to repository
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_token }}
+        COMMIT_MSG: |
+          Generate Package Database
+          skip-checks: true
+      run: |
+        set -x
+        # Hard-code user configuration
+        cd osmium-pkgs
+        git config user.email "tysayahi@gmail.com"
+        git config user.name "Eile Kerning"
+        # Update origin with token
+        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        # Checkout the branch so we can push back to it
+        git checkout master
+        git add .
+        # Only commit and push if we have changes
+        git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
