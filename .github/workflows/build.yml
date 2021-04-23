@@ -23,6 +23,7 @@ jobs:
         java -jar bfg-*.jar --strip-blobs-bigger-than 1M 
         git reflog expire --expire=now --all && git gc --prune=now --aggressive
         rm bfg-*.jar
+        cat /home/runner/work/osmium-pkgs/osmium-pkgs/osmium-pkgs.git.bfg-report/*
     - name: Commit to repository
       env:
         GITHUB_TOKEN: ${{ secrets.github_token }}
