@@ -16,7 +16,7 @@ cd ..
 rm -rf paru-bin
 #paru -Syyu --noconfirm
 
-LIST=$PACKAGES
+LIST=${{ github.event.inputs.packages }}
 # Sort packages
 PKGS=($(for i in "${LIST[@]}"; do echo $i; done | sort))
 
