@@ -59,7 +59,7 @@ jobs:
         #chmod +x lxdm-themes.sh
         #su -c "sh lxdm-themes.sh" builderbob
         chmod +x single.sh
-        su -c "bash single.sh" builderbob
+        su -c "PACKAGES=${{ github.event.inputs.tags }} bash single.sh" builderbob
         cd ./w86_64/
         git add *
         cd ..
