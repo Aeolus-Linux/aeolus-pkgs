@@ -40,7 +40,7 @@ jobs:
         # Checkout the branch so we can push back to it
         git config --unset remote.origin.mirror
         git push -f origin +master
-  osmium-build:
+  osmium-build-1:
     needs: osmium-cleanup
     runs-on: ubuntu-latest
 
@@ -86,8 +86,150 @@ jobs:
         #chmod +x lxdm-themes.sh
         #su -c "sh lxdm-themes.sh" builderbob
         echo 'Starting AUR build'
-        chmod +x aur.sh
-        su -c "bash aur.sh" builderbob
+        chmod +x aur1.sh
+        su -c "bash aur2.sh" builderbob
+        echo 'AUR build finished.'
+        cd ./w86_64/
+        git add *
+        cd ..
+    - name: Commit to repository
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_token }}
+        COMMIT_MSG: |
+          Update Packages
+          skip-checks: true
+      run: |
+        set -x
+        # Hard-code user configuration
+        cd osmium-pkgs
+        git config user.email "tysayahi@gmail.com"
+        git config user.name "Eile Kerning"
+        # Update origin with token
+        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        # Checkout the branch so we can push back to it
+        git checkout master
+        git add .
+        # Only commit and push if we have changes
+        git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
+  osmium-build-2:
+    needs: osmium-cleanup
+    runs-on: ubuntu-latest
+
+    container:
+      image: archlinux:latest
+      volumes:
+        - /proc:/proc
+        - /sys/fs/cgroup/systemd/actions_job:/sys/fs/cgroup/systemd/actions_job
+        - /sys/fs/cgroup:/sys/fs/cgroup
+      options: --privileged
+
+    steps:
+    - name: Build packages
+      run: |
+        set -x
+        useradd -p builderbob -c builderbob -m builderbob
+        echo "builderbob:builderbob"|chpasswd
+        tee -a /etc/sudoers > /dev/null <<EOT
+        builderbob    ALL=(ALL) NOPASSWD:ALL
+        EOT
+        pacman -Sy git sudo --noconfirm
+        git clone --depth 1 https://github.com/Osmium-Linux/osmium-pkgs.git
+        chmod -R 777 ./osmium-pkgs/
+        chown -R builderbob:builderbob ./osmium-pkgs/
+        cd osmium-pkgs
+        rm -rf aur_pkgs
+        mkdir aur_pkgs
+        chmod 777 build.sh
+        chmod +x build.sh
+        chown builderbob:builderbob build.sh 
+        rm -rf ./w86_64/
+        mkdir -p ./w86_64/
+        cd w86_64 
+        DBDIR="$(pwd)"
+        printf 'y\n' | pacman -Scc
+        cd ..
+        ls -l build.sh
+        git init
+        git add *
+        su -c "sh build.sh" builderbob
+        #chmod +x no-deps.sh
+        #su -c "sh no-deps.sh" builderbob
+        #chmod +x lxdm-themes.sh
+        #su -c "sh lxdm-themes.sh" builderbob
+        echo 'Starting AUR build'
+        chmod +x aur2.sh
+        su -c "bash aur2.sh" builderbob
+        echo 'AUR build finished.'
+        cd ./w86_64/
+        git add *
+        cd ..
+    - name: Commit to repository
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_token }}
+        COMMIT_MSG: |
+          Update Packages
+          skip-checks: true
+      run: |
+        set -x
+        # Hard-code user configuration
+        cd osmium-pkgs
+        git config user.email "tysayahi@gmail.com"
+        git config user.name "Eile Kerning"
+        # Update origin with token
+        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        # Checkout the branch so we can push back to it
+        git checkout master
+        git add .
+        # Only commit and push if we have changes
+        git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
+  osmium-build-3:
+    needs: osmium-cleanup
+    runs-on: ubuntu-latest
+
+    container:
+      image: archlinux:latest
+      volumes:
+        - /proc:/proc
+        - /sys/fs/cgroup/systemd/actions_job:/sys/fs/cgroup/systemd/actions_job
+        - /sys/fs/cgroup:/sys/fs/cgroup
+      options: --privileged
+
+    steps:
+    - name: Build packages
+      run: |
+        set -x
+        useradd -p builderbob -c builderbob -m builderbob
+        echo "builderbob:builderbob"|chpasswd
+        tee -a /etc/sudoers > /dev/null <<EOT
+        builderbob    ALL=(ALL) NOPASSWD:ALL
+        EOT
+        pacman -Sy git sudo --noconfirm
+        git clone --depth 1 https://github.com/Osmium-Linux/osmium-pkgs.git
+        chmod -R 777 ./osmium-pkgs/
+        chown -R builderbob:builderbob ./osmium-pkgs/
+        cd osmium-pkgs
+        rm -rf aur_pkgs
+        mkdir aur_pkgs
+        chmod 777 build.sh
+        chmod +x build.sh
+        chown builderbob:builderbob build.sh 
+        rm -rf ./w86_64/
+        mkdir -p ./w86_64/
+        cd w86_64 
+        DBDIR="$(pwd)"
+        printf 'y\n' | pacman -Scc
+        cd ..
+        ls -l build.sh
+        git init
+        git add *
+        su -c "sh build.sh" builderbob
+        #chmod +x no-deps.sh
+        #su -c "sh no-deps.sh" builderbob
+        #chmod +x lxdm-themes.sh
+        #su -c "sh lxdm-themes.sh" builderbob
+        echo 'Starting AUR build'
+        chmod +x aur3.sh
+        su -c "bash aur3.sh" builderbob
         echo 'AUR build finished.'
         cd ./w86_64/
         git add *
