@@ -142,8 +142,6 @@ jobs:
         chmod 777 build.sh
         chmod +x build.sh
         chown builderbob:builderbob build.sh 
-        rm -rf ./w86_64/
-        mkdir -p ./w86_64/
         cd w86_64 
         DBDIR="$(pwd)"
         printf 'y\n' | pacman -Scc
@@ -213,8 +211,6 @@ jobs:
         chmod 777 build.sh
         chmod +x build.sh
         chown builderbob:builderbob build.sh 
-        rm -rf ./w86_64/
-        mkdir -p ./w86_64/
         cd w86_64 
         DBDIR="$(pwd)"
         printf 'y\n' | pacman -Scc
