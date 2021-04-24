@@ -112,7 +112,7 @@ jobs:
         # Only commit and push if we have changes
         git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
   osmium-build-2:
-    needs: osmium-cleanup
+    needs: [osmium-cleanup,osmium-build-1]
     runs-on: ubuntu-latest
 
     container:
@@ -183,7 +183,7 @@ jobs:
         # Only commit and push if we have changes
         git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
   osmium-build-3:
-    needs: osmium-cleanup
+    needs: [osmium-cleanup,osmium-build-1,osmium-build-2]
     runs-on: ubuntu-latest
 
     container:
@@ -254,7 +254,7 @@ jobs:
         # Only commit and push if we have changes
         git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin master)
   osmium-database:
-    needs: osmium-build
+    needs: [osmium-cleanup,osmium-build-1,osmium-build-2,osmium-build-3]
     runs-on: ubuntu-latest
 
     container:
