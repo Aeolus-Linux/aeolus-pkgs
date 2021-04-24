@@ -85,8 +85,10 @@ jobs:
         #su -c "sh no-deps.sh" builderbob
         #chmod +x lxdm-themes.sh
         #su -c "sh lxdm-themes.sh" builderbob
+        echo 'Starting AUR build'
         chmod +x aur.sh
         su -c "bash aur.sh" builderbob
+        echo 'AUR build finished.'
         cd ./w86_64/
         git add *
         cd ..
