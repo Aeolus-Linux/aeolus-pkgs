@@ -290,6 +290,7 @@ jobs:
         cd osmium-pkgs
         git config user.email "tysayahi@gmail.com"
         git config user.name "Eile Kerning"
+        git config --global http.postBuffer 524288000
         # Update origin with token
         git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         # Checkout the branch so we can push back to it
