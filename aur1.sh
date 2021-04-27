@@ -30,6 +30,14 @@ makepkg -is --noconfirm
 cd ..
 rm -rf paru-bin
 paru -Syyu --noconfirm
+printf 'y\n\y\n' | paru -Scc
+paru -S pacman-git
+cd $PKGDIR
+git clone --depth 1 https://aur.archlinux.org/paru-git.git
+cd paru-git
+makepkg -is --noconfirm
+cd ..
+rm -rf paru-git
 
 ##Custom linux kernels
 cd $PKGDIR
@@ -82,7 +90,7 @@ delete_pkg () {
 download_pkgs () {
 	mkdir $PKGDIR/aur_pkgs && cd $PKGDIR/aur_pkgs
 	for pkg in "${PKGS[@]}"; do
-		git clone --depth 1 https://aur.archlinux.org/${pkg}.git
+		paru -G ${pkg}
 	# Verify
 		while true; do
 			set -- $PKGDIR/aur_pkgs/$pkg
