@@ -15,6 +15,14 @@ makepkg -is --noconfirm
 cd ..
 rm -rf paru-bin
 paru -Syyu --noconfirm
+printf 'y\n\y\n' | paru -Scc
+paru -S pacman-git
+cd $PKGDIR
+git clone --depth 1 https://aur.archlinux.org/paru-git.git
+cd paru-git
+makepkg -is --noconfirm
+cd ..
+rm -rf paru-git
 
 LIST=(oomox resvg paru discord_arch_electron vscodium tor-browser humanity-icon-theme yaru colorz gconf libgksu python-colorthief python-haishoku themix-export-spotify-git themix-icons-archdroid-git themix-icons-gnome-colors-git themix-icons-numix-git themix-icons-papirus-git themix-icons-suru-plus-aspromauros-git themix-icons-suru-plus-git themix-import-images-git themix-plugin-base16-git themix-theme-materia-git themix-theme-oomox-git tlpui-git python2-gobject2 asus-fan-control)
 # Sort packages
@@ -61,7 +69,7 @@ delete_pkg () {
 download_pkgs () {
 	mkdir $PKGDIR/aur_pkgs && cd $PKGDIR/aur_pkgs
 	for pkg in "${PKGS[@]}"; do
-		git clone --depth 1 https://aur.archlinux.org/${pkg}.git
+		paru -G ${pkg}
 	# Verify
 		while true; do
 			set -- $PKGDIR/aur_pkgs/$pkg
