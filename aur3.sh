@@ -69,7 +69,7 @@ delete_pkg () {
 download_pkgs () {
 	mkdir $PKGDIR/aur_pkgs && cd $PKGDIR/aur_pkgs
 	for pkg in "${PKGS[@]}"; do
-		paru -G ${pkg}
+		git clone --depth 1 https://aur.archlinux.org/${pkg}.git
 	# Verify
 		while true; do
 			set -- $PKGDIR/aur_pkgs/$pkg
