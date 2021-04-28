@@ -3,10 +3,10 @@
 BWDIR="$(pwd)"
 echo ${BWDIR}
 PKGDIRBW="$BWDIR/osmium-pkgs"
-tee -a /etc/pacman.conf > /dev/null <<EOT
-[multilib]
-Include = /etc/pacman.d/mirrorlist
-EOT
+echo [multilib] >> /etc/pacman.conf
+echo Include = /etc/pacman.d/mirrorlist >> /etc/pacman.conf
+rm /etc/pacman.conf.d/mirrorlist
+cp ./mirrorlist /etc/pacman.conf.d
 cat /etc/pacman.conf
 sudo pacman -Syyu --noconfirm --needed
 sudo pacman -Sy --needed --noconfirm meson coreutils kmod linux-firmware git
