@@ -35,7 +35,7 @@ paru -S pacman-git
 cd $PKGDIR
 git clone --depth 1 https://aur.archlinux.org/paru-git.git
 cd paru-git
-pacman -R --noconfirm paru-bin
+sudo pacman -R --noconfirm paru-bin
 makepkg -is --noconfirm
 cd ..
 rm -rf paru-git
