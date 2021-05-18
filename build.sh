@@ -9,7 +9,7 @@ echo MARKER1
 echo MARKER2
 echo MARKER3
 #cat /etc/pacman.conf
-sudo pacman -Syyu --noconfirm --needed
+sudo pacman -Syyu --noconfirm --needed asciidoc doxygen fakechroot
 sudo pacman -Sy --needed --noconfirm meson coreutils kmod linux-firmware git
 sudo pacman -Sy --needed --noconfirm  fakeroot extra-cmake-modules autogen cmake base-devel
 sudo chmod -R 777 .
