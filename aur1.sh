@@ -31,16 +31,6 @@ cd ..
 rm -rf paru-bin
 paru -Syyu --noconfirm
 printf 'y\n\y\n' | paru -Scc
-git clone https://aur.archlinux.org/pacman-git.git
-cd pacman-git
-makepkg -isis --noconfirm
-cd ..
-git clone --depth 1 https://aur.archlinux.org/paru-git.git
-cd paru-git
-sudo pacman -R --noconfirm paru-bin
-makepkg -is --noconfirm
-cd ..
-rm -rf paru-git
 
 ##Custom linux kernels
 cd $PKGDIR
