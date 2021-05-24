@@ -16,8 +16,10 @@ cd ..
 rm -rf paru-bin
 paru -Syyu --noconfirm
 printf 'y\n\y\n' | paru -Scc
-paru -S pacman-git
-cd $PKGDIR
+git clone https://aur.archlinux.org/pacman-git.git
+cd pacman-git
+makepkg -isis --noconfirm
+cd ..
 git clone --depth 1 https://aur.archlinux.org/paru-git.git
 cd paru-git
 sudo pacman -R --noconfirm paru-bin
