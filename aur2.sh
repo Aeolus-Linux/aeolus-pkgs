@@ -16,16 +16,6 @@ cd ..
 rm -rf paru-bin
 paru -Syyu --noconfirm
 printf 'y\n\y\n' | paru -Scc
-git clone https://aur.archlinux.org/pacman-git.git
-cd pacman-git
-makepkg -isis --noconfirm
-cd ..
-git clone --depth 1 https://aur.archlinux.org/paru-git.git
-cd paru-git
-sudo pacman -R --noconfirm paru-bin
-makepkg -is --noconfirm
-cd ..
-rm -rf paru-git
 
 LIST=(mangohud-opengl2 mangohud-opengl2-common pygtk mwoffliner openbox-patched mkinitcpio-openswap plymouth oranchelo-icon-theme tela-icon-theme grub-themes-git obmenu-generator ttf-comfortaa ttf-iosevka perl-linux-desktopfiles loksh-git opensnap arc-gtk-theme-git openbox-arc-git python-gettext suru-plus-aspromauros-git suru-plus-dark-git suru-plus-git suru-plus-pack-git suru-plus-telinkrin-git themix-icons-suru-plus-aspromauros-git themix-icons-suru-plus-git themix-full-git themix-gui-git perl-encode-detect perl-authen-pam suru-icon-theme-git)
 # Sort packages
