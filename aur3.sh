@@ -17,7 +17,7 @@ rm -rf paru-bin
 paru -Syyu --noconfirm
 printf 'y\n\y\n' | paru -Scc
 
-LIST=(oomox resvg paru discord_arch_electron vscodium tlp-git tlp-rdw-git tor-browser humanity-icon-theme yaru colorz gconf libgksu python-colorthief python-haishoku themix-export-spotify-git themix-icons-archdroid-git themix-icons-gnome-colors-git themix-icons-numix-git themix-icons-papirus-git themix-icons-suru-plus-aspromauros-git themix-icons-suru-plus-git themix-import-images-git themix-plugin-base16-git themix-theme-materia-git themix-theme-oomox-git tlpui-git python2-gobject2 asus-fan-control)
+LIST=(oomox resvg paru discord_arch_electron vscodium tlp-git tlp-rdw-git ryzen_smu-dkms-git ryzenadj-git tor-browser humanity-icon-theme yaru colorz gconf libgksu python-colorthief python-haishoku themix-export-spotify-git themix-icons-archdroid-git themix-icons-gnome-colors-git themix-icons-numix-git themix-icons-papirus-git themix-icons-suru-plus-aspromauros-git themix-icons-suru-plus-git themix-import-images-git themix-plugin-base16-git themix-theme-materia-git themix-theme-oomox-git tlpui-git python2-gobject2 asus-fan-control)
 # Sort packages
 PKGS=($(for i in "${LIST[@]}"; do echo $i; done | sort))
 
